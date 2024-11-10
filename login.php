@@ -159,9 +159,9 @@
                     if (!isset($_SESSION["total_time_spent"])) {
                         $_SESSION["total_time_spent"] = 0;
                     }
-                    exit();
-                } else {
-                    $err_mss = "Incorrect email or password"; 
+                }
+                else {
+                  $err_mss = "Incorrect email or password"; 
                 }
             }
             ?>

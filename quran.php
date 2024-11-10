@@ -183,10 +183,9 @@ direction: rtl;
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                 <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="login.php">login</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="signup.php">signup</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
                 </ul>
           </div>
         <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
@@ -196,8 +195,151 @@ direction: rtl;
     </div>
 </header>
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
+  <div class="container-fluid col-11" id="res-container">
+
+<!-- Audio Recording Section for Students -->
+<?php if ($_SESSION["role"] === "student") { ?>
+  <div id="student-section">
+    <h1 class="d-flex justify-content-center">Audio Recording</h1>
+    <div class="surah-card audio-player">
+      <button id="start-recording">Start Recording</button><br>
+      <button id="stop-recording" style="display: none;">Stop Recording</button>
+      <audio id="audio-preview" controls></audio><br>
+      <button id="submit-audio" style="display: none;">Submit for Evaluation</button>
+    </div>
+  </div>
+<?php } ?>
+
+<!-- Audio Review Section for Educators -->
+<?php if ($_SESSION["role"] === "educator") { ?>
+  <div id="educator-section">
+    <h1 class="d-flex justify-content-center">Evaluate Student Recordings</h1>
+    <div class="surah-card audio-player">
+      <?php
+        $targetDir = __DIR__ . "/audios/";
+        $audioFiles = glob($targetDir . "*.webm"); // Consistently use .webm
+
+        if (!empty($audioFiles)) {
+            foreach ($audioFiles as $file) {
+                $fileName = basename($file);
+                echo "<div class='audio-item'>";
+                echo "<audio controls src='audios/$fileName'></audio>";
+                echo "<button class='mark-good' data-file='$fileName'>Good Job</button>";
+                echo "<button class='mark-more' data-file='$fileName'>Needs More Work</button>";
+                echo "</div><br>";
+            }
+        } else {
+            echo "<p>No audio files to review.</p>";
+        }
+      ?>
+    </div>
+  </div>
+<?php } ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const startRecordingBtn = document.getElementById("start-recording");
+  const stopRecordingBtn = document.getElementById("stop-recording");
+  const audioPreview = document.getElementById("audio-preview");
+  const submitAudioBtn = document.getElementById("submit-audio");
+
+  let mediaRecorder;
+  let audioBlob;
+
+  // Recording logic for students
+  if (startRecordingBtn) {
+    startRecordingBtn.addEventListener("click", async () => {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+
+      mediaRecorder.ondataavailable = (event) => {
+        audioBlob = new Blob([event.data], { type: 'audio/webm' });
+        audioPreview.src = URL.createObjectURL(audioBlob);
+      };
+
+      mediaRecorder.start();
+      startRecordingBtn.style.display = "none";
+      stopRecordingBtn.style.display = "block";
+    });
+
+    stopRecordingBtn.addEventListener("click", () => {
+      mediaRecorder.stop();
+      startRecordingBtn.style.display = "block";
+      stopRecordingBtn.style.display = "none";
+      submitAudioBtn.style.display = "block";
+    });
+
+    // Submit recorded audio
+    submitAudioBtn.addEventListener("click", async () => {
+      const formData = new FormData();
+      formData.append("audio", audioBlob, "student_audio.webm");
+
+      const response = await fetch("upload_audio.php", { // Use dedicated upload script
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.text();
+      alert(result);
+    });
+  }
+
+  // Handle educator's evaluation of audio files
+  document.querySelectorAll('.mark-good, .mark-more').forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const fileName = event.target.getAttribute('data-file');
+      const action = event.target.classList.contains('mark-good') ? 'good' : 'more';
+
+      const response = await fetch("evaluate.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ fileName, action }),
+      });
+
+      const result = await response.text();
+      alert(result);
+
+      // Remove the audio item from the page if marked as "Good Job"
+      if (action === "good") {
+        event.target.closest('.audio-item').remove();
+      }
+    });
+  });
+});
+</script>
+
+<h1 class=" d-flex justify-content-center">Quran Juzes</h1>
+<div class="container col-8" id="juz-container">
+<script>
+    const juzContainer = document.getElementById('juz-container');
+
+    // Loop to create 30 Juz cards
+    for (let index = 0; index < 30; index++) {
+        const juzCard = document.createElement('div');
+        juzCard.className = 'surah-card';
+
+        const juzLink = document.createElement('a');
+        const formattedNumber = (index + 1).toString();
+        juzLink.href = `https://quran.com/juz/${formattedNumber}`;
+        juzLink.className = 'surah-link';
+
+        const juzContent = document.createElement('div');
+        juzContent.className = 'surah-content';
+
+        const juzName = document.createElement('div');
+        juzName.className = 'surah-name-arabic';
+        juzName.textContent = `Juz ${formattedNumber}`;
+
+        juzContent.appendChild(juzName);
+        juzLink.appendChild(juzContent);
+        juzCard.appendChild(juzLink);
+        juzContainer.appendChild(juzCard);
+    }
+</script></div>
 <h1 class=" d-flex justify-content-center">Quran Surahs</h1>
-<div class="container col-8" id="surah-container">
+<div class="container col-10" id="surah-container">
 <script>
     const surahs = [
   { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },
@@ -256,7 +398,9 @@ surahLink.appendChild(surahContent);
 surahCard.appendChild(surahLink);
 surahContainer.appendChild(surahCard);
 });
-</script></div>
+</script>
+</div>
+</div>
 </div>
 
 <footer>
@@ -271,7 +415,7 @@ surahContainer.appendChild(surahCard);
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                 </ul>
                 <hr style="color:aliceblue;" class="featurette-divider">
-                <p style="color:aliceblue;">&copy; 2024 جميع الحقوق محفوظة</p>
+                <p style="color:aliceblue;">&copy; 2024 All rights reserved</p>
             </ul>
       </div>
     </div>

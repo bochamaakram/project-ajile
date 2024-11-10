@@ -160,8 +160,7 @@ body{
                 <ul class="navbar-nav">
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="quranAr.php">القرآن</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="loginAr.php">تسجيل الدخول</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="signupAr.php">التسجيل</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
@@ -233,8 +232,6 @@ body{
                 <ul class="navbar-nav">
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="quranAr.php">القرآن</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="bookpage.php">القرآ</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="loginAr.php">تسجيل الدخول</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="signupAr.php">التسجيل</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
                 <hr style="color:aliceblue;" class="featurette-divider">

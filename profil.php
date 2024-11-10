@@ -10,14 +10,22 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 // Calculate time spent in the current session
 if (isset($_SESSION["login_time"])) {
     $current_time = time();
-    $time_spent = $current_time - $_SESSION["login_time"]; // Time since last calculation
-    $_SESSION["total_time_spent"] += $time_spent; // Add to total time spent
-    $_SESSION["login_time"] = $current_time; // Reset login time for the next calculation
+    $time_spent = $current_time - $_SESSION["login_time"];
+    $_SESSION["total_time_spent"] += $time_spent;
+    $_SESSION["login_time"] = $current_time;
 }
 
 // Convert total time spent to hours and minutes
 $hours = floor($_SESSION["total_time_spent"] / 3600);
 $minutes = floor(($_SESSION["total_time_spent"] % 3600) / 60);
+
+// Check if a description has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["description"])) {
+    $_SESSION["description"] = $_POST["description"];
+}
+
+$description = isset($_SESSION["description"]) ? $_SESSION["description"] : ""; 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,34 +33,54 @@ $minutes = floor(($_SESSION["total_time_spent"] % 3600) / 60);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      body{
-        font-family: "Urbanist", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-      }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
-        .card { display: flex; background: white; border-radius: 15px; width: 400px; height: 320px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); flex-direction: column; }
-        .header { height: 120px; background: linear-gradient(90deg, rgba(238, 77, 58, 1) 0%, rgba(255, 186, 0, 1) 100%); }
-        .profile-info { padding: 20px; padding-top: 40px; }
-        .profile-info h2 { font-size: 1.5em; color: #333; }
-        .profile-info p { color: #777; margin: 5px 0; }
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .bg-image {
+            background-image: url('./images (1).jpeg'); /* Set the image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="header"></div>
-        <div class="profile-info">
-            <h2>Name: <?php echo htmlspecialchars($_SESSION["name"]); ?></h2>
-            <p>Role: <?php echo htmlspecialchars($_SESSION["role"]); ?></p>
-            <p>Email: <?php echo htmlspecialchars($_SESSION["email"]); ?></p>
-            <p>Total Time Spent: <?php echo "$hours hours and $minutes minutes"; ?></p> <!-- Display time spent -->
+    <div class="bg-image">
+        <div class="card w-50 shadow">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Profile Card</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name: <?php echo htmlspecialchars($_SESSION["name"]); ?></h5>
+                <p class="card-text">Role: <?php echo htmlspecialchars($_SESSION["role"]); ?></p>
+                <p class="card-text">Email: <?php echo htmlspecialchars($_SESSION["email"]); ?></p>
+                <p class="card-text">Total Time Spent: <?php echo "$hours hours and $minutes minutes"; ?></p>
+
+                <h5 class="mt-4">Description</h5>
+                <form method="post">
+                    <div class="form-group">
+                        <textarea name="description" id="textarea" class="form-control" rows="4"><?php echo htmlspecialchars($description); ?></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Description</button>
+                </form>
+                
+                <!-- Go Back Button -->
+                <a href="index.php" class="btn btn-secondary mt-3">Go Back</a>
+            </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

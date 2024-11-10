@@ -106,16 +106,15 @@
         <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
         <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
               <ul class="navbar-nav nav-underline">
-                  <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="login.php">login</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="signup.php">signup</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="quran.php">Quran</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="bookpage.php">Library</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
               </ul>
         </div>
-          <li class="nav-item d-flex justify-content-left"><a style="color:#0F1035;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="distroy.php">Log out</a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="indexAr.php">Arabic</a></li>
+          <li class="nav-item d-flex justify-content-left"><a style="color: aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="indexAr.php">Arabic</a></li>
       </div>
     </nav>
   </div>

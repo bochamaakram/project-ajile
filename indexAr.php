@@ -113,16 +113,15 @@ body{
                   <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
                   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                       <ul class="navbar-nav">
-                          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;"  class="nav-link" href="loginAr.php">تسجيل الدخول</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="signupAr.php">إنشاء حساب</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;"  class="nav-link" href="quranAr.php">القرآن</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
                       </ul>
                   </div>
-                    <li class="nav-item d-flex justify-content-left"><a style="color:#0F1035;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:#0F1035;" class="nav-link" href="index.php">الانجليزية</a></li>
+                    <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="index.php">الانجليزية</a></li>
               </div>
           </nav>
       </div>

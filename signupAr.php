@@ -130,18 +130,6 @@ body{
   .form-container input[type="radio"] {
       margin: 0 5px 10px 0;
   }
-  .form-container button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  }
-  .form-container button:hover {
-      background-color: #218838;
-  }
     </style>
 </head>
 <body>
@@ -217,7 +205,7 @@ body{
                 <input type="radio" name="role" value="student" id="student" required>طالب<br>
                 <input type="radio" name="role" value="educator" id="educator" required>معلم<br>
                 
-                <button type="submit">إنشاء حساب</button>
+                <button type="submit" class="btn btn-outline-primary">إنشاء حساب</button>
             </form>
         </div>
     </div>

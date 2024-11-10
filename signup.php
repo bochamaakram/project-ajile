@@ -124,18 +124,6 @@
  .form-container input[type="radio"] {
      margin: 0 5px 10px 0;
  }
- .form-container button {
-     margin-top: 20px;
-     padding: 10px 20px;
-     background-color: #28a745;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
- }
- .form-container button:hover {
-     background-color: #218838;
- }
     </style>
 </head>
 <body>
@@ -181,6 +169,8 @@
                     $resultat->bindValue(":param6", $role);
                     if ($resultat->execute()) {
                         echo "<p class='text-light'>Account created successfully!</p>";
+                        header("Location: login.php");
+                        exit();
                     } else {
                         echo "<p class='text-light'>Error: " . $stmt->error . "</p>";
                     }
@@ -211,7 +201,7 @@
                 <input type="radio" name="role" value="student" id="student" required>Student<br>
                 <input type="radio" name="role" value="educator" id="educator" required>Educator<br>
                 
-                <button type="submit">Create Account</button>
+                <button type="submit" class="btn btn-outline-primary">Create Account</button>
             </form>
         </div>
     </div>
