@@ -104,20 +104,21 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($students as $student): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($student['name']); ?></td>
-                        <td><?php echo htmlspecialchars($student['gender']); ?></td>
-                        <td>
-                            <form action="" method="post">
-                                <textarea class="mb-2 col-10 btn btn-outline-secondary" name="feedback" rows="1" cols="25" placeholder="أدخل ملاحظاتك هنا..."></textarea>
-                        </td>
-                        <td>
-                                <input type="submit" name="Submit_feedback" value="إرسال التعليقات" class="btn btn-outline-secondary">
-                            </form>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+            <?php foreach ($students as $student): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($student['name']); ?></td>
+        <td><?php echo htmlspecialchars($student['gender']); ?></td>
+        <td>
+            <form action="" method="post">
+                <textarea class="mb-2 col-10 btn btn-outline-secondary" name="feedback" rows="1" cols="25" placeholder="ادخل ملاحظة عن التلميد..."></textarea>
+                <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($student['user_id']); ?>">
+        </td>
+        <td>
+                <input type="submit" name="Submit_feedback" value="حفظ الملاحضة" class="btn btn-outline-secondary">
+            </form>
+        </td>
+    </tr>
+<?php endforeach; ?>
             </tbody>
         </table>
     </div>

@@ -114,14 +114,17 @@
 <div class="p-5 rounded-4 container-fluid d-flex justify-content-center  about-container">
     <div class="button-container">
     <button id="clickable-div"><h1 class="d-flex justify-content-center" id="phrase-display"></h1></button>
-        <span class="top_right" id="count"></span></div>
-        <a href="Prayer.html"class=" d-flex justify-content-center col-12"><button type="submit" class="d-flex justify-content-center btn btn-outline-secondary col-3">Done</button></a>
+        <span style="color: black;" class="top_right" id="count"></span></div>
+        <div class=" d-flex justify-content-center">
+        <a href="Prayer.html"class=" d-flex justify-content-center"><button type="submit" class="d-flex justify-content-center btn btn-outline-secondary">Done</button></a>
+        <button id="reset" class="d-flex justify-content-right btn btn-outline-secondary">Reset</button></div>
 </div>
 <script>
     let count = 0;
     const phrases = ["سبحان الله", "الحمد لله", "الله أكبر"];
     const specialPhrase = "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير";
     const clickableDiv = document.getElementById('clickable-div');
+    const reset = document.getElementById('reset');
     const countDisplay = document.getElementById('count');
     const phraseDisplay = document.getElementById('phrase-display');
 
@@ -137,6 +140,10 @@
             // Cycle through phrases when not at a multiple of 100
             phraseDisplay.textContent = phrases[(count - 1) % phrases.length];
         }
+    });
+    reset.addEventListener('click', () => {
+        count=0;
+        countDisplay.textContent = count;
     });
 
     // Function to send the click count to the server

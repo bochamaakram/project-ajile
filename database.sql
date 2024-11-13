@@ -17,11 +17,14 @@ CREATE TABLE profile (
 );
 
 -- Step 3: Create the 'user_achievements' table
-CREATE TABLE IF NOT EXISTS students_feesback (
-    user_id INT PRIMARY KEY,
-    feedback VARCHAR(500),
-    FOREIGN KEY (user_id) REFERENCES profile(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE students_feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    feedback TEXT NOT NULL,
+    feedback_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES profile(user_id) ON DELETE CASCADE
 );
+
 -- Step 4: Create the 'student_audios' table
 CREATE TABLE IF NOT EXISTS student_audios (
     user_id INT AUTO_INCREMENT PRIMARY KEY,

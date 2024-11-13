@@ -145,8 +145,8 @@ Welcome to our platform! We are committed to providing the necessary resources t
                     Our goal is to serve students, scholars and anyone interested in deepening their understanding of the Holy Quran and Islamic history.
                 </p>
                 <div id="gotop">
-                    <a href="loginAr.php"><button class="btn btn-outline-secondary" type="submit" name="login">login</button></a>
-                    <a href="signupAr.php"><button class="btn btn-outline-secondary" type="submit" name="signup">signup</button></a><br>
+                    <a href="login.php"><button class="btn btn-outline-secondary" type="submit" name="login">login</button></a>
+                    <a href="signup.php"><button class="btn btn-outline-secondary" type="submit" name="signup">signup</button></a><br>
                 </div>
                 <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button">More information</button></a>
             </div>

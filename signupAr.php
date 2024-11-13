@@ -41,11 +41,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+      .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
+        }
+      
 body{
   font-family: "Amiri", serif;
   font-weight: 400;
@@ -57,11 +60,47 @@ body{
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: right;
+  }
+  .toggler-icon {
+    width: 30px;
+    height: 3px;
+    background: #0F1035;
+    display: block;
+    transition: all 0.2s;
+  }
+  .middle-bar {
+    margin: 5px auto;
+  }
+
+  .navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .navbar-toggler .middle-bar {
+    opacity: 0;
+  }
+
+  .navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+
+  .navbar-toggler.collapsed .top-bar,
+  .navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+  }
+
+  .navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+  }
+
+  .navbar-toggler.collapsed .toggler-icon {
+      background: #0F1035;
   }
   .section {
     height: 100%;
@@ -74,7 +113,6 @@ body{
     height: 100vh;
   }
   .backbody {
-      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
       direction: rtl;
       text-align: right;
@@ -83,7 +121,7 @@ body{
       background-color: #C4DFDF;
   }
   nav a.nav-link {
-      color: black;
+      color: aliceblue;
   }
   .nav-link:hover {
     transform: scale(1.02);
@@ -95,15 +133,15 @@ body{
       align-items: center;
       justify-content: center;
       color: white;
-      background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
-      border-radius: 15px;
-      padding: 30px;
+      backdrop-filter: blur(5px);
+     border-radius: 25px;
+     padding: 25px;
       max-width: 400px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .form-container label {
-      margin-top: 10px;
+      margin-top: 8px;
       text-align: right;
       width: 100%;
       color: #fff;
@@ -113,7 +151,7 @@ body{
   .form-container input[type="password"],
   .form-container input[type="number"] {
       width: 100%;
-      padding: 8px;
+      padding: 5px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ddd;
@@ -122,6 +160,11 @@ body{
   .form-container input[type="radio"] {
       margin: 0 5px 10px 0;
   }
+  #container{
+  background-image: url("IMGG/471133.jpg");
+    background-size: cover;
+    height: 100vh;
+ }
     </style>
 </head>
 <body>
@@ -130,41 +173,44 @@ body{
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
+                <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
 
 <!-- Main Content -->
-<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+<div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
-        <h1>صفحة التسجيل</h1>
         <div class="form-container">
             <form method="POST" action="">
-                <h2 style="color:black;">التسجيل</h2>
                 
-                <label style="color:black;" for="name">الاسم الكامل:</label>
-                <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+                <input type="text" id="name" name="name" placeholder= " أدخل إسمك الكامل" required>
         
-                <label style="color:black;">الجنس:</label>
-                <input type="radio" name="gender" value="M" id="M" required><span style="color:black;">ذكر</span><br>
-                <input type="radio" name="gender" value="F" id="F" required><span style="color:black;">أنثى</span><br>
+                <label>الجنس:</label>
+                <input type="radio" name="gender" value="M" id="M" required>ذكر
+                <input type="radio" name="gender" value="F" id="F" style="margin-right: 55px;" required>أنثى<br>
         
-                <label style="color:black;" for="email">البريد الإلكتروني:</label>
+                <label for="email">البريد الإلكتروني:</label>
                 <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
         
-                <label style="color:black;" for="password">كلمة المرور:</label>
+                <label for="password">كلمة المرور:</label>
                 <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
         
-                <label style="color:black;" for="age">العمر:</label>
+                <label for="age">العمر:</label>
                 <input type="number" id="age" name="age" placeholder="أدخل عمرك" min="1" required>
         
-                <label style="color:black;">الدور:</label>
-                <input type="radio" name="role" value="student" id="student" required><span style="color:black;">طالب</span><br>
-                <input type="radio" name="role" value="educator" id="educator" required><span style="color:black;">معلم</span><br>
+                <label>الدور:</label>
+                <input type="radio" name="role" value="student" id="student" required>طالب
+                <input type="radio" name="role" value="educator" id="educator" style="margin-right: 55px;" required>معلم<br>
                 
-                <hr style="color:black;" class="featurette-divider">
-                <button type="submit" class="btn btn-outline-secondary">إنشاء حساب</button>
+                <button type="submit" class="btn btn-outline-secondary" style="color:black">إنشاء حساب</button>
             </form>
         </div>
     </div>

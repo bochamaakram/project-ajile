@@ -102,7 +102,6 @@
 </head>
 <body>
   <header>
-  <div class="container-fluid"></div>
       <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
       <div class="container-fluid">
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

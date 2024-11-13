@@ -48,6 +48,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
+      .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
+        }
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
@@ -66,6 +73,43 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: right;
   }
+  .toggler-icon {
+    width: 30px;
+    height: 3px;
+    background: #0F1035;
+    display: block;
+    transition: all 0.2s;
+  }
+  .middle-bar {
+    margin: 5px auto;
+  }
+
+  .navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .navbar-toggler .middle-bar {
+    opacity: 0;
+  }
+
+  .navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+
+  .navbar-toggler.collapsed .top-bar,
+  .navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+  }
+
+  .navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+  }
+
+  .navbar-toggler.collapsed .toggler-icon {
+      background: #0F1035;
+  }
   .section {
     height: 100%;
     display: flex;
@@ -77,7 +121,7 @@
     height: 100vh;
   }
   .backbody {
-      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
+      background-color: linear-gradient(135deg, black, #7FC7D9);
       color: #333;
       direction: rtl;
       text-align: right;
@@ -86,7 +130,7 @@
       background-color: #C4DFDF;
   }
   nav a.nav-link {
-      color: black;
+      color: aliceblue;
   }
   .nav-link:hover {
     transform: scale(1.02);
@@ -98,12 +142,20 @@
       align-items: center;
       justify-content: center;
       color: white;
-      background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
-      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      border-radius: 30px;
       padding: 30px;
       max-width: 400px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #container{
+    background-image: url("IMGG/470549.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
   }
 </style>
 </head>
@@ -113,28 +165,36 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
-            <a style="color:black;" class="nav-link d-flex justify-content-center" aria-current="page" href="index.php">Home Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item d-flex justify-content-center">
+                        <a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
 
 <!-- Main Content -->
-<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4); height: 100vh;">
+<div class="p-5 bg-body-tertiary rounded-4" id="container" style=" height: 100vh;">
     <div class="container py-5 text-center">
-        <h1>Login Page</h1>
-        <div class="form-container">
+                <div class="form-container ">
             <form method="POST" action="">
-                <h3 style="color:black;">Login</h3><br>
+                <h3 class="text-light">Login</h3><br>
                 <?php if ($err_mss): ?>
                     <div class="alert alert-danger"><?php echo htmlspecialchars($err_mss); ?></div>
-                <?php endif; ?>
-                <label style="color:black;" for="email" class="nav-link d-flex justify-content-left">Email:</label>
-                <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Enter your email" required>
+                <?php endif; ?> 
+                <label for="email" class="text-light">Email:</label>
+                <input type="email" class="form-control mb-4 " id="email" name="email" placeholder="Enter your email" required>
+              
+                <label for="password" class="text-light">Password:</label>
+                <input type="password" class="form-control mb-4" id="password" name="password" placeholder="Enter your password" required>
                 
-                <label style="color:black;" for="password" class="nav-link d-flex justify-content-left">Password:</label>
-                <input type="password" class="form-control mb-3" id="password" name="password" placeholder="Enter your password" required>
-                
-                <button type="submit" class="btn btn-outline-secondary" name="login">Login</button>
+                <button type="submit" class="btn btn-outline-secondary" style="color:white" name="login">Login</button>
             </form>
         </div>
     </div>

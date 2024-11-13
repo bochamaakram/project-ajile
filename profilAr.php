@@ -26,6 +26,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["description"])) {
 
 $description = isset($_SESSION["description"]) ? $_SESSION["description"] : ""; 
 
+// Check if a description has been submitted
+// Retrieve existing description from the database if not set in the session
+if (!isset($_SESSION["description"])) {
+    $query = "SELECT description FROM profile WHERE email = :email";
+    $stmt = $connexion->prepare($query);
+    $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $_SESSION["description"] = $result ? $result['description'] : '';
+}
+
+// Update description in the database and session on form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["description"])) {
+    $description = $_POST["description"];
+    $_SESSION["description"] = $description; // Store in session
+
+    // Update the database
+    $query = "UPDATE profile SET description = :description WHERE email = :email";
+    $stmt = $connexion->prepare($query);
+    $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+    $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
+    $stmt->execute();
+}
+
+
+// Set description for display
+$description = $_SESSION["description"];
+
 ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -36,6 +64,13 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
+        }
         body, html {
             height: 100%;
             margin: 0;
@@ -44,7 +79,7 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
             text-align: right;
         }
         .bg-image {
-            background-image: url(IMGG/back.gif);
+            background-image: url(IMGG/mos2.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             background-position: center;
@@ -54,12 +89,18 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
             align-items: center;
         }
         .card {
-            text-align: right;
-            background: rgba(240, 240, 240, 0.6);
-            color: #333;
-        }
+    text-align: right;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Optional: shadow */
+}
+
         .form-control {
             text-align: right;
+        }
+        .card-body h5,p{
+            color: white;
         }
     </style>
 </head>
@@ -67,7 +108,10 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
     <div class="bg-image">
         <div class="card w-50 shadow">
             <div class="card-header bg-info text-white">
-                <h4 class="mb-0">بطاقة الملف الشخصي</h4>
+                <a href="indexAr.php" class="text-white d-flex align-items-center">
+                    <img style="width: 25px; height: 25px; margin-left: 8px;" src="./IMGG/enter.png" alt="Homepage">
+                </a>
+                <h4 class="mb-0 d-flex align-items-center">بطاقة الملف الشخصي</h4>
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?php echo htmlspecialchars($_SESSION["name"]); ?>: الاسم </h5>
@@ -79,11 +123,8 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
                     <div class="form-group">
                         <textarea name="description" id="textarea" class="card form-control" rows="4"><?php echo htmlspecialchars($description); ?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">حفظ الوصف</button>
+                    <button type="submit" class="btn btn-secondary">حفظ الوصف</button>
                 </form>
-                
-                <!-- Go Back Button -->
-                <a href="index.php" class="btn btn-secondary mt-3">العودة</a>
             </div>
         </div>
     </div>
