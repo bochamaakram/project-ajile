@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -76,13 +76,13 @@
     height: 100vh;
   }
   .backbody {
-      background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
       direction: rtl;
       text-align: right;
   }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
       color: #0F1035;
@@ -91,6 +91,13 @@
     transform: scale(1.02);
     color: #d1e7dd;
   }
+        .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
+        }
 </style>
 </head>
 <body>
@@ -106,21 +113,21 @@
         <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
         <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
               <ul class="navbar-nav nav-underline">
-                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quran.php">Quran</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
               </ul>
         </div>
-          <li class="nav-item d-flex justify-content-left"><a style="color: aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="indexAr.php">Arabic</a></li>
+          <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="indexAr.php">Arabic</a></li>
       </div>
     </nav>
   </div>
   </header>
 <!--page-->
-<div class="p-5 rounded-4 container-fluid " style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
+<div class="p-5 rounded-4 container-fluid " style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
   
   <div class="main-wrapper about-container">
     <div class="container py-5 section right col-xs-9">
@@ -128,8 +135,8 @@
         Welcome to our platform! We are dedicated to providing resources for learning and exploring the Quran and other Islamic teachings.
       </p>
       <div id="gotop">
-        <a href="login.php"><button class="btn btn-outline-primary" type="button">login</button></a>
-        <a href="signup.php"><button class="btn btn-outline-primary" type="button">signup </button></a><br>
+        <a href="login.php"><button class="btn btn-outline-secondary" type="button">login</button></a>
+        <a href="signup.php"><button class="btn btn-outline-secondary" type="button">signup </button></a><br>
       </div>
     </div>
 </div>

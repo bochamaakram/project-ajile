@@ -5,28 +5,26 @@ CREATE DATABASE IF NOT EXISTS user_profiles;
 USE user_profiles;
 
 -- Step 2: Create the 'profile' table with the specified columns
-CREATE TABLE IF NOT EXISTS profile (
+CREATE TABLE profile (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     gender ENUM('F', 'M') NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     age INT CHECK (age >= 0),
-    role ENUM('educator', 'student') NOT NULL
+    role ENUM('educator', 'student') NOT NULL,
+    description varchar(5000)
 );
 
 -- Step 3: Create the 'user_achievements' table
-CREATE TABLE IF NOT EXISTS user_achievements (
-    user_id INT,
-    link_id VARCHAR(10),
-    PRIMARY KEY (user_id, link_id),
-    FOREIGN KEY (user_id) REFERENCES profile(user_id)
+CREATE TABLE IF NOT EXISTS students_feesback (
+    user_id INT PRIMARY KEY,
+    feedback VARCHAR(500),
+    FOREIGN KEY (user_id) REFERENCES profile(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
 -- Step 4: Create the 'student_audios' table
 CREATE TABLE IF NOT EXISTS student_audios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     file_path VARCHAR(255) NOT NULL,
     status ENUM('pending', 'reviewed') DEFAULT 'pending',
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -36,7 +34,7 @@ CREATE TABLE IF NOT EXISTS student_audios (
 CREATE TABLE button_clicks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     click_date DATE NOT NULL,
-    click_count INT DEFAULT 1
+    click_count INT DEFAULT 0
 );
 -- To drop the database, use:
--- DROP DATABASE user_profiles;
+#DROP DATABASE user_profiles;

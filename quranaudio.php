@@ -26,7 +26,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         font-style: normal;
       }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
       color: #0F1035;
@@ -41,7 +41,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -97,7 +97,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     h1 {
       padding: 20px;
       font-size: 2em;
-      color: #006699;
+      color: black;
     }
     @font-face {
       font-family: 'PDMS_Saleem_QuranFont';
@@ -112,7 +112,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       list-style-type: none;
     }
     .surah-item {
-      background-color: #DCF2F1;
+      background-color: #F8F6F4;
       padding: 15px;
       border: 1px solid #365486;
       border-radius: 8px;
@@ -138,6 +138,13 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     width: 600px;
     margin-left: auto;
   }
+.navbar-toggler:focus{
+    box-shadow: none !important;
+    
+}
+.navbar-toggler{
+    border: none !important;
+}
   </style>
 </head>
 <body>
@@ -153,19 +160,19 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
           <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
                 </ul>
           </div>
-        <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-        <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
+        <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">Log out</a></li>
         </div>
       </nav>
     </div>
 </header>
-<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1, #7FC7D9);">
+<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
 <h1 class=" d-flex justify-content-center">Quran Surahs</h1>
 <div class="container">
   <ul class="surah-list" id="surah-list">
@@ -241,13 +248,13 @@ const surahs = [
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="login.php">login</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="signup.php">signup</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
                 </ul>
-                <hr style="color:aliceblue;" class="featurette-divider">
-                <p style="color:aliceblue;">&copy; 2024 All rights reserved</p>
+                <hr style="color:black;" class="featurette-divider">
+                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
             </ul>
       </div>
     </div>

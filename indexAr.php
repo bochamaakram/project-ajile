@@ -28,7 +28,7 @@ body{
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 30px;
     padding: 10px;
     margin: auto;
@@ -83,13 +83,13 @@ body{
     height: 100vh;
   }
   .backbody {
-    background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     color: #333;
     direction: rtl;
     text-align: right;
   }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
       color: #0F1035;
@@ -98,6 +98,13 @@ body{
     transform: scale(1.02);
     color: #d1e7dd;
   }
+        .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
+        }
 </style>
 </head>
 <body>
@@ -113,30 +120,30 @@ body{
                   <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
                   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                       <ul class="navbar-nav">
-                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="quranAr.php">القرآن</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
                       </ul>
                   </div>
-                    <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="index.php">الانجليزية</a></li>
+                    <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="index.php">الانجليزية</a></li>
               </div>
           </nav>
       </div>
   </header>
   
   <!-- Page Content -->
-  <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
+  <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
       <div class="main-wrapper about-container">
           <div class="container py-5 section right col-xs-9">
               <p class="col-md-8 fs-4">
                   مرحباً بكم في منصتنا! نحن ملتزمون بتوفير الموارد اللازمة لتعلم واستكشاف القرآن الكريم والتعاليم الإسلامية الأخرى.
               </p>
               <div id="gotop" class="d-flex gap-2">
-                  <a href="loginAr.php"><button class="btn btn-outline-primary" type="button">تسجيل الدخول</button></a>
-                  <a href="signupAr.php"><button class="btn btn-outline-primary" type="button">التسجيل</button></a>
+                  <a href="loginAr.php"><button class="btn btn-outline-secondary" type="button">تسجيل الدخول</button></a>
+                  <a href="signupAr.php"><button class="btn btn-outline-secondary" type="button">التسجيل</button></a>
               </div>
           </div>
       </div>

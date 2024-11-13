@@ -1,3 +1,32 @@
+<?php
+            require "connexion.php";
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $name = $_POST['name'];
+                $gender = $_POST['gender'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $age = $_POST['age'];
+                $role = $_POST['role'];
+                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
+                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
+                    $resultat = $connexion->prepare($query);
+                    $resultat->bindValue(":param1", $name);
+                    $resultat->bindValue(":param2", $gender);
+                    $resultat->bindValue(":param3", $email);
+                    $resultat->bindValue(":param4", $password);
+                    $resultat->bindValue(":param5", $age);
+                    $resultat->bindValue(":param6", $role);
+                    if ($resultat->execute()) {
+                        echo "<p class='text-light'>تم إنشاء الحساب بنجاح!</p>";
+                        // Redirect to index.php upon successful login
+                        header("Location: loginAr.php");
+                        exit();
+                    } else {
+                        echo "<p class='text-light'>خطأ: " . $stmt->error . "</p>";
+                    }
+                }
+            }
+            ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -34,43 +63,6 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: right;
   }
-  .toggler-icon {
-    width: 30px;
-    height: 3px;
-    background: #0F1035;
-    display: block;
-    transition: all 0.2s;
-  }
-  .middle-bar {
-    margin: 5px auto;
-  }
-
-  .navbar-toggler .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-
-  .navbar-toggler .middle-bar {
-    opacity: 0;
-  }
-
-  .navbar-toggler .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-
-  .navbar-toggler.collapsed .top-bar,
-  .navbar-toggler.collapsed .bottom-bar {
-    transform: rotate(0);
-  }
-
-  .navbar-toggler.collapsed .middle-bar {
-    opacity: 1;
-  }
-
-  .navbar-toggler.collapsed .toggler-icon {
-      background: #0F1035;
-  }
   .section {
     height: 100%;
     display: flex;
@@ -82,16 +74,16 @@ body{
     height: 100vh;
   }
   .backbody {
-      background-color: linear-gradient(135deg, #DCF2F1, #7FC7D9);
+      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
       direction: rtl;
       text-align: right;
   }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
-      color: aliceblue;
+      color: black;
   }
   .nav-link:hover {
     transform: scale(1.02);
@@ -103,7 +95,7 @@ body{
       align-items: center;
       justify-content: center;
       color: white;
-      background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+      background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       border-radius: 15px;
       padding: 30px;
       max-width: 400px;
@@ -138,74 +130,41 @@ body{
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
-                <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                </ul>
-            </div>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
         </div>
     </nav>
 </header>
 
 <!-- Main Content -->
-<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
+<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
     <div class="container py-5 text-center">
         <h1>صفحة التسجيل</h1>
         <div class="form-container">
-            <?php
-            require "connexion.php";
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $name = $_POST['name'];
-                $gender = $_POST['gender'];
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-                $age = $_POST['age'];
-                $role = $_POST['role'];
-                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
-                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
-                    $resultat = $connexion->prepare($query);
-                    $resultat->bindValue(":param1", $name);
-                    $resultat->bindValue(":param2", $gender);
-                    $resultat->bindValue(":param3", $email);
-                    $resultat->bindValue(":param4", $password);
-                    $resultat->bindValue(":param5", $age);
-                    $resultat->bindValue(":param6", $role);
-                    if ($resultat->execute()) {
-                        echo "<p class='text-light'>تم إنشاء الحساب بنجاح!</p>";
-                    } else {
-                        echo "<p class='text-light'>خطأ: " . $stmt->error . "</p>";
-                    }
-                }
-            }
-            ?>
-
             <form method="POST" action="">
-                <h2>التسجيل:</h2>
+                <h2 style="color:black;">التسجيل</h2>
                 
-                <label for="name">الاسم الكامل:</label>
+                <label style="color:black;" for="name">الاسم الكامل:</label>
                 <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
         
-                <label>الجنس:</label>
-                <input type="radio" name="gender" value="M" id="M" required>ذكر<br>
-                <input type="radio" name="gender" value="F" id="F" required>أنثى<br>
+                <label style="color:black;">الجنس:</label>
+                <input type="radio" name="gender" value="M" id="M" required><span style="color:black;">ذكر</span><br>
+                <input type="radio" name="gender" value="F" id="F" required><span style="color:black;">أنثى</span><br>
         
-                <label for="email">البريد الإلكتروني:</label>
+                <label style="color:black;" for="email">البريد الإلكتروني:</label>
                 <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
         
-                <label for="password">كلمة المرور:</label>
+                <label style="color:black;" for="password">كلمة المرور:</label>
                 <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
         
-                <label for="age">العمر:</label>
+                <label style="color:black;" for="age">العمر:</label>
                 <input type="number" id="age" name="age" placeholder="أدخل عمرك" min="1" required>
         
-                <label>الدور:</label>
-                <input type="radio" name="role" value="student" id="student" required>طالب<br>
-                <input type="radio" name="role" value="educator" id="educator" required>معلم<br>
+                <label style="color:black;">الدور:</label>
+                <input type="radio" name="role" value="student" id="student" required><span style="color:black;">طالب</span><br>
+                <input type="radio" name="role" value="educator" id="educator" required><span style="color:black;">معلم</span><br>
                 
-                <button type="submit" class="btn btn-outline-primary">إنشاء حساب</button>
+                <hr style="color:black;" class="featurette-divider">
+                <button type="submit" class="btn btn-outline-secondary">إنشاء حساب</button>
             </form>
         </div>
     </div>

@@ -1,0 +1,265 @@
+[13-Nov-2024 09:27:59 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:28:24 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:28:50 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:29:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:29:16 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:29:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:29:59 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:30:13 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:30:39 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:30:53 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:31:02 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:32:19 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:32:54 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:33:08 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:33:17 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:33:30 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:33:38 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:33:54 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:34:30 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:35:01 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:35:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:35:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:36:24 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:37:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:39:39 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:50
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(50): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 50
+[13-Nov-2024 09:55:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:50
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(50): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 50
+[13-Nov-2024 09:57:28 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:57:48 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:58:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:58:35 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:58:48 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:58:59 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:59:10 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:59:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:59:35 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 09:59:39 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:00:01 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:00:02 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:00:56 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:02:31 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:02:32 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:03:24 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:03:25 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:04:11 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:05:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:05:19 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:05:44 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:06:57 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:07:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:07:15 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:07:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:07:28 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48
+[13-Nov-2024 10:07:32 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'button_clicks.PRIMARY' in C:\xampp\htdocs\PHP\project agile\save_click.php:48
+Stack trace:
+#0 C:\xampp\htdocs\PHP\project agile\save_click.php(48): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHP\project agile\save_click.php on line 48

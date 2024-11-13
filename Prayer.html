@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
      body{
-        background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+        background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
         font-weight: 500;
@@ -23,7 +23,7 @@
       align-items: center;
       justify-content: center;
       color: #0F1035;
-      background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+      background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       border-radius: 15px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -77,13 +77,13 @@
       height: 100vh;
     }
     .backbody {
-        background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+        background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
         color: #333;
         direction: rtl;
         text-align: right;
     }
     header, footer {
-        background-color: #365486;
+        background-color: #C4DFDF;
     }
     nav a.nav-link {
         color: #0F1035;
@@ -109,11 +109,18 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            background-color: #7FC7D9;
+            background-color: #F8F6F4;
             border-radius: 8px;
         }
         .prayer-time span {
             font-size: 1.2em;
+        }
+        .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
         }
     </style>
 </head>
@@ -122,7 +129,7 @@
     <div class="container-fluid"></div>
         <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
         <div class="container-fluid">
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="toggler-icon top-bar"></span>
             <span class="toggler-icon middle-bar"></span>
             <span class="toggler-icon bottom-bar"></span>
@@ -130,24 +137,23 @@
           <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li>
                 </ul>
           </div>
-            <li class="nav-item d-flex justify-content-left"><a style="color: aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-            <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
+          <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+          <li class="nav-item d-flex justify-content-left "><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
         </div>
       </nav>
     </div>
-    </header>
-    <div class="p-5 rounded-4 container-fluid " style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">   
+    </header>  
       <div class="main-wrapper about-container">
         <div class="container right col-xs-1">
                     <h1 class=" d-flex justify-content-center">Prayer Times</h1>
                         <label for="city" class=" d-flex justify-content-center">Select City:</label>
-                        <select id="city" class="form-select form-select-lg mb-3">
+                        <select id="city" class="form-select form-select-lg mb-3 btn btn-outline-secondary">
                             <option value="Marrakech">Marrakech</option>
                             <option value="Casablanca">Casablanca</option>
                             <option value="Rabat">Rabat</option>
@@ -277,11 +283,10 @@
             </script>
             <hr class="featurette-divider">
             <div id="gotop" class="d-flex gap-2">
-                <a href="afterprayerAr.html"><button class="btn btn-outline-primary" type="button">After prayer diker</button></a>
-                <a href="adkarAr.html"><button class="btn btn-outline-primary" type="button">morning and afternoon diker</button></a><br>
-                <a href="tasbi7.php"><button class="btn btn-outline-primary" type="button">diker counter</button></a>
+                <a href="afterprayerAr.html"><button class=" btn btn-outline-secondary" type="button">After prayer diker</button></a>
+                <a style="color: aliceblue;" class="nav-link" href="tasbih.html"><img style="width: 50px; height: auto;" src="IMGG/tasbih.png" alt="tasbih">
+                <a href="adkarAr.html"><button class=" btn btn-outline-secondary" type="button">morning and afternoon diker</button></a><br>
             </div>
-          </div>
         </div>
     </div>    
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -291,13 +296,13 @@
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li>
                 </ul>
                 <hr style="color:aliceblue;" class="featurette-divider">
-                <p style="color:aliceblue;">&copy; 2024 All rights reserved</p>
+                <p style="color:aliceblue;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
             </ul>
       </div>
     </div>

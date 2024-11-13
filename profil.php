@@ -41,22 +41,31 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
             margin: 0;
         }
         .bg-image {
-            background-image: url('./images (1).jpeg'); /* Set the image path */
+            background-image: url(IMGG/back.gif);
             background-size: cover;
+            background-repeat: no-repeat ;
             background-position: center;
-            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        .card {
+            text-align: left;
+            background: rgba(240, 240, 240, 0.6);
+            color: #333;
+        }
+        .form-control {
+            text-align: left;
+        }
+        
     </style>
 </head>
 <body>
     <div class="bg-image">
         <div class="card w-50 shadow">
-            <div class="card-header bg-info text-white">
-                <h4 class="mb-0">Profile Card</h4>
+        <div class="card-header bg-info text-black d-flex justify-content-between align-items-center" style="height: 60px;">
+            <h4 class="mb-0 d-flex align-items-center"> Profile Card </h4>
             </div>
             <div class="card-body">
                 <h5 class="card-title">Name: <?php echo htmlspecialchars($_SESSION["name"]); ?></h5>
@@ -67,13 +76,13 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
                 <h5 class="mt-4">Description</h5>
                 <form method="post">
                     <div class="form-group">
-                        <textarea name="description" id="textarea" class="form-control" rows="4"><?php echo htmlspecialchars($description); ?></textarea>
+                        <textarea name="description" id="textarea" class="card form-control" rows="4" placeholder="Add Description to you Profil"><?php echo htmlspecialchars($description); ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Save Description</button>
                 </form>
                 
                 <!-- Go Back Button -->
-                <a href="index.php" class="btn btn-secondary mt-3">Go Back</a>
+                
             </div>
         </div>
     </div>
