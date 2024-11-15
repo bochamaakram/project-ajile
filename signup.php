@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
         <div class="form-container">
-            <form method="POST" action="">
+            <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole()">
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
         
                 <label>Gender:</label>
@@ -213,5 +213,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 </div>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+function verifyEducatorRole() {
+    const educatorRole = document.getElementById("educator").checked;
+    if (educatorRole) {
+        const confirmationCode = prompt("Please enter the educator confirmation code:");
+        if (confirmationCode !== "661219") {
+            alert("Incorrect code. Please try again.");
+            return false; // Prevent form submission
+        }
+    }
+    return true; // Allow form submission
+}
+</script>
 </body>
 </html>

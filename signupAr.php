@@ -189,7 +189,7 @@ body{
 <div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
         <div class="form-container">
-            <form method="POST" action="">
+        <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole()">
                 
                 <input type="text" id="name" name="name" placeholder= " أدخل إسمك الكامل" required>
         
@@ -216,5 +216,18 @@ body{
     </div>
 </div>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+function verifyEducatorRole() {
+    const educatorRole = document.getElementById("educator").checked;
+    if (educatorRole) {
+        const confirmationCode = prompt("الرجاء إدخال رمز تأكيد المعلم:");
+        if (confirmationCode !== "661219") {
+            alert("رمز غير صحيح. يرجى المحاولة مرة أخرى.");
+            return false; // Prevent form submission
+        }
+    }
+    return true; // Allow form submission
+}
+</script>
 </body>
 </html>

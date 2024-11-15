@@ -410,8 +410,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <h1 class=" d-flex justify-content-center">سور القرآن</h1>
 <div class="container col-8" id="surah-container">
 <script>
-    const surahs = [
-    { name: "الفاتحة" }, { name: "البقرة" }, { name: "آل عمران" }, { name: "النساء" },{ name: "المائدة" }, { name: "الأنعام" }, { name: "الأعراف" }, { name: "الأنفال" },
+    document.addEventListener("DOMContentLoaded", function() {
+        // Define Surah list
+        const surahs = [{ name: "الفاتحة" }, { name: "البقرة" }, { name: "آل عمران" }, { name: "النساء" },{ name: "المائدة" }, { name: "الأنعام" }, { name: "الأعراف" }, { name: "الأنفال" },
     { name: "التوبة" }, { name: "يونس" }, { name: "هود" }, { name: "يوسف" },{ name: "الرعد" }, { name: "إبراهيم" }, { name: "الحجر" }, { name: "النحل" },
     { name: "الإسراء" }, { name: "الكهف" }, { name: "مريم" }, { name: "طه" },{ name: "الأنبياء" }, { name: "الحج" }, { name: "المؤمنون" }, { name: "النور" },
     { name: "الفرقان" }, { name: "الشعراء" }, { name: "النمل" }, { name: "القصص" },{ name: "العنكبوت" }, { name: "الروم" }, { name: "لقمان" }, { name: "السجدة" },
@@ -427,31 +428,72 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "الفيل" }, { name: "قريش" }, { name: "الماعون" }, { name: "الكوثر" },{ name: "الكافرون" }, { name: "النصر" }, { name: "المسد" }, { name: "الإخلاص" },
     { name: "الفلق" }, { name: "الناس"}];
 
-    const surahContainer = document.getElementById('surah-container');
-surahs.forEach((surah, index) => {
-    const surahCard = document.createElement('div');
-    surahCard.className = 'surah-card';
+        const surahContainer = document.getElementById('surah-container');
+        
+        // Get read and last visited Surahs from localStorage
+        const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
+        const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
 
-    const surahLink = document.createElement('a');
-    const formattedNumber = (index + 1).toString().padStart(3, '0');
-    surahLink.href = `https://quran.com/${formattedNumber}`;
-    surahLink.className = 'surah-link';
+        surahs.forEach((surah, index) => {
+            const surahCard = document.createElement('div');
+            surahCard.className = 'surah-card';
 
-    const surahContent = document.createElement('div');
-    surahContent.className = 'surah-content';
+            const surahLink = document.createElement('a');
+            const formattedNumber = (index + 1).toString().padStart(3, '0');
+            surahLink.href = `https://quran.com/${formattedNumber}`;
+            surahLink.className = 'surah-link';
 
-    const surahName = document.createElement('div');
-    surahName.className = 'surah-name-arabic';
-    surahName.textContent = surah.name;
-  
-surahContent.appendChild(surahName);
+            const surahContent = document.createElement('div');
+            surahContent.className = 'surah-content';
 
-surahLink.appendChild(surahContent);
+            const surahName = document.createElement('div');
+            surahName.className = 'surah-name-arabic';
+            surahName.textContent = surah.name;
 
-surahCard.appendChild(surahLink);
-surahContainer.appendChild(surahCard);
-});
-</script></div>
+            surahContent.appendChild(surahName);
+            surahLink.appendChild(surahContent);
+            surahCard.appendChild(surahLink);
+
+            // Apply background colors based on read and last visited status
+            if (readSurahs.includes(index + 1)) {
+                surahCard.style.backgroundColor = 'green';
+            }
+            if (parseInt(lastVisitedSurah) === index + 1) {
+                surahCard.style.backgroundColor = 'orange';
+            }
+
+            // Add event listener to update read status and last visited on click
+            surahLink.addEventListener('click', async (event) => {
+                event.preventDefault();
+
+                if (!readSurahs.includes(index + 1)) {
+                    readSurahs.push(index + 1);
+                    localStorage.setItem('readSurahs', JSON.stringify(readSurahs));
+                }
+
+                localStorage.setItem('lastVisitedSurah', index + 1);
+
+                // Save to the database
+                await fetch('surahHistory.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({
+                        user_id: '  $_SESSION["user_id"]',  // Ensure this value is dynamically set on the server-side
+                        surah_id: index + 1,
+                        is_read: true,
+                        last_visited: true
+                    })
+                });
+
+                // Redirect after marking as read
+                window.location.href = surahLink.href;
+            });
+
+            surahContainer.appendChild(surahCard);
+        });
+    });
+</script>
+</div>
 </div>
 
 <footer>

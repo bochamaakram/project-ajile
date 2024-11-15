@@ -38,6 +38,6 @@ CREATE TABLE button_clicks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     click_date DATE NOT NULL,
     click_count INT DEFAULT 0
-);
+)
 -- To drop the database, use:
 #DROP DATABASE user_profiles;
