@@ -439,11 +439,51 @@ document.addEventListener("DOMContentLoaded", () => {
             { name: "Al-Kafirun" }, { name: "An-Nasr" }, { name: "Al-Masad" }, { name: "Al-Ikhlas" },
             { name: "Al-Falaq" }, { name: "An-Nas" }
         ];
+    document.addEventListener("DOMContentLoaded", function() {
+        const surahContainer = document.getElementById('surah-container');
+        const surahs = [
+            { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },
+            { name: "Al-Ma'idah" }, { name: "Al-An'am" }, { name: "Al-A'raf" }, { name: "Al-Anfal" },
+            { name: "At-Tawbah" }, { name: "Yunus" }, { name: "Hud" }, { name: "Yusuf" },
+            { name: "Ar-Ra'd" }, { name: "Ibrahim" }, { name: "Al-Hijr" }, { name: "An-Nahl" },
+            { name: "Al-Isra" }, { name: "Al-Kahf" }, { name: "Maryam" }, { name: "Ta-Ha" },
+            { name: "Al-Anbiya" }, { name: "Al-Hajj" }, { name: "Al-Mu'minun" }, { name: "An-Nur" },
+            { name: "Al-Furqan" }, { name: "Ash-Shu'ara" }, { name: "An-Naml" }, { name: "Al-Qasas" },
+            { name: "Al-Ankabut" }, { name: "Ar-Rum" }, { name: "Luqman" }, { name: "As-Sajda" },
+            { name: "Al-Ahzab" }, { name: "Saba" }, { name: "Fatir" }, { name: "Ya-Sin" },
+            { name: "As-Saffat" }, { name: "Sad" }, { name: "Az-Zumar" }, { name: "Ghafir" },
+            { name: "Fussilat" }, { name: "Ash-Shura" }, { name: "Az-Zukhruf" }, { name: "Ad-Dukhan" },
+            { name: "Al-Jathiyah" }, { name: "Al-Ahqaf" }, { name: "Muhammad" }, { name: "Al-Fath" },
+            { name: "Al-Hujurat" }, { name: "Qaf" }, { name: "Adh-Dhariyat" }, { name: "At-Tur" },
+            { name: "An-Najm" }, { name: "Al-Qamar" }, { name: "Ar-Rahman" }, { name: "Al-Waqi'a" },
+            { name: "Al-Hadid" }, { name: "Al-Mujadila" }, { name: "Al-Hashr" }, { name: "Al-Mumtahina" },
+            { name: "As-Saff" }, { name: "Al-Jumu'a" }, { name: "Al-Munafiqun" }, { name: "At-Taghabun" },
+            { name: "At-Talaq" }, { name: "At-Tahrim" }, { name: "Al-Mulk" }, { name: "Al-Qalam" },
+            { name: "Al-Haqqah" }, { name: "Al-Ma'arij" }, { name: "Nuh" }, { name: "Al-Jinn" },
+            { name: "Al-Muzzammil" }, { name: "Al-Muddathir" }, { name: "Al-Qiyamah" }, { name: "Al-Insan" },
+            { name: "Al-Mursalat" }, { name: "An-Naba" }, { name: "An-Nazi'at" }, { name: "Abasa" },
+            { name: "At-Takwir" }, { name: "Al-Infitar" }, { name: "Al-Mutaffifin" }, { name: "Al-Inshiqaq" },
+            { name: "Al-Buruj" }, { name: "At-Tariq" }, { name: "Al-A'la" }, { name: "Al-Ghashiyah" },
+            { name: "Al-Fajr" }, { name: "Al-Balad" }, { name: "Ash-Shams" }, { name: "Al-Lail" },
+            { name: "Ad-Duha" }, { name: "Ash-Sharh" }, { name: "At-Tin" }, { name: "Al-Alaq" },
+            { name: "Al-Qadr" }, { name: "Al-Bayyina" }, { name: "Az-Zalzalah" }, { name: "Al-Adiyat" },
+            { name: "Al-Qari'a" }, { name: "At-Takathur" }, { name: "Al-Asr" }, { name: "Al-Humazah" },
+            { name: "Al-Fil" }, { name: "Quraish" }, { name: "Al-Ma'un" }, { name: "Al-Kawthar" },
+            { name: "Al-Kafirun" }, { name: "An-Nasr" }, { name: "Al-Masad" }, { name: "Al-Ikhlas" },
+            { name: "Al-Falaq" }, { name: "An-Nas" }
+        ];
 
         // Get read and last visited data from localStorage
         const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
         const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
+        // Get read and last visited data from localStorage
+        const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
+        const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
 
+        // Create Surah cards
+        surahs.forEach((surah, index) => {
+            const surahCard = document.createElement('div');
+            surahCard.className = 'surah-card';
         // Create Surah cards
         surahs.forEach((surah, index) => {
             const surahCard = document.createElement('div');
@@ -453,10 +493,61 @@ document.addEventListener("DOMContentLoaded", () => {
             const formattedNumber = (index + 1).toString().padStart(3, '0');
             surahLink.href = `https://quran.com/${formattedNumber}#verses`;
             surahLink.className = 'surah-link';
+            const surahLink = document.createElement('a');
+            const formattedNumber = (index + 1).toString().padStart(3, '0');
+            surahLink.href = `https://quran.com/${formattedNumber}#verses`;
+            surahLink.className = 'surah-link';
 
             const surahContent = document.createElement('div');
             surahContent.className = 'surah-content';
+            const surahContent = document.createElement('div');
+            surahContent.className = 'surah-content';
 
+            const surahName = document.createElement('div');
+            surahName.className = 'surah-name-arabic';
+            surahName.textContent = surah.name;
+
+            surahContent.appendChild(surahName);
+            surahLink.appendChild(surahContent);
+            surahCard.appendChild(surahLink);
+
+            // Apply orange background if Surah has been read
+            if (readSurahs.includes(index + 1)) {
+                surahCard.style.backgroundColor = 'orange';
+            }
+
+            // Apply green background to the last visited Surah
+            if (parseInt(lastVisitedSurah) === index + 1) {
+                surahCard.style.backgroundColor = 'green';
+            }
+
+// Add click event to mark Surah as read and last visited
+surahLink.addEventListener('click', () => {
+    // Add the Surah to readSurahs if not already present
+    if (!readSurahs.includes(index + 1)) {
+        readSurahs.push(index + 1);
+        localStorage.setItem('readSurahs', JSON.stringify(readSurahs));
+    }
+
+    // Set the current Surah as last visited
+    localStorage.setItem('lastVisitedSurah', index + 1);
+});
+        // Save Surah read and last visited to the database
+        surahLink.addEventListener('click', async () => {
+            await fetch('surahHistory.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    user_id:  $_SESSION["user_id"],
+                    surah_id: surahLinks,
+                    is_read: true,
+                    last_visited: true
+                })
+            });
+        });
+
+        surahContainer.appendChild(surahCard);
+    });
             const surahName = document.createElement('div');
             surahName.className = 'surah-name-arabic';
             surahName.textContent = surah.name;
