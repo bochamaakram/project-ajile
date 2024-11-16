@@ -122,9 +122,17 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav nav-underline">
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php">Quran</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
+                  <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
+                  <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
+                </ul>
+              </li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                     </ul>
                 </div>
                 <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="logout.php">Logout</a></li>
@@ -133,7 +141,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         </nav>
     </div>
 </header>
-
 <!-- Page Content -->
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
     <hr class="featurette-divider">

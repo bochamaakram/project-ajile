@@ -1,32 +1,51 @@
 <?php
 require "connexion.php";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = $_POST['name'];
+    $name = trim($_POST['name']);
     $gender = $_POST['gender'];
-    $email = $_POST['email'];
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
-    $age = $_POST['age'];
+    $age = (int)$_POST['age'];
     $role = $_POST['role'];
-    if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
-        $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
-        $resultat = $connexion->prepare($query);
-        $resultat->bindValue(":param1", $name);
-        $resultat->bindValue(":param2", $gender);
-        $resultat->bindValue(":param3", $email);
-        $resultat->bindValue(":param4", $password);
-        $resultat->bindValue(":param5", $age);
-        $resultat->bindValue(":param6", $role);
-        if ($resultat->execute()) {
-            echo "<p class='text-light'>Account created successfully!</p>";
-            // Redirect to index.php upon successful login
+
+    // Validate inputs
+    if (!empty($name) && !empty($gender) && filter_var($email, FILTER_VALIDATE_EMAIL) &&
+        !empty($password) && $age >= 16 && !empty($role)) {
+        
+        // Check for educator confirmation code
+        if ($role === "educator" && (!isset($_POST['confirmation_code']) || $_POST['confirmation_code'] !== "661219")) {
+            echo "<p class='text-danger'>Invalid educator confirmation code.</p>";
+            exit();
+        }
+
+        // Hash the password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Prepare the SQL query
+        $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES (:name, :gender, :email, :password, :age, :role)";
+        $stmt = $connexion->prepare($query);
+        $stmt->bindValue(":name", $name);
+        $stmt->bindValue(":gender", $gender);
+        $stmt->bindValue(":email", $email);
+        $stmt->bindValue(":password", $hashedPassword);
+        $stmt->bindValue(":age", $age);
+        $stmt->bindValue(":role", $role);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            echo "<p class='text-success'>Account created successfully!</p>";
             header("Location: login.php");
             exit();
         } else {
-            echo "<p class='text-light'>Error: " . $stmt->error . "</p>";
+            echo "<p class='text-danger'>Error: " . implode(", ", $stmt->errorInfo()) . "</p>";
         }
+    } else {
+        echo "<p class='text-danger'>Please fill all the fields correctly.</p>";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
         <div class="form-container">
-            <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole()">
+            <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole() && verifyAge()">
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
         
                 <label>Gender:</label>
@@ -218,10 +237,19 @@ function verifyEducatorRole() {
     const educatorRole = document.getElementById("educator").checked;
     if (educatorRole) {
         const confirmationCode = prompt("Please enter the educator confirmation code:");
-        if (confirmationCode !== "661219") {
+        if (!confirmationCode || confirmationCode.trim() !== "661219") {
             alert("Incorrect code. Please try again.");
             return false; // Prevent form submission
         }
+    }
+    return true; // Allow form submission
+}
+
+function verifyAge() {
+    const age = parseInt(document.getElementById("age").value, 10); // Get age input value
+    if (isNaN(age) || age < 16) {
+        alert("You must be 16 years or older to register on this site.");
+        return false; // Prevent form submission
     }
     return true; // Allow form submission
 }

@@ -15,6 +15,9 @@
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
+        height: 100vh;
+        background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
+        
       }
   .about-container {
     display: flex;
@@ -23,10 +26,12 @@
     justify-content: center;
     color: #0F1035;
     background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
-    border-radius: 15px;
+    border-radius: 25px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
+    width: 70%;
+    height: 80%;
   }
   .toggler-icon {
     width: 30px;
@@ -71,10 +76,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding:0px 60px ;
   }
-  .main-wrapper {
-    height: 100vh;
-  }
+  
   .backbody {
       background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
@@ -88,16 +92,26 @@
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
-        .navbar-toggler:focus{
+.navbar-toggler:focus{
             box-shadow: none !important;
             
         }
-        .navbar-toggler{
+.navbar-toggler{
             border: none !important;
-        }
+      }
+  #bbody{
+    height: 89vh;
+    display: flex;
+    align-items: center;
+  }
+  #index{
+    background-color: #E3F4F4;
+    border-radius: 10px 20px;
+    transform: scale(1);
+  }
 </style>
 </head>
 <body>
@@ -112,10 +126,19 @@
         <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
         <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
               <ul class="navbar-nav nav-underline">
-                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quran.php">Quran</a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php" id="index">Home page</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
+                  <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
+                  <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
+                </ul>
+              </li>
                   <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                   <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li>
                   <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
               </ul>
         </div>
           <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
@@ -126,7 +149,7 @@
   </div>
   </header>
 <!--page-->
-<div class="p-5 rounded-4 container-fluid " style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+<div class="p-5 rounded-4 container-fluid " id="bbody" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
   
   <div class="main-wrapper about-container">
     <div class="container py-5 section right col-xs-9">
@@ -143,4 +166,3 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
