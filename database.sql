@@ -48,5 +48,6 @@ CREATE TABLE user_surah_history (
     last_visited BOOLEAN DEFAULT FALSE -- Indicates if the Surah is the last visited one
 );
 
+)
 -- To drop the database, use:
 #DROP DATABASE user_profiles;

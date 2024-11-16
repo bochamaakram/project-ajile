@@ -217,6 +217,8 @@ direction: rtl;
   <?php if ($_SESSION["role"] === "student") { ?>
     <div id="student-section">
       <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
+=======
+      <h1 class="d-flex justify-content-center">Audio Recording</h1>
       <table class="table table-bordered d-flex justify-content-center">
         <tr>
           <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
@@ -403,6 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 </script></div>
 <h1 class=" d-flex justify-content-center" id="sura">Quran Surahs</h1>
+=======
+<h1 class=" d-flex justify-content-center">Quran Surahs</h1>
 <div class="container col-10" id="surah-container"></div>
 
 <script>
@@ -476,6 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Get read and last visited data from localStorage
         const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
         const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
+
         // Get read and last visited data from localStorage
         const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
         const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
@@ -500,6 +505,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const surahContent = document.createElement('div');
             surahContent.className = 'surah-content';
+            const surahContent = document.createElement('div');
+            surahContent.className = 'surah-content';
+
             const surahContent = document.createElement('div');
             surahContent.className = 'surah-content';
 
