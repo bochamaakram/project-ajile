@@ -98,6 +98,10 @@
         .navbar-toggler{
             border: none !important;
         }
+        #navbar-example2{
+            background-color: #0F1035;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 <body>
@@ -114,7 +118,14 @@
                 <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                     <ul class="navbar-nav nav-underline">
                         <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranAr.php">القرآن</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
+                              <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
+                              <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                            </ul>
+                          </li>
                         <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                         <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
                         <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
@@ -127,8 +138,29 @@
     </div>
 </header>
 <div class="main-wrapper about-container">
-<div class="container">
-    <h1>الأذكار الصباح </h1>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading1">First</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">Second</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+<div class="container" >
+    <h1 id="scrollspyHeading1">الأذكار الصباح </h1>
     <div class="supplication ayah">
         <p>آية الكرسي</p>
         <p>اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.</p>
@@ -246,7 +278,7 @@
     </div>
 </div>
 <div class="container">
-    <h1>أذكار المساء</h1>
+    <h1 id="scrollspyHeading2">أذكار المساء</h1>
     <div class="supplication ayah">
         <p>آية الكرسي</p>
         <p>اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.</p>
