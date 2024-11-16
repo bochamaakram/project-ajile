@@ -127,7 +127,14 @@ body{
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                          <li class="nav-item d-flex justify-content-center"><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                </ul>
+              </li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
