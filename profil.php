@@ -1,6 +1,10 @@
 <?php
 session_start();
 require "connexion.php";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2780b3fbd70f3d11d05d2b3ec1ca8e0127ddef3d
 // Check if the user is logged in
 if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"])) {
     header("Location: login.php");
