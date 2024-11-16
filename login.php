@@ -60,6 +60,9 @@
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
+        background-image: url("IMGG/470549.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
       }
   .about-container {
     display: flex;
@@ -120,20 +123,13 @@
   .main-wrapper {
     height: 100vh;
   }
-  .backbody {
-      background-color: linear-gradient(135deg, black, #7FC7D9);
-      color: #333;
-      direction: rtl;
-      text-align: right;
-  }
-  header, footer {
-      background-color: #C4DFDF;
-  }
+  
+  
   nav a.nav-link {
       color: aliceblue;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
   .form-container {
@@ -149,21 +145,21 @@
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  #container{
-    background-image: url("IMGG/470549.jpg");
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+  
+  .container-fluid{
+    background-color: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(600px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
   }
+  
 </style>
 </head>
 <body>
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+        <div class="container-fluid" id="navv">
             <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -185,14 +181,14 @@
                 <div class="form-container ">
             <form method="POST" action="">
                 <h3 class="text-light">Login</h3><br>
+                <label for="email" class="text-light">Email:</label>
+                <input type="email" class="form-control mb-4 " id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="password" class="text-light">Password:</label>
+                <input type="password" class="form-control mb-4" id="password" name="password" placeholder="Enter your password" required>
                 <?php if ($err_mss): ?>
                     <div class="alert alert-danger"><?php echo htmlspecialchars($err_mss); ?></div>
                 <?php endif; ?> 
-                <label for="email" class="text-light">Email:</label>
-                <input type="email" class="form-control mb-4 " id="email" name="email" placeholder="Enter your email" required>
-              
-                <label for="password" class="text-light">Password:</label>
-                <input type="password" class="form-control mb-4" id="password" name="password" placeholder="Enter your password" required>
                 
                 <button type="submit" class="btn btn-outline-secondary" style="color:white" name="login">Login</button>
             </form>

@@ -16,7 +16,9 @@
         font-weight: 500;
         font-style: normal;
         height: 100vh;
-        background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
+        background-image: url("IMGG/mos1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
         
       }
   .about-container {
@@ -25,8 +27,8 @@
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 25px;
+    backdrop-filter: blur(5px);
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
@@ -86,7 +88,8 @@
       text-align: right;
   }
   header, footer {
-      background-color: #C4DFDF;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   nav a.nav-link {
       color: #0F1035;
@@ -149,7 +152,7 @@
   </div>
   </header>
 <!--page-->
-<div class="p-5 rounded-4 container-fluid " id="bbody" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+<div class="p-5 rounded-4 container-fluid " id="bbody" >
   
   <div class="main-wrapper about-container">
     <div class="container py-5 section right col-xs-9">

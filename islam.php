@@ -17,6 +17,8 @@
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
+        background-image: url("IMGG/mos1.jpg");
+    background-size: cover;
 }
     .about-container {
     display: flex;
@@ -146,7 +148,7 @@
     </div>
     </header>
     <!-- الصفحة الرئيسية -->
-    <div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+    <div class="p-5 bg-body-tertiary rounded-4" style="background-image:url(IMGG/mos1.jpg);background-size:contain;background-repeat:no-repeat">
         <div class="main-wrapper about-container">
             <div class="container py-5 section right col-xs-9">
                 <h1 class="display-1 fw-bold" style="color: black;">Islam</h1>
