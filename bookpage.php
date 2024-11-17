@@ -141,7 +141,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         </nav>
     </div>
 </header>
-
 <!-- Page Content -->
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
     <hr class="featurette-divider">

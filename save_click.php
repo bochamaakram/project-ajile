@@ -38,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         // Check for an existing record
         $stmt = $connexion->prepare("
-            INSERT INTO button_clicks (id, click_date, click_count) 
-            VALUES (:user_id, CURDATE(), :click_count)
+            INSERT INTO button_clicks (id, click_count) 
+            VALUES (:user_id, :click_count)
             ON DUPLICATE KEY UPDATE 
             click_count = click_count + :click_count
         ");

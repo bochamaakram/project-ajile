@@ -1,32 +1,52 @@
 <?php
-            require "connexion.php";
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $name = $_POST['name'];
-                $gender = $_POST['gender'];
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-                $age = $_POST['age'];
-                $role = $_POST['role'];
-                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
-                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
-                    $resultat = $connexion->prepare($query);
-                    $resultat->bindValue(":param1", $name);
-                    $resultat->bindValue(":param2", $gender);
-                    $resultat->bindValue(":param3", $email);
-                    $resultat->bindValue(":param4", $password);
-                    $resultat->bindValue(":param5", $age);
-                    $resultat->bindValue(":param6", $role);
-                    if ($resultat->execute()) {
-                        echo "<p class='text-light'>تم إنشاء الحساب بنجاح!</p>";
-                        // Redirect to index.php upon successful login
-                        header("Location: loginAr.php");
-                        exit();
-                    } else {
-                        echo "<p class='text-light'>خطأ: " . $stmt->error . "</p>";
-                    }
-                }
-            }
-            ?>
+require "connexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // قراءة البيانات من النموذج
+    $name = trim($_POST['name']);
+    $gender = $_POST['gender'];
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = $_POST['password'];
+    $age = (int)$_POST['age'];
+    $role = $_POST['role'];
+
+    // التحقق من المدخلات
+    if (!empty($name) && !empty($gender) && filter_var($email, FILTER_VALIDATE_EMAIL) &&
+        !empty($password) && $age >= 16 && !empty($role)) {
+        
+        // التحقق من رمز تأكيد دور المعلم
+        if ($role === "educator" && (!isset($_POST['confirmation_code']) || $_POST['confirmation_code'] !== "661219")) {
+            echo "<p class='text-danger'>رمز تأكيد المعلم غير صحيح.</p>";
+            exit();
+        }
+
+        // تشفير كلمة المرور
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // إعداد الاستعلام
+        $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES (:name, :gender, :email, :password, :age, :role)";
+        $stmt = $connexion->prepare($query);
+        $stmt->bindValue(":name", $name);
+        $stmt->bindValue(":gender", $gender);
+        $stmt->bindValue(":email", $email);
+        $stmt->bindValue(":password", $hashedPassword);
+        $stmt->bindValue(":age", $age);
+        $stmt->bindValue(":role", $role);
+
+        // تنفيذ الاستعلام
+        if ($stmt->execute()) {
+            echo "<p class='text-success'>تم إنشاء الحساب بنجاح!</p>";
+            header("Location: login.php");
+            exit();
+        } else {
+            echo "<p class='text-danger'>خطأ: " . implode(", ", $stmt->errorInfo()) . "</p>";
+        }
+    } else {
+        echo "<p class='text-danger'>يرجى تعبئة جميع الحقول بشكل صحيح.</p>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -189,7 +209,7 @@ body{
 <div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
         <div class="form-container">
-        <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole()">
+        <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole() && verifyAge()">
                 
                 <input type="text" id="name" name="name" placeholder= " أدخل إسمك الكامل" required>
         
@@ -217,17 +237,29 @@ body{
 </div>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
+// التحقق من دور المعلم
 function verifyEducatorRole() {
     const educatorRole = document.getElementById("educator").checked;
     if (educatorRole) {
-        const confirmationCode = prompt("الرجاء إدخال رمز تأكيد المعلم:");
-        if (confirmationCode !== "661219") {
-            alert("رمز غير صحيح. يرجى المحاولة مرة أخرى.");
-            return false; // Prevent form submission
+        const confirmationCode = prompt("يرجى إدخال رمز تأكيد المعلم:");
+        if (!confirmationCode || confirmationCode.trim() !== "661219") {
+            alert("الرمز غير صحيح. يرجى المحاولة مرة أخرى.");
+            return false; // منع إرسال النموذج
         }
     }
-    return true; // Allow form submission
+    return true; // السماح بإرسال النموذج
 }
+
+// التحقق من العمر
+function verifyAge() {
+    const age = parseInt(document.getElementById("age").value, 10); // الحصول على قيمة العمر
+    if (isNaN(age) || age < 16) {
+        alert("يجب أن يكون عمرك 16 عامًا أو أكثر للتسجيل في هذا الموقع.");
+        return false; // منع إرسال النموذج
+    }
+    return true; // السماح بإرسال النموذج
+}
+
 </script>
 </body>
 </html>
