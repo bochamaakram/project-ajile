@@ -150,8 +150,7 @@
     background-color: rgba(255, 255, 255, 0); 
     backdrop-filter: blur(600px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
-  }
+}
   
 </style>
 </head>
@@ -167,7 +166,7 @@
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center">
-                        <a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a>
+                        <a style="color:white;" class="nav-link" aria-current="page" href="index.php">Home Page</a>
                     </li>
                 </ul>
             </div>
