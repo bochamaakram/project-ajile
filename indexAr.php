@@ -30,9 +30,12 @@ body{
     color: #0F1035;
     background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 25px;
+    border-radius: 25px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: right;
+    width: 70%;
+    height: 80%;
     width: 70%;
     height: 80%;
   }
@@ -80,7 +83,9 @@ body{
     justify-content: center;
     align-items: center;
     padding:0px 60px ;
+    padding:0px 60px ;
   }
+  
   
   .backbody {
     background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
@@ -96,6 +101,7 @@ body{
   }
   .nav-link:hover {
     transform: scale(1.07);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
         .navbar-toggler:focus{
@@ -104,6 +110,17 @@ body{
         }
         .navbar-toggler{
             border: none !important;
+        }
+        #bbody{
+          height: 89vh;
+    display: flex;
+    align-items: center;
+        }
+  #index{
+    background-color: #E3F4F4;
+    border-radius: 20px 10px;
+    transform: scale(1);
+  }
         }
         #bbody{
           height: 89vh;
@@ -132,13 +149,14 @@ body{
                   <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php" id="index">الصفحة الرئيسية</a></li>
                       <ul class="navbar-nav"> 
                           <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
-                </ul>
-              </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
+                                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
+                                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                                </ul>
+                              </li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
@@ -153,6 +171,7 @@ body{
   </header>
   
   <!-- Page Content -->
+  <div class="p-5 rounded-4 backbody container-fluid" id="bbody" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
   <div class="p-5 rounded-4 backbody container-fluid" id="bbody" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
       <div class="main-wrapper about-container">
           <div class="container py-5 section right col-xs-9">
