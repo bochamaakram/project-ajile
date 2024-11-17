@@ -70,7 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
+        background-image: url("IMGG/471133.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
       }
+      
   .about-container {
     display: flex;
     flex-direction: column;
@@ -134,9 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       direction: rtl;
       text-align: right;
   }
-  header, footer {
-      background-color: #C4DFDF;
-  }
+  
   nav a.nav-link {
       color: aliceblue;
   }
@@ -182,6 +184,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     background-size: cover;
     height: 100vh;
  }
+ .container-fluid{
+    background-color: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(600px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
     </style>
 </head>
 <body>

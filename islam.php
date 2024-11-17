@@ -17,8 +17,7 @@
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
-        background-image: url("IMGG/mos1.jpg");
-    background-size: cover;
+        
 }
     .about-container {
     display: flex;
@@ -27,10 +26,10 @@
     justify-content: center;
     color: #0F1035;
     text-indent: 50px;
-    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
+    backdrop-filter: blur(5px);
     border-radius: 25px;
     margin: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-image: url("IMGG/470549.jpg");
     text-align: left;
     width: 80%;
     height: 80%;
@@ -73,7 +72,7 @@
       background: #0F1035;
   }
   .section {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,8 +86,10 @@
       direction: rtl;
       text-align: right;
   }
-  header, footer {
-      background-color: #C4DFDF;
+footer {
+    
+    background-color: #C4DFDF;
+    
   }
   nav a.nav-link {
       color: #0F1035;
@@ -110,61 +111,96 @@
     .text-center.position-relative.p-5.lead span {
         font-size: 30px;
     }
-    
+    .introduction {
+    background-image: url("IMGG/470549.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    color: white;
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center; 
+    text-align: center; 
+    position: relative; 
+    padding-top: 0; 
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(600px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    width: 100%; 
+    position: absolute; 
+    top: 0; 
+    z-index: 10; 
+}
+
+.introduction-content {
+    margin: 60px 80px;
+    padding: 120px; 
+    text-indent: 20px;
+}
+
+
 </style>
 </head>
 <body>
-    <header>
-    <div class="container-fluid"></div>
-        <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon top-bar"></span>
-                <span class="toggler-icon middle-bar"></span>
-                <span class="toggler-icon bottom-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
-                    <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
-                    <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
-                </ul>
-                </li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpage.php">library</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
-                </ul>
-            </div>
-            <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-            <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-            <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="welcomAr.php">Arabic</a></li>
-        </div>
-        </nav>
-    </div>
-    </header>
     <!-- الصفحة الرئيسية -->
-    <div class="p-5 bg-body-tertiary rounded-4" style="background-image:url(IMGG/mos1.jpg);background-size:contain;background-repeat:no-repeat">
-        <div class="main-wrapper about-container">
-            <div class="container py-5 section right col-xs-9">
-                <h1 class="display-1 fw-bold" style="color: black;">Islam</h1>
-                <p class=" fs-4" style="color: black;">
-                In Islam, purification and prayer are fundamental acts of worship that connect a believer to Allah.
-                Wudu (ablution) cleanses both the body and soul, preparing Muslims for Salah (prayer), 
-                the cornerstone of faith and devotion. Through these practices, we attain spiritual discipline, 
-                mindfulness, and closeness to our Creator.
-                Begin your journey with guidance on wudu and prayer below.</p>
-                <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button">More information</button></a>
+    <div class="introduction">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav nav-underline">
+                        <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
+                                <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
+                                <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    </ul>
+                </div>
+                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+                <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
+                <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="welcomAr.php">Arabic</a></li>
             </div>
-        </div>
+        </nav>
+    </header>
+    <div class="introduction-content">
+        <h1 class="display-1 fw-bold">Islam</h1>
+        <p class="fs-4">
+            In Islam, purification and prayer are fundamental acts of worship that connect a believer to Allah.
+            Wudu (ablution) cleanses both the body and soul, preparing Muslims for Salah (prayer), 
+            the cornerstone of faith and devotion. Through these practices, we attain spiritual discipline, 
+            mindfulness, and closeness to our Creator.
+            Begin your journey with guidance on wudu and prayer below.
+        </p>
+        <a href="#topbar" id="gotopBtn">
+            <button class="btn btn-outline-secondary" type="button">More information</button>
+        </a>
+    </div>
+</div>
+
+
+    <div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
 
         
+    <hr class="featurette-divider"id="topbar">
         <div data-bs-spy="scroll" data-bs-target="#gotop" class="row featurette" style="margin-top: 30px;">
-            <div id="topbar" class=" col-md-8">
+            <div  class=" col-md-8">
                 <h1 class="text-center position-relative p-5 lead" style="color: black;"> <span>Step 1: Niyyah (Intention)</span>  <br>
 
 The first step in performing wudu is known as “Niyyah” (intention). This involves having the intention to perform wudu and make a firm resolve to obey Allah in this act of worship. It is important to remember that simply intending in your heart alone is not enough—you must verbalize it as well. An example of how one might verbally express their intention could be:
