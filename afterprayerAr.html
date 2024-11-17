@@ -1,0 +1,214 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"])) {
+    header("Location: login.php");
+    exit();
+}
+?><!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأذكار بعد الصلاة</title>
+    <link rel="icon" href="Logo.png">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        .amiri-regular {
+    font-family: "Amiri", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  body{
+    font-family: "Amiri", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    font-optical-sizing: auto;
+    font-style: normal;
+    direction: rtl;
+    text-align: right;
+        }
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #0F1035;
+            background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+            border-radius: 15px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-toggler .toggler-icon {
+            background: #0F1035;
+        }
+        .section {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-wrapper {
+            height: 100%;
+        }
+        header, footer {
+            background-color: #365486;
+        }
+        nav a.nav-link {
+            color: #0F1035;
+        }
+        .nav-link:hover {
+            transform: scale(1.02);
+            color: #d1e7dd;
+        }
+        .container {
+            width: 95%;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+        .supplication {
+            background-color: #7FC7D9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .repetition {
+            color: #e63946;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .ayah, .sura {
+            font-size: 1em;
+            color: #676767;
+            margin-bottom: 10px;
+        }
+        h1 {
+            padding: 20px;
+            font-size: 2em;
+            color: #006699;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
+            <div class="container-fluid">
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+                <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+                <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav nav-underline">
+                        <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranAr.php">القرآن</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                    </ul>
+                </div>
+                <li class="nav-item d-flex justify-content-left"><a style="color: aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="الملف الشخصي"></a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="main-wrapper about-container">
+    <div class="container p-5 rounded-4 backbody right col-xs-1">
+            <h1>الأذكار بعد الصلاة</h1>
+    
+            <div class="supplication">
+                <div class="repetition">٣ مرات</div>
+                <p>أستغفر الله، أستغفر الله، أستغفر الله</p>
+            </div>
+    
+            <div class="supplication">
+                <p>اللهم أنت السلام، ومنك السلام، تباركت يا ذا الجلال والإكرام</p>
+            </div>
+    
+            <div class="supplication">
+                <p>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير، لا حول ولا قوة إلا بالله، لا إله إلا الله، ولا نعبد إلا إياه، له النعمة وله الفضل وله الثناء الحسن</p>
+            </div>
+    
+            <div class="supplication">
+                <p>لا إله إلا الله مخلصين له الدين ولو كره الكافرون</p>
+            </div>
+    
+            <div class="supplication">
+                <p>اللهم لا مانع لما أعطيت، ولا معطي لما منعت، ولا ينفع ذا الجد منك الجد</p>
+            </div>
+    
+            <div class="supplication">
+                <div class="repetition">١ مرة</div>
+                <p>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير</p>
+            </div>
+    
+            <div class="supplication">
+                <div class="repetition">٣٣ مرة</div>
+                <p>سبحان الله - الحمد لله - الله أكبر</p>
+            </div>
+    
+            <div class="supplication">
+                <p>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير</p>
+            </div>
+    
+            <div class="supplication ayah">
+                <p>آية الكرسي</p>
+                <p>اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.</p>
+            </div>
+    
+            <div class="supplication sura">
+                <p>سورة الإخلاص</p>
+                <p>بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ - قُلْ هُوَ ٱللَّهُ أَحَدٌ - ٱللَّهُ ٱلصَّمَدُ - لَمْ يَلِدْ وَلَمْ يُولَدْ - وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</p>
+                <div class="repetition">٣ مرات</div>
+            </div>
+    
+            <div class="supplication sura">
+                <p>سورة الفلق</p>
+                <p>بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ - قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ - مِن شَرِّ مَا خَلَقَ - وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ - وَمِن شَرِّ ٱلنَّفَّـٰثَـٰتِ فِى ٱلْعُقَدِ - وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ</p>
+                <div class="repetition">٣ مرات</div>
+            </div>
+    
+            <div class="supplication sura">
+                <p>سورة الناس</p>
+                <p>بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ - قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ - مَلِكِ ٱلنَّاسِ - إِلَـٰهِ ٱلنَّاسِ - مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ - ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ - مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ</p>
+                <div class="repetition">٣ مرات</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<footer>
+    <div class="container-fluid w-100">
+        <div class="d-flex justify-content-center">
+            <ul class="navbar-nav">
+                <hr class="featurette-divider">
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
+                </ul>
+                <p style="color:aliceblue;">&copy; 2024 جميع الحقوق محفوظة</p>
+            </ul>
+      </div>
+    </div>
+</div>
+</footer>
+</body>
+</html>
