@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS student_audios (
     FOREIGN KEY (user_id) REFERENCES profile(user_id)
 );
 CREATE TABLE button_clicks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    click_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id INT PRIMARY KEY,
+    click_date date,
     click_count INT DEFAULT 0
 );
 -- hestoy of quran read
@@ -48,6 +48,5 @@ CREATE TABLE user_surah_history (
     last_visited BOOLEAN DEFAULT FALSE -- Indicates if the Surah is the last visited one
 );
 
-)
 -- To drop the database, use:
 #DROP DATABASE user_profiles;

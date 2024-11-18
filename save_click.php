@@ -31,21 +31,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo json_encode(["status" => "error", "message" => "User not authenticated"]);
         exit;
     }
-
     $click_count = $data['click_count'];
     $user_id = $_SESSION["user_id"];
-
+    $date = date("Y-m-d");
+    
     try {
         // Check for an existing record
         $stmt = $connexion->prepare("
-            INSERT INTO button_clicks (id, click_count) 
-            VALUES (:user_id, :click_count)
-            ON DUPLICATE KEY UPDATE 
-            click_count = click_count + :click_count
+            INSERT INTO button_clicks (id, click_date, click_count) 
+            VALUES (:user_id, :click_date, :click_count) 
+            ON DUPLICATE KEY UPDATE click_count = click_count + VALUES(click_count)
         ");
         $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindValue(':click_date', $date, PDO::PARAM_STR);
         $stmt->bindValue(':click_count', $click_count, PDO::PARAM_INT);
-
+    
         if ($stmt->execute()) {
             echo json_encode(["status" => "success", "message" => "Click count updated successfully"]);
         } else {
