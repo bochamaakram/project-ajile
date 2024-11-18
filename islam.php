@@ -112,7 +112,7 @@ footer {
         font-size: 30px;
     }
     .introduction {
-    background-image: url("IMGG/470549.jpg");
+    background-image: url("IMGG/pexels.jpg");
     background-size: cover;
     background-repeat: no-repeat; 
     color: white;
