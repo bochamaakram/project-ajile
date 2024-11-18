@@ -93,6 +93,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+
+
+
 // Set variables for display
 $description = $_SESSION["description"];
 $Twitter = $_SESSION["Twitter"];
