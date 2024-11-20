@@ -19,6 +19,36 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
+header, footer {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.backbody {
+  position: relative;; 
+  padding: 20px;
+  min-height: 80vh;  
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-image: url('IMGG/strip.png'); 
+  background-size: contain; 
+  background-repeat: repeat-y; 
+}
+
+.container::before {
+  left: 0;
+}
+
+.container::after {
+  right: 0;
+}
+
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
@@ -97,7 +127,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
 h1 {
@@ -182,6 +212,11 @@ direction: rtl;
 .navbar-toggler{
     border: none !important;
 }
+#qur{
+  background-color: #E3F4F4;
+    border-radius: 10px 25px;
+    transform: scale(1);
+}
 </style>
 </head>
 <body>
@@ -198,9 +233,17 @@ direction: rtl;
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php" id="qur">Quran </a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
           </div>
@@ -217,6 +260,7 @@ direction: rtl;
   <?php if ($_SESSION["role"] === "student") { ?>
     <div id="student-section">
       <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
+      <h1 class="d-flex justify-content-center">Audio Recording</h1>
       <table class="table table-bordered d-flex justify-content-center">
         <tr>
           <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
@@ -402,11 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
         juzContainer.appendChild(juzCard);
     }
 </script></div>
-<h1 class=" d-flex justify-content-center" id="sura">Quran Surahs</h1>
+<h1 class=" d-flex justify-content-center">Quran Surahs</h1>
 <div class="container col-10" id="surah-container"></div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+<script>   document.addEventListener("DOMContentLoaded", function() {
         const surahContainer = document.getElementById('surah-container');
         const surahs = [
             { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },
@@ -439,88 +481,33 @@ document.addEventListener("DOMContentLoaded", () => {
             { name: "Al-Kafirun" }, { name: "An-Nasr" }, { name: "Al-Masad" }, { name: "Al-Ikhlas" },
             { name: "Al-Falaq" }, { name: "An-Nas" }
         ];
-    document.addEventListener("DOMContentLoaded", function() {
-        const surahContainer = document.getElementById('surah-container');
-        const surahs = [
-            { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },
-            { name: "Al-Ma'idah" }, { name: "Al-An'am" }, { name: "Al-A'raf" }, { name: "Al-Anfal" },
-            { name: "At-Tawbah" }, { name: "Yunus" }, { name: "Hud" }, { name: "Yusuf" },
-            { name: "Ar-Ra'd" }, { name: "Ibrahim" }, { name: "Al-Hijr" }, { name: "An-Nahl" },
-            { name: "Al-Isra" }, { name: "Al-Kahf" }, { name: "Maryam" }, { name: "Ta-Ha" },
-            { name: "Al-Anbiya" }, { name: "Al-Hajj" }, { name: "Al-Mu'minun" }, { name: "An-Nur" },
-            { name: "Al-Furqan" }, { name: "Ash-Shu'ara" }, { name: "An-Naml" }, { name: "Al-Qasas" },
-            { name: "Al-Ankabut" }, { name: "Ar-Rum" }, { name: "Luqman" }, { name: "As-Sajda" },
-            { name: "Al-Ahzab" }, { name: "Saba" }, { name: "Fatir" }, { name: "Ya-Sin" },
-            { name: "As-Saffat" }, { name: "Sad" }, { name: "Az-Zumar" }, { name: "Ghafir" },
-            { name: "Fussilat" }, { name: "Ash-Shura" }, { name: "Az-Zukhruf" }, { name: "Ad-Dukhan" },
-            { name: "Al-Jathiyah" }, { name: "Al-Ahqaf" }, { name: "Muhammad" }, { name: "Al-Fath" },
-            { name: "Al-Hujurat" }, { name: "Qaf" }, { name: "Adh-Dhariyat" }, { name: "At-Tur" },
-            { name: "An-Najm" }, { name: "Al-Qamar" }, { name: "Ar-Rahman" }, { name: "Al-Waqi'a" },
-            { name: "Al-Hadid" }, { name: "Al-Mujadila" }, { name: "Al-Hashr" }, { name: "Al-Mumtahina" },
-            { name: "As-Saff" }, { name: "Al-Jumu'a" }, { name: "Al-Munafiqun" }, { name: "At-Taghabun" },
-            { name: "At-Talaq" }, { name: "At-Tahrim" }, { name: "Al-Mulk" }, { name: "Al-Qalam" },
-            { name: "Al-Haqqah" }, { name: "Al-Ma'arij" }, { name: "Nuh" }, { name: "Al-Jinn" },
-            { name: "Al-Muzzammil" }, { name: "Al-Muddathir" }, { name: "Al-Qiyamah" }, { name: "Al-Insan" },
-            { name: "Al-Mursalat" }, { name: "An-Naba" }, { name: "An-Nazi'at" }, { name: "Abasa" },
-            { name: "At-Takwir" }, { name: "Al-Infitar" }, { name: "Al-Mutaffifin" }, { name: "Al-Inshiqaq" },
-            { name: "Al-Buruj" }, { name: "At-Tariq" }, { name: "Al-A'la" }, { name: "Al-Ghashiyah" },
-            { name: "Al-Fajr" }, { name: "Al-Balad" }, { name: "Ash-Shams" }, { name: "Al-Lail" },
-            { name: "Ad-Duha" }, { name: "Ash-Sharh" }, { name: "At-Tin" }, { name: "Al-Alaq" },
-            { name: "Al-Qadr" }, { name: "Al-Bayyina" }, { name: "Az-Zalzalah" }, { name: "Al-Adiyat" },
-            { name: "Al-Qari'a" }, { name: "At-Takathur" }, { name: "Al-Asr" }, { name: "Al-Humazah" },
-            { name: "Al-Fil" }, { name: "Quraish" }, { name: "Al-Ma'un" }, { name: "Al-Kawthar" },
-            { name: "Al-Kafirun" }, { name: "An-Nasr" }, { name: "Al-Masad" }, { name: "Al-Ikhlas" },
-            { name: "Al-Falaq" }, { name: "An-Nas" }
-        ];
-
         // Get read and last visited data from localStorage
         const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
         const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
-        // Get read and last visited data from localStorage
-        const readSurahs = JSON.parse(localStorage.getItem('readSurahs') || '[]');
-        const lastVisitedSurah = localStorage.getItem('lastVisitedSurah');
-
         // Create Surah cards
         surahs.forEach((surah, index) => {
             const surahCard = document.createElement('div');
             surahCard.className = 'surah-card';
-        // Create Surah cards
-        surahs.forEach((surah, index) => {
-            const surahCard = document.createElement('div');
-            surahCard.className = 'surah-card';
-
             const surahLink = document.createElement('a');
             const formattedNumber = (index + 1).toString().padStart(3, '0');
             surahLink.href = `https://quran.com/${formattedNumber}#verses`;
             surahLink.className = 'surah-link';
-            const surahLink = document.createElement('a');
-            const formattedNumber = (index + 1).toString().padStart(3, '0');
-            surahLink.href = `https://quran.com/${formattedNumber}#verses`;
-            surahLink.className = 'surah-link';
-
             const surahContent = document.createElement('div');
             surahContent.className = 'surah-content';
-            const surahContent = document.createElement('div');
-            surahContent.className = 'surah-content';
-
             const surahName = document.createElement('div');
             surahName.className = 'surah-name-arabic';
             surahName.textContent = surah.name;
-
             surahContent.appendChild(surahName);
             surahLink.appendChild(surahContent);
             surahCard.appendChild(surahLink);
-
             // Apply orange background if Surah has been read
             if (readSurahs.includes(index + 1)) {
                 surahCard.style.backgroundColor = 'orange';
             }
-
             // Apply green background to the last visited Surah
             if (parseInt(lastVisitedSurah) === index + 1) {
                 surahCard.style.backgroundColor = 'green';
             }
-
 // Add click event to mark Surah as read and last visited
 surahLink.addEventListener('click', () => {
     // Add the Surah to readSurahs if not already present
@@ -528,7 +515,6 @@ surahLink.addEventListener('click', () => {
         readSurahs.push(index + 1);
         localStorage.setItem('readSurahs', JSON.stringify(readSurahs));
     }
-
     // Set the current Surah as last visited
     localStorage.setItem('lastVisitedSurah', index + 1);
 });
@@ -545,55 +531,31 @@ surahLink.addEventListener('click', () => {
                 })
             });
         });
-
-        surahContainer.appendChild(surahCard);
-    });
-            const surahName = document.createElement('div');
-            surahName.className = 'surah-name-arabic';
-            surahName.textContent = surah.name;
-
-            surahContent.appendChild(surahName);
-            surahLink.appendChild(surahContent);
-            surahCard.appendChild(surahLink);
-
-            // Apply orange background if Surah has been read
-            if (readSurahs.includes(index + 1)) {
-                surahCard.style.backgroundColor = 'orange';
-            }
-
-            // Apply green background to the last visited Surah
-            if (parseInt(lastVisitedSurah) === index + 1) {
-                surahCard.style.backgroundColor = 'green';
-            }
-
-// Add click event to mark Surah as read and last visited
-surahLink.addEventListener('click', () => {
-    // Add the Surah to readSurahs if not already present
-    if (!readSurahs.includes(index + 1)) {
-        readSurahs.push(index + 1);
-        localStorage.setItem('readSurahs', JSON.stringify(readSurahs));
-    }
-
-    // Set the current Surah as last visited
-    localStorage.setItem('lastVisitedSurah', index + 1);
-});
-        // Save Surah read and last visited to the database
-        surahLink.addEventListener('click', async () => {
-            await fetch('surahHistory.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({
-                    user_id:  $_SESSION["user_id"],
-                    surah_id: surahLinks,
-                    is_read: true,
-                    last_visited: true
-                })
-            });
-        });
-
         surahContainer.appendChild(surahCard);
     });
 });
+</script>
+</div>
+</div>
+</div>
+
+<footer>
+    <div class="container-fluid w-100">
+        <div class="d-flex justify-content-center">
+            <ul class="navbar-nav">
+                <hr class="featurette-divider">
+                <ul class="navbar-nav nav-underline">
+                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                </ul>
+                <hr style="color:black;" class="featurette-divider">
+                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
+            </ul>
+      </div>
+    </div>
+  </div>
 </script>
 </div>
 </div>
