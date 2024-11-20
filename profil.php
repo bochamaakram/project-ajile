@@ -1,13 +1,20 @@
+
 <?php
 session_start();
-require "connexion.php";
-// Check if the user is logged in
-if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"])) {
+require 'connexion.php';
+
+// Redirect to login if required session variables are missing
+if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"]) || !isset($_SESSION["age"])) {
     header("Location: login.php");
     exit();
 }
 
-// Calculate time spent in the current session
+// Initialize session variable for tracking total time spent
+if (!isset($_SESSION["total_time_spent"])) {
+    $_SESSION["total_time_spent"] = 0;
+}
+
+// Calculate time spent in the session
 if (isset($_SESSION["login_time"])) {
     $current_time = time();
     $time_spent = $current_time - $_SESSION["login_time"];
@@ -19,115 +26,405 @@ if (isset($_SESSION["login_time"])) {
 $hours = floor($_SESSION["total_time_spent"] / 3600);
 $minutes = floor(($_SESSION["total_time_spent"] % 3600) / 60);
 
-// Check if a description has been submitted
-// Retrieve existing description from the database if not set in the session
-if (!isset($_SESSION["description"])) {
-    $query = "SELECT description FROM profile WHERE email = :email";
-    $stmt = $connexion->prepare($query);
-    $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
-    $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    $_SESSION["description"] = $result ? $result['description'] : '';
+// Retrieve profile data from the database if not already in session
+if (!isset($_SESSION["description"]) || !isset($_SESSION["Instagram"]) || !isset($_SESSION["LinkedIn"]) || 
+    !isset($_SESSION["Google"]) || !isset($_SESSION["Twitter"]) || !isset($_SESSION["Facebook"])) {
+    try {
+        $query = "SELECT * FROM profile WHERE email = :email";
+        $stmt = $connexion->prepare($query);
+        $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $_SESSION["description"] = $result['description'] ?? '';
+        $_SESSION["Twitter"] = $result['Twitter'] ?? '';
+        $_SESSION["Instagram"] = $result['Instagram'] ?? '';
+        $_SESSION["LinkedIn"] = $result['LinkedIn'] ?? '';
+        $_SESSION["Google"] = $result['Google'] ?? '';
+        $_SESSION["Facebook"] = $result['Facebook'] ?? '';
+    } catch (PDOException $e) {
+        echo "Error fetching profile data: " . $e->getMessage();
+        exit();
+    }
 }
 
-// Update description in the database and session on form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["description"])) {
-    $description = $_POST["description"];
-    $_SESSION["description"] = $description; // Store in session
+// Update description and social media links in the database and session on form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
+    // Sanitize input
+    $description = filter_var($_POST["description"] ?? '', FILTER_SANITIZE_STRING);
+    $Twitter = filter_var($_POST["Twitter"] ?? '', FILTER_SANITIZE_URL);
+    $Instagram = filter_var($_POST["Instagram"] ?? '', FILTER_SANITIZE_URL);
+    $LinkedIn = filter_var($_POST["LinkedIn"] ?? '', FILTER_SANITIZE_URL);
+    $Google = filter_var($_POST["Google"] ?? '', FILTER_SANITIZE_URL);
+    $Facebook = filter_var($_POST["Facebook"] ?? '', FILTER_SANITIZE_URL);
 
-    // Update the database
-    $query = "UPDATE profile SET description = :description WHERE email = :email";
-    $stmt = $connexion->prepare($query);
-    $stmt->bindValue(':description', $description, PDO::PARAM_STR);
-    $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
-    $stmt->execute();
+    // Update session variables
+    $_SESSION["description"] = $description;
+    $_SESSION["Twitter"] = $Twitter;
+    $_SESSION["Instagram"] = $Instagram;
+    $_SESSION["LinkedIn"] = $LinkedIn;
+    $_SESSION["Google"] = $Google;
+    $_SESSION["Facebook"] = $Facebook;
+
+    // Update database
+    try {
+        $query = "UPDATE profile SET 
+                  description = :description, 
+                  Twitter = :Twitter, 
+                  Instagram = :Instagram, 
+                  LinkedIn = :LinkedIn, 
+                  Google = :Google, 
+                  Facebook = :Facebook 
+                  WHERE email = :email";
+
+        $stmt = $connexion->prepare($query);
+        $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+        $stmt->bindValue(':Twitter', $Twitter, PDO::PARAM_STR);
+        $stmt->bindValue(':Instagram', $Instagram, PDO::PARAM_STR);
+        $stmt->bindValue(':LinkedIn', $LinkedIn, PDO::PARAM_STR);
+        $stmt->bindValue(':Google', $Google, PDO::PARAM_STR);
+        $stmt->bindValue(':Facebook', $Facebook, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error updating profile: " . $e->getMessage();
+    }
 }
 
 
-// Set description for display
+
+// Set variables for display
 $description = $_SESSION["description"];
+$Twitter = $_SESSION["Twitter"];
+$Instagram = $_SESSION["Instagram"];
+$LinkedIn = $_SESSION["LinkedIn"];
+$Google = $_SESSION["Google"];
+$Facebook = $_SESSION["Facebook"];
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="Logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .navbar-toggler:focus{
-            box-shadow: none !important;
-            
-        }
-        .navbar-toggler{
-            border: none !important;
-        }
-        body, html {
-            height: 100%;
-            margin: 0;
-            
-        }
-        .bg-image {
-            background-image: url(IMGG/mos2.jpg);
-            background-size: cover;
-            background-repeat: no-repeat ;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .card {
-    text-align: left;
-    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
-    backdrop-filter: blur(5px); /* Blur effect */
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Optional: shadow */
+    <title>CodingDung | Profile Template</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<script>
+const express = require('express');
+const mysql = require('mysql');
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
+
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Configure session
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Set to true if using HTTPS
+}));
+
+// Connect to MySQL
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'your_username',
+    password: 'your_password',
+    database: 'your_database'
+});
+
+db.connect((err) => {
+    if (err) throw err;
+    console.log('Connected to MySQL');
+});
+
+// Middleware to check if user is logged in
+function isAuthenticated(req, res, next) {
+    if (req.session.user) {
+        return next();
+    } else {
+        res.redirect('/login');
+    }
 }
 
+// Route to change password
+app.post('/change-password', isAuthenticated, async (req, res) => {
+    const { current_password, new_password, confirm_password } = req.body;
 
+    // Check if new password and confirm password match
+    if (new_password !== confirm_password) {
+        return res.status(400).send('New password and confirm password do not match.');
+    }
 
-        .form-control {
-            text-align: left;
+    try {
+        const email = req.session.user.email;
+        db.query('SELECT password FROM profile WHERE email = ?', [email], async (err, results) => {
+            if (err) throw err;
+
+            const hashed_password = results[0].password;
+
+            // Verify the current password
+            const isMatch = await bcrypt.compare(current_password, hashed_password);
+            if (!isMatch) {
+                return res.status(400).send('Current password is incorrect.');
+            }
+
+            // Hash the new password
+            const new_hashed_password = await bcrypt.hash(new_password, 10);
+
+            // Update the password in the database
+            db.query('UPDATE profile SET password = ? WHERE email = ?', [new_hashed_password, email], (err, results) => {
+                if (err) throw err;
+
+                // Update the session variable with the new hashed password
+                req.session.user.password = new_hashed_password;
+
+                res.send('Password changed successfully.');
+            });
+        });
+    } catch (error) {
+        res.status(500).send('Error updating password: ' + error.message);
+    }
+});
+
+// Route to login (for demonstration purposes)
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    db.query('SELECT * FROM profile WHERE email = ?', [email], async (err, results) => {
+        if (err) throw err;
+
+        if (results.length > 0) {
+            const user = results[0];
+            const isMatch = await bcrypt.compare(password, user.password);
+
+            if (isMatch) {
+                req.session.user = user;
+                res.send('Logged in successfully.');
+            } else {
+                res.status(400).send('Invalid email or password.');
+            }
+        } else {
+            res.status(400).send('Invalid email or password.');
         }
-        .card-body h5,p{
-            color: white;
-        }
-        
-    </style>
-</head>
+    });
+});
+
+// Start the server
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+
+</script>
 <body>
-    <div class="bg-image">
-        <div class="card w-50 ">
-            <div class="card-header  text-black bg-info d-flex justify-content-between align-items-center" style="height: 60px;">
-                <h4 class="mb-0 d-flex align-items-center" style="color: white;"> Profile Card </h4>
-                <a href="index.php" class="text-white d-flex align-items-center">
-                    <img style="width: 25px; height: 25px; margin-left: 8px;" src="./IMGG/enter.png" alt="Homepage">
-                </a>
-            </div>
-            <div class="card-body" >
-                <h5 class="card-title">Name: <?php echo htmlspecialchars($_SESSION["name"]); ?></h5>
-                <p class="card-text">Role: <?php echo htmlspecialchars($_SESSION["role"]); ?></p>
-                <p class="card-text">Email: <?php echo htmlspecialchars($_SESSION["email"]); ?></p>
-                <p class="card-text">Total Time Spent: <?php echo "$hours hours and $minutes minutes"; ?></p>
-
-                <h5 class="mt-4">Description</h5>
-                <form method="post">
-                    <div class="form-group">
-                        <textarea name="description" id="textarea" class="card form-control" rows="4" placeholder="Add Description to you Profil"><?php echo htmlspecialchars($description); ?></textarea>
+    <div class="container light-style flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-4">Account settings</h4>
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
                     </div>
-                    <button type="submit" class="btn btn-secondary">Save Description</button><br>
-                </form>
-                <!-- Go Back Button -->              
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-general">
+                            <form method="POST">
+                                <div class="card-body media align-items-center">
+                                    <div class="media-body ml-4">
+                                        <h1><?php echo htmlspecialchars($_SESSION["name"]); ?></h1>
+                                    </div>
+                                </div>
+                                <hr class="border-light m-0">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="form-label">Name</label>
+                                        <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($_SESSION["name"]); ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Role</label>
+                                        <input type="text" class="form-control mb-1" name="role" value="<?php echo htmlspecialchars($_SESSION["role"]); ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">E-mail</label>
+                                        <input type="text" class="form-control mb-1" name="email" value="<?php echo htmlspecialchars($_SESSION["email"]); ?>">
+                                        <div class="alert alert-warning mt-3">
+                                            Your email is not confirmed. Please check your inbox.<br>
+                                            <a href="javascript:void(0)">Resend confirmation</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right mt-3">
+                                    <button type="submit" class="btn btn-primary" name="save">Save changes</button>&nbsp;
+                                    <button type="button" class="btn btn-default">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="account-change-password">
+                        <form method="post" action="/change-password">
+                            <label for="current_password">Current Password:</label>
+                            <input type="password" id="current_password" name="current_password" required><br>
+                            <label for="new_password">New Password:</label>
+                            <input type="password" id="new_password" name="new_password" required><br>
+                            <label for="confirm_password">Confirm New Password:</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required><br>
+                            <button type="submit" name="change_password">Change Password</button>
+                        </form>
+                        </div>
+                        <div class="tab-pane fade" id="account-info">
+                            <div class="card-body pb-2">
+                            <form method="POST" action="">
+                                <label for="description">Profile Description:</label><br>
+                                <textarea id="description" name="description" rows="4" cols="50"><?= htmlspecialchars($description); ?></textarea><br><br>
+                                <button type="submit">Update Description</button>
+                            </form>
+                                <div class="form-group">
+                                <label class="form-label">Total Time Spent:</label>
+                                <input type="text" class="form-control" value="<?php echo "$hours hours and $minutes minutes"; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">age</label>
+                                    <input type="text" class="form-control" value="<?php echo htmlspecialchars($_SESSION["age"]); ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="custom-select">
+                                        <option>USA</option>
+                                        <option selected>Canada</option>
+                                        <option>UK</option>
+                                        <option>Germany</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Contacts</h6>
+                                <div class="form-group">
+                                    <label class="form-label">Phone</label>
+                                    <input type="text" class="form-control" value="+0 (123) 456 7891">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Website</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-connections">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-twitter">Connect to
+                                    <strong>Twitter</strong></button>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <h5 class="mb-2">
+                                    <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i
+                                            class="ion ion-md-close"></i> Remove</a>
+                                    <i class="ion ion-logo-google text-google"></i>
+                                    You are connected to Google:
+                                </h5>
+                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="f9979498818e9c9595b994989095d79a9694">[email&#160;protected]</a>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-facebook">Connect to
+                                    <strong>Facebook</strong></button>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-instagram">Connect to
+                                    <strong>Instagram</strong></button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-notifications">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Activity</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone comments on my article</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone answers on my forum
+                                            thread</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone follows me</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Application</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">News and announcements</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Weekly product updates</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Weekly blog digest</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
