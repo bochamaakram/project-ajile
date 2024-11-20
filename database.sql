@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS student_audios (
     FOREIGN KEY (user_id) REFERENCES profile(user_id)
 );
 CREATE TABLE button_clicks (
-    id INT PRIMARY KEY,
+    id INT,
     click_date date,
     click_count INT DEFAULT 0
 );
