@@ -62,6 +62,7 @@ $description = isset($_SESSION["description"]) ? $_SESSION["description"] : "";
     </style>
 </head>
 <body>
+    <H1></H1>
     <div class="bg-image">
         <div class="card w-50 shadow">
             <div class="card-header bg-info text-white">
