@@ -20,6 +20,36 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
+header, footer {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.backbody {
+  position: relative;; 
+  padding: 20px;
+  min-height: 80vh;  
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-image: url('IMGG/strip.png'); 
+  background-size: contain; 
+  background-repeat: repeat-y; 
+}
+
+.container::before {
+  left: 0;
+}
+
+.container::after {
+  right: 0;
+}
+
       .amiri-regular {
   font-family: "Amiri", serif;
   font-weight: 400;

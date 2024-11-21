@@ -19,7 +19,51 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
-      body{
+
+
+/* Header and Footer Styles */
+header, footer {
+  text-align: center;
+  background-color: #f4f4f4; /* Optional: Background for header/footer */
+}
+
+/* Main Content */
+.backbody {
+  position: relative;; /* Center the content */
+  padding: 20px;
+  min-height: 80vh;  /* Optional */
+}
+
+/* Left and Right Strips using Pseudo-elements */
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Width of the strip */
+  background-image: url('IMGG/strip.png'); /* Replace with your image path */
+  background-size: contain; /* Scale the image */
+  background-repeat: repeat-y; 
+}
+
+/* Left Strip */
+.container::before {
+  left: 0;
+}
+
+/* Right Strip */
+.container::after {
+  right: 0;
+}
+
+
+
+
+
+
+
+  body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
         font-weight: 500;
@@ -32,7 +76,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
   .about-container {
@@ -94,6 +138,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
   .main-wrapper {
     height: 100vh;
   }
+  
     h1 {
       padding: 20px;
       font-size: 2em;
@@ -108,8 +153,9 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     .surah-list {
       max-width: 1000px;
       margin: auto;
-      padding: 20px;
+      padding: 10px;
       list-style-type: none;
+      width: 73%;
     }
     .surah-item {
       background-color: #F8F6F4;
@@ -120,7 +166,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       justify-content: space-between;
       align-items: center;
       transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
   .surah-item:hover {
     transform: translateY(-5px);
@@ -135,7 +181,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
   }
   .audio-player {
     height: 40px;
-    width: 600px;
+    width: 500px;
     margin-left: auto;
   }
 .navbar-toggler:focus{
@@ -144,6 +190,11 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 }
 .navbar-toggler{
     border: none !important;
+}
+#qura{
+  background-color: #E3F4F4;
+    border-radius: 10px 20px;
+    transform: scale(1);
 }
   </style>
 </head>
@@ -162,15 +213,23 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
                     <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
-                </ul>
-              </li>
+                      <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
+                        <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
+                        <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="quranaudio.php" id="qura">Quran audio</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
           </div>
@@ -180,6 +239,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       </nav>
     </div>
 </header>
+
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
 <h1 class=" d-flex justify-content-center">Quran Surahs</h1>
 <div class="container">
@@ -267,6 +327,7 @@ const surahs = [
       </div>
     </div>
 </footer>
+
 
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

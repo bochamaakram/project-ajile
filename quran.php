@@ -19,6 +19,36 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
+header, footer {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.backbody {
+  position: relative;; 
+  padding: 20px;
+  min-height: 80vh;  
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-image: url('IMGG/strip.png'); 
+  background-size: contain; 
+  background-repeat: repeat-y; 
+}
+
+.container::before {
+  left: 0;
+}
+
+.container::after {
+  right: 0;
+}
+
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
@@ -97,7 +127,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
 h1 {
@@ -182,6 +212,11 @@ direction: rtl;
 .navbar-toggler{
     border: none !important;
 }
+#qur{
+  background-color: #E3F4F4;
+    border-radius: 10px 25px;
+    transform: scale(1);
+}
 </style>
 </head>
 <body>
@@ -198,9 +233,17 @@ direction: rtl;
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php" id="qur">Quran </a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
           </div>
