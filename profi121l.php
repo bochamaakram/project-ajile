@@ -1,4 +1,6 @@
 
+
+
 <?php
 session_start();
 require "connexion.php"; // Ensure database connection
@@ -8,7 +10,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     header("Location: login.php");
     exit();
 }
-
 // Calculate time spent in the current session
 if (isset($_SESSION["login_time"])) {
     $current_time = time();
