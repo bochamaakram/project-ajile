@@ -125,7 +125,7 @@
           <span class="toggler-icon top-bar"></span>
           <span class="toggler-icon middle-bar"></span>
           <span class="toggler-icon bottom-bar"></span>
-        </button>
+        </button> 
         <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
         <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
               <ul class="navbar-nav nav-underline">

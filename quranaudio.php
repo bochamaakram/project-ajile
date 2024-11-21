@@ -20,7 +20,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
 
-
 /* Header and Footer Styles */
 header, footer {
   text-align: center;

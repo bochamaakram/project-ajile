@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
     <style>
-
     body{
     font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;

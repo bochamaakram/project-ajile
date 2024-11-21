@@ -6,6 +6,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     header("Location: loginAr.php");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

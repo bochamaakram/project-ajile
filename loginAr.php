@@ -13,7 +13,6 @@
                 $resultat->bindValue(":param01", $email);
                 $resultat->bindValue(":param02", $pass);
                 $resultat->execute(); 
-                
                 $x = $resultat->fetch(PDO::FETCH_ASSOC);
                 
                 if ($x) {

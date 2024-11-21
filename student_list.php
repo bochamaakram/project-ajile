@@ -18,7 +18,6 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

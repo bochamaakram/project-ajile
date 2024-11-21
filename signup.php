@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "<p class='text-danger'>Invalid educator confirmation code.</p>";
             exit();
         }
-
         // Hash the password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

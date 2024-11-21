@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "<p class='text-danger'>رمز تأكيد المعلم غير صحيح.</p>";
             exit();
         }
-
         // تشفير كلمة المرور
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

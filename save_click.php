@@ -57,7 +57,6 @@ try {
         $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
         $stmt->bindValue(':click_date', $date, PDO::PARAM_STR);
         $stmt->bindValue(':click_count', $click_count, PDO::PARAM_INT);
-
         // Execute the query and return appropriate response
         if ($stmt->execute()) {
             echo json_encode(["status" => "success", "message" => "Click count updated successfully"]);

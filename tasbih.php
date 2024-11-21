@@ -237,7 +237,6 @@ try {
     }
 </style>
 <h1 style="text-align: center;">tasbih Statistics</h1>
-
 <div class="chart-container">
     <div class="chart-box">
         <h2>Daily Clicks (Last 7 Days)</h2>

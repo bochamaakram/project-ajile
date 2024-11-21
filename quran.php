@@ -449,6 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h1 class=" d-flex justify-content-center">Quran Surahs</h1>
 <div class="container col-10" id="surah-container"></div>
 <script>   document.addEventListener("DOMContentLoaded", function() {
+  
         const surahContainer = document.getElementById('surah-container');
         const surahs = [
             { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },

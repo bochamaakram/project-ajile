@@ -3,7 +3,6 @@ CREATE DATABASE IF NOT EXISTS user_profiles;
 
 -- Use the newly created database
 USE user_profiles;
-
 -- Step 2: Create the 'profile' table with the specified columns
 CREATE TABLE profile (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
