@@ -134,7 +134,7 @@ body{
                   <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
                   <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
-              </li>
+              </li> 
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
