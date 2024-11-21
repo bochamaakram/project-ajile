@@ -6,6 +6,8 @@ require 'connexion.php';
 
 
 
+
+
 // Redirect to login if required session variables are missing
 if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"]) || !isset($_SESSION["age"])) {
     header("Location: login.php");
