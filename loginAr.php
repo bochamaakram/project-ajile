@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
             session_start();
             require "connexion.php";
@@ -35,6 +36,8 @@
                 }
             }
             ?>
+=======
+>>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -48,13 +51,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-      .navbar-toggler:focus{
-            box-shadow: none !important;
-            
-        }
-        .navbar-toggler{
-            border: none !important;
-        }
       .amiri-regular {
   font-family: "Amiri", serif;
   font-weight: 400;
@@ -131,7 +127,7 @@ body{
       text-align: right;
   }
   header, footer {
-      background-color: #C4DFDF;
+      background-color: #365486;
   }
   nav a.nav-link {
       color: aliceblue;
@@ -146,20 +142,12 @@ body{
       align-items: center;
       justify-content: center;
       color: white;
-      backdrop-filter: blur(5px);
-      border-radius: 30px;
+      background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+      border-radius: 15px;
       padding: 30px;
       max-width: 400px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  #container{
-    background-image: url("IMGG/470549.jpg");
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-
   }
 </style>
 </head>
@@ -175,7 +163,7 @@ body{
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center">
-                        <a style="color:black;font-size:18px" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a>
+                        <a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a>
                     </li>
                 </ul>
             </div>
@@ -184,9 +172,45 @@ body{
 </header>
 
 <!-- المحتوى الرئيسي -->
-<div class="p-5 bg-body-tertiary rounded-4" id="container" style= "height: 100vh;">
+<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1); height: 100vh;">
     <div class="container py-5 text-center">
+        <h1>صفحة تسجيل الدخول</h1>
         <div class="form-container">
+            <?php
+            session_start();
+            require "connexion.php";
+
+            $err_mss = "";
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"])) {
+                $email = $_POST["email"];
+                $pass = $_POST["password"];
+                
+                $query = "SELECT * FROM profile WHERE email = :param01 AND password = :param02";
+                $resultat = $connexion->prepare($query); 
+                $resultat->bindValue(":param01", $email);
+                $resultat->bindValue(":param02", $pass);
+                $resultat->execute(); 
+                
+                $x = $resultat->fetch(PDO::FETCH_ASSOC);
+                
+                if ($x) {
+                    $_SESSION["age"] = $x['age'];
+                    $_SESSION["email"] = $x['email'];
+                    $_SESSION["password"] = $x['password'];
+                    $_SESSION["name"] = $x['name'];
+                    $_SESSION["gender"] = $x['gender'];
+                    $_SESSION["role"] = $x['role'];
+                    if (!isset($_SESSION["total_time_spent"])) {
+                        $_SESSION["total_time_spent"] = 0;
+                    }
+                    
+                } else {
+                    $err_mss = "البريد الإلكتروني أو كلمة المرور غير صحيحة"; 
+                }
+            }
+            ?>
+
             <form method="POST" action="">
                 <h3 class="text-light">تسجيل الدخول</h3><br>
                 <?php if ($err_mss): ?>
@@ -198,7 +222,7 @@ body{
                 <label for="password" class="text-light">كلمة المرور:</label>
                 <input type="password" class="form-control mb-3" id="password" name="password" placeholder="أدخل كلمة المرور الخاصة بك" required>
                 
-                <button type="submit" class="btn btn-outline-secondary" style="color:white" name="login">تسجيل الدخول</button>
+                <button type="submit" class="btn btn-outline-primary" name="login">تسجيل الدخول</button>
             </form>
         </div>
     </div>

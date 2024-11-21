@@ -15,11 +15,6 @@
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
-        height: 100vh;
-        background-image: url("IMGG/mos1.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        
       }
   .about-container {
     display: flex;
@@ -27,13 +22,11 @@
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    border-radius: 25px;
-    backdrop-filter: blur(5px);
+    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
-    width: 70%;
-    height: 80%;
   }
   .toggler-icon {
     width: 30px;
@@ -78,47 +71,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:0px 60px ;
   }
-  
+  .main-wrapper {
+    height: 100vh;
+  }
   .backbody {
-      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
+      background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
       color: #333;
       direction: rtl;
       text-align: right;
   }
   header, footer {
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #365486;
   }
   nav a.nav-link {
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.07);
+    transform: scale(1.02);
     color: #d1e7dd;
-  }
-.navbar-toggler:focus{
-            box-shadow: none !important;
-            
-        }
-.navbar-toggler{
-            border: none !important;
-      }
-  #bbody{
-    height: 89vh;
-    display: flex;
-    align-items: center;
-  }
-  #index{
-    background-color: #E3F4F4;
-    border-radius: 10px 20px;
-    transform: scale(1);
   }
 </style>
 </head>
 <body>
   <header>
+  <div class="container-fluid"></div>
       <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
       <div class="container-fluid">
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,30 +106,21 @@
         <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
         <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
               <ul class="navbar-nav nav-underline">
-                <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php" id="index">Home page</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
-                </ul>
-              </li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
               </ul>
         </div>
-          <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="indexAr.php">Arabic</a></li>
+          <li class="nav-item d-flex justify-content-left"><a style="color: aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="indexAr.php">Arabic</a></li>
       </div>
     </nav>
   </div>
   </header>
 <!--page-->
-<div class="p-5 rounded-4 container-fluid " id="bbody" >
+<div class="p-5 rounded-4 container-fluid " style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
   
   <div class="main-wrapper about-container">
     <div class="container py-5 section right col-xs-9">
@@ -160,8 +128,8 @@
         Welcome to our platform! We are dedicated to providing resources for learning and exploring the Quran and other Islamic teachings.
       </p>
       <div id="gotop">
-        <a href="login.php"><button class="btn btn-outline-secondary" type="button">login</button></a>
-        <a href="signup.php"><button class="btn btn-outline-secondary" type="button">signup </button></a><br>
+        <a href="login.php"><button class="btn btn-outline-primary" type="button">login</button></a>
+        <a href="signup.php"><button class="btn btn-outline-primary" type="button">signup </button></a><br>
       </div>
     </div>
 </div>
@@ -169,3 +137,4 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

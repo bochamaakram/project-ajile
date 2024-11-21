@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require "connexion.php";
 
@@ -45,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
+=======
+>>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,29 +60,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
-      .navbar-toggler:focus{
-            box-shadow: none !important;
-            
-        }
-        .navbar-toggler{
-            border: none !important;
-        }
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
-        background-image: url("IMGG/471133.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
       }
-      
   .about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #0F1035;
+    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -133,11 +126,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     height: 100vh;
   }
   .backbody {
+      background-color: linear-gradient(135deg, #DCF2F1, #7FC7D9);
       color: #333;
       direction: rtl;
       text-align: right;
   }
-  
+  header, footer {
+      background-color: #365486;
+  }
   nav a.nav-link {
       color: aliceblue;
   }
@@ -151,15 +147,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
      align-items: center;
      justify-content: center;
      color: white;
-     backdrop-filter: blur(5px);
-     border-radius: 25px;
-     padding: 25px;
+     background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+     border-radius: 15px;
+     padding: 30px;
      max-width: 400px;
      margin: auto;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
  }
  .form-container label {
-     margin-top: 8px;
+     margin-top: 10px;
      text-align: left;
      direction: ltr;
      width: 100%;
@@ -170,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
  .form-container input[type="password"],
  .form-container input[type="number"] {
      width: 100%;
-     padding: 5px;
+     padding: 8px;
      margin-top: 5px;
      border-radius: 5px;
      border: 1px solid #ddd;
@@ -178,16 +174,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
  .form-container input[type="radio"] {
      margin: 0 5px 10px 0;
  }
- #container{
-  background-image: url("IMGG/471133.jpg");
-    background-size: cover;
-    height: 100vh;
- }
- .container-fluid{
-    background-color: rgba(255, 255, 255, 0); 
-    backdrop-filter: blur(600px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
     </style>
 </head>
 <body>
@@ -201,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </button>
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
                 </ul>
             </div>
         </div>
@@ -209,15 +195,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </header>
 
 <!-- Main Content -->
-<div class="p-5 bg-body-tertiary rounded-4" id="container" >
+<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
     <div class="container py-5 text-center">
+        <h1>Signup Page</h1>
         <div class="form-container">
-            <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole() && verifyAge()">
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <?php
+            
+            require "connexion.php";
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $name = $_POST['name'];
+                $gender = $_POST['gender'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $age = $_POST['age'];
+                $role = $_POST['role'];
+                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
+                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
+                    $resultat = $connexion->prepare($query);
+                    $resultat->bindValue(":param1", $name);
+                    $resultat->bindValue(":param2", $gender);
+                    $resultat->bindValue(":param3", $email);
+                    $resultat->bindValue(":param4", $password);
+                    $resultat->bindValue(":param5", $age);
+                    $resultat->bindValue(":param6", $role);
+                    if ($resultat->execute()) {
+                        echo "<p class='text-light'>Account created successfully!</p>";
+                        header("Location: login.php");
+                        exit();
+                    } else {
+                        echo "<p class='text-light'>Error: " . $stmt->error . "</p>";
+                    }
+                }
+            }
+            ?>
+
+            <form method="POST" action="">
+                <h2>Registration:</h2>
+                
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
         
                 <label>Gender:</label>
-                <input type="radio" name="gender" value="M" id="M" required>Male
-                <input type="radio" name="gender" value="F" id="F" style="margin-left: 55px;" required>Female<br>
+                <input type="radio" name="gender" value="M" id="M" required>Male<br>
+                <input type="radio" name="gender" value="F" id="F" required>Female<br>
         
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -229,36 +249,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="number" id="age" name="age" placeholder="Enter your age" min="1" required>
         
                 <label>Role:</label>
-                <input type="radio" name="role" value="student" id="student" required>Student
-                <input type="radio" name="role" value="educator" id="educator" style="margin-left: 55px;" required>Educator<br>
+                <input type="radio" name="role" value="student" id="student" required>Student<br>
+                <input type="radio" name="role" value="educator" id="educator" required>Educator<br>
                 
-                <button type="submit" class="btn btn-outline-secondary" style="color:black">Create Account</button>
+                <button type="submit" class="btn btn-outline-primary">Create Account</button>
             </form>
         </div>
     </div>
 </div>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-<script>
-function verifyEducatorRole() {
-    const educatorRole = document.getElementById("educator").checked;
-    if (educatorRole) {
-        const confirmationCode = prompt("Please enter the educator confirmation code:");
-        if (!confirmationCode || confirmationCode.trim() !== "661219") {
-            alert("Incorrect code. Please try again.");
-            return false; // Prevent form submission
-        }
-    }
-    return true; // Allow form submission
-}
-
-function verifyAge() {
-    const age = parseInt(document.getElementById("age").value, 10); // Get age input value
-    if (isNaN(age) || age < 16) {
-        alert("You must be 16 years or older to register on this site.");
-        return false; // Prevent form submission
-    }
-    return true; // Allow form submission
-}
-</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "connexion.php";
+
 // Check if the user is logged in
 if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"])) {
     header("Location: login.php");
@@ -26,34 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["description"])) {
 
 $description = isset($_SESSION["description"]) ? $_SESSION["description"] : ""; 
 
-// Check if a description has been submitted
-// Retrieve existing description from the database if not set in the session
-if (!isset($_SESSION["description"])) {
-    $query = "SELECT description FROM profile WHERE email = :email";
-    $stmt = $connexion->prepare($query);
-    $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
-    $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    $_SESSION["description"] = $result ? $result['description'] : '';
-}
-
-// Update description in the database and session on form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["description"])) {
-    $description = $_POST["description"];
-    $_SESSION["description"] = $description; // Store in session
-
-    // Update the database
-    $query = "UPDATE profile SET description = :description WHERE email = :email";
-    $stmt = $connexion->prepare($query);
-    $stmt->bindValue(':description', $description, PDO::PARAM_STR);
-    $stmt->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
-    $stmt->execute();
-}
-
-
-// Set description for display
-$description = $_SESSION["description"];
-
 ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -64,13 +36,6 @@ $description = $_SESSION["description"];
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar-toggler:focus{
-            box-shadow: none !important;
-            
-        }
-        .navbar-toggler{
-            border: none !important;
-        }
         body, html {
             height: 100%;
             margin: 0;
@@ -79,39 +44,29 @@ $description = $_SESSION["description"];
             text-align: right;
         }
         .bg-image {
-            background-image: url(IMGG/mos2.jpg);
+            background-image: url('./images (1).jpeg'); /* Set the image path */
             background-size: cover;
-            background-repeat: no-repeat ;
             background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .card {
-    text-align: right;
-    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
-    backdrop-filter: blur(5px); /* Blur effect */
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Optional: shadow */
-}
-
-        .form-control {
             text-align: right;
         }
-        .card-body h5,p{
-            color: white;
+        .form-control {
+            text-align: right;
         }
     </style>
 </head>
 <body>
+    <H1></H1>
     <div class="bg-image">
         <div class="card w-50 shadow">
             <div class="card-header bg-info text-white">
-                <a href="indexAr.php" class="text-white d-flex align-items-center">
-                    <img style="width: 25px; height: 25px; margin-left: 8px;" src="./IMGG/enter.png" alt="Homepage">
-                </a>
-                <h4 class="mb-0 d-flex align-items-center">بطاقة الملف الشخصي</h4>
+                <h4 class="mb-0">بطاقة الملف الشخصي</h4>
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?php echo htmlspecialchars($_SESSION["name"]); ?>: الاسم </h5>
@@ -121,10 +76,13 @@ $description = $_SESSION["description"];
                 <h5 class="mt-4">الوصف</h5>
                 <form method="post">
                     <div class="form-group">
-                        <textarea name="description" id="textarea" class="card form-control" rows="4"><?php echo htmlspecialchars($description); ?></textarea>
+                        <textarea name="description" id="textarea" class="form-control" rows="4"><?php echo htmlspecialchars($description); ?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-secondary">حفظ الوصف</button>
+                    <button type="submit" class="btn btn-primary">حفظ الوصف</button>
                 </form>
+                
+                <!-- Go Back Button -->
+                <a href="index.php" class="btn btn-secondary mt-3">العودة</a>
             </div>
         </div>
     </div>

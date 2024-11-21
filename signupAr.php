@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require "connexion.php";
 
@@ -46,6 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
+=======
+>>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -60,14 +63,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-      .navbar-toggler:focus{
-            box-shadow: none !important;
-            
-        }
-        .navbar-toggler{
-            border: none !important;
-        }
-      
+      .amiri-regular {
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 body{
   font-family: "Amiri", serif;
   font-weight: 400;
@@ -79,6 +79,7 @@ body{
     align-items: center;
     justify-content: center;
     color: #0F1035;
+    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -132,12 +133,13 @@ body{
     height: 100vh;
   }
   .backbody {
+      background-color: linear-gradient(135deg, #DCF2F1, #7FC7D9);
       color: #333;
       direction: rtl;
       text-align: right;
   }
   header, footer {
-      background-color: #C4DFDF;
+      background-color: #365486;
   }
   nav a.nav-link {
       color: aliceblue;
@@ -152,15 +154,15 @@ body{
       align-items: center;
       justify-content: center;
       color: white;
-      backdrop-filter: blur(5px);
-     border-radius: 25px;
-     padding: 25px;
+      background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+      border-radius: 15px;
+      padding: 30px;
       max-width: 400px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .form-container label {
-      margin-top: 8px;
+      margin-top: 10px;
       text-align: right;
       width: 100%;
       color: #fff;
@@ -170,7 +172,7 @@ body{
   .form-container input[type="password"],
   .form-container input[type="number"] {
       width: 100%;
-      padding: 5px;
+      padding: 8px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ddd;
@@ -179,11 +181,6 @@ body{
   .form-container input[type="radio"] {
       margin: 0 5px 10px 0;
   }
-  #container{
-  background-image: url("IMGG/471133.jpg");
-    background-size: cover;
-    height: 100vh;
- }
     </style>
 </head>
 <body>
@@ -197,7 +194,7 @@ body{
             </button>
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
         </div>
@@ -205,16 +202,46 @@ body{
 </header>
 
 <!-- Main Content -->
-<div class="p-5 bg-body-tertiary rounded-4" id="container" >
+<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
     <div class="container py-5 text-center">
+        <h1>صفحة التسجيل</h1>
         <div class="form-container">
-        <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole() && verifyAge()">
+            <?php
+            require "connexion.php";
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $name = $_POST['name'];
+                $gender = $_POST['gender'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $age = $_POST['age'];
+                $role = $_POST['role'];
+                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
+                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
+                    $resultat = $connexion->prepare($query);
+                    $resultat->bindValue(":param1", $name);
+                    $resultat->bindValue(":param2", $gender);
+                    $resultat->bindValue(":param3", $email);
+                    $resultat->bindValue(":param4", $password);
+                    $resultat->bindValue(":param5", $age);
+                    $resultat->bindValue(":param6", $role);
+                    if ($resultat->execute()) {
+                        echo "<p class='text-light'>تم إنشاء الحساب بنجاح!</p>";
+                    } else {
+                        echo "<p class='text-light'>خطأ: " . $stmt->error . "</p>";
+                    }
+                }
+            }
+            ?>
+
+            <form method="POST" action="">
+                <h2>التسجيل:</h2>
                 
-                <input type="text" id="name" name="name" placeholder= " أدخل إسمك الكامل" required>
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
         
                 <label>الجنس:</label>
-                <input type="radio" name="gender" value="M" id="M" required>ذكر
-                <input type="radio" name="gender" value="F" id="F" style="margin-right: 55px;" required>أنثى<br>
+                <input type="radio" name="gender" value="M" id="M" required>ذكر<br>
+                <input type="radio" name="gender" value="F" id="F" required>أنثى<br>
         
                 <label for="email">البريد الإلكتروني:</label>
                 <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
@@ -226,39 +253,14 @@ body{
                 <input type="number" id="age" name="age" placeholder="أدخل عمرك" min="1" required>
         
                 <label>الدور:</label>
-                <input type="radio" name="role" value="student" id="student" required>طالب
-                <input type="radio" name="role" value="educator" id="educator" style="margin-right: 55px;" required>معلم<br>
+                <input type="radio" name="role" value="student" id="student" required>طالب<br>
+                <input type="radio" name="role" value="educator" id="educator" required>معلم<br>
                 
-                <button type="submit" class="btn btn-outline-secondary" style="color:black">إنشاء حساب</button>
+                <button type="submit" class="btn btn-outline-primary">إنشاء حساب</button>
             </form>
         </div>
     </div>
 </div>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-<script>
-// التحقق من دور المعلم
-function verifyEducatorRole() {
-    const educatorRole = document.getElementById("educator").checked;
-    if (educatorRole) {
-        const confirmationCode = prompt("يرجى إدخال رمز تأكيد المعلم:");
-        if (!confirmationCode || confirmationCode.trim() !== "661219") {
-            alert("الرمز غير صحيح. يرجى المحاولة مرة أخرى.");
-            return false; // منع إرسال النموذج
-        }
-    }
-    return true; // السماح بإرسال النموذج
-}
-
-// التحقق من العمر
-function verifyAge() {
-    const age = parseInt(document.getElementById("age").value, 10); // الحصول على قيمة العمر
-    if (isNaN(age) || age < 16) {
-        alert("يجب أن يكون عمرك 16 عامًا أو أكثر للتسجيل في هذا الموقع.");
-        return false; // منع إرسال النموذج
-    }
-    return true; // السماح بإرسال النموذج
-}
-
-</script>
 </body>
 </html>

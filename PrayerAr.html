@@ -27,110 +27,62 @@
     text-align: right;
         }
         .about-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          color: #0F1035;
-          background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
-          border-radius: 15px;
-          margin: auto;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #0F1035;
+            background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+            border-radius: 15px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .toggler-icon {
-          width: 30px;
-          height: 3px;
-          background: #0F1035;
-          display: block;
-          transition: all 0.2s;
-        }
-        .middle-bar {
-          margin: 5px auto;
-        }
-      
-        .navbar-toggler .top-bar {
-          transform: rotate(45deg);
-          transform-origin: 10% 10%;
-        }
-      
-        .navbar-toggler .middle-bar {
-          opacity: 0;
-        }
-      
-        .navbar-toggler .bottom-bar {
-          transform: rotate(-45deg);
-          transform-origin: 10% 90%;
-        }
-      
-        .navbar-toggler.collapsed .top-bar,
-        .navbar-toggler.collapsed .bottom-bar {
-          transform: rotate(0);
-        }
-      
-        .navbar-toggler.collapsed .middle-bar {
-          opacity: 1;
-        }
-      
-        .navbar-toggler.collapsed .toggler-icon {
+        .navbar-toggler .toggler-icon {
             background: #0F1035;
         }
         .section {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .main-wrapper {
-          height: 100vh;
-        }
-        .backbody {
-            background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
-            color: #333;
-            direction: rtl;
-            text-align: right;
+            height: 100vh;
         }
         header, footer {
-            background-color: #C4DFDF;
+            background-color: #365486;
         }
         nav a.nav-link {
             color: #0F1035;
         }
         .nav-link:hover {
-          transform: scale(1.02);
-          color: #d1e7dd;
+            transform: scale(1.02);
+            color: #d1e7dd;
         }
-            .container {
-                width: 90%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-            .city-selection, .timer-section, .date-section {
-                margin: 20px 0;
-            }
-            .prayer-times {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .prayer-time {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px;
-                background-color: #F8F6F4;
-                border-radius: 8px;
-            }
-            .prayer-time span {
-                font-size: 1.2em;
-            }
-            .navbar-toggler:focus{
-                box-shadow: none !important;
-                
-            }
-            .navbar-toggler{
-                border: none !important;
-            }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .city-selection, .timer-section, .date-section {
+            margin: 20px 0;
+        }
+        .prayer-times {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .prayer-time {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #7FC7D9;
+            border-radius: 8px;
+        }
+        .prayer-time span {
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
@@ -146,14 +98,14 @@
                 <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
                 <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                     <ul class="navbar-nav nav-underline">
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranAr.php">القرآن</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
+                        <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranAr.php">القرآن</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
                     </ul>
                 </div>
-                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="الملف الشخصي"></a></li>
-                <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+                <li class="nav-item d-flex justify-content-left"><a style="color: aliceblue;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="الملف الشخصي"></a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
             </div>
         </nav>
     </div>
@@ -162,7 +114,7 @@
     <div class="container right col-xs-1">
                 <h1 class=" d-flex justify-content-center">مواقيت الصلاة</h1>
                     <label for="city" class=" d-flex justify-content-center">اختر المدينة:</label>
-                    <select id="city" class="form-select form-select-lg mb-3 btn btn-outline-secondary">
+                    <select id="city" class="form-select form-select-lg mb-3">
                         <option value="Marrakech">مراكش</option>
                         <option value="Casablanca">الدار البيضاء</option>
                         <option value="Rabat">الرباط</option>
@@ -305,10 +257,10 @@
         </script>
         <hr class="featurette-divider">
         <div id="gotop" class="d-flex gap-2">
-            <a href="afterprayerAr.html"><button class="btn btn-outline-secondary" type="button">أذكار بعد الصلاة</button></a>
-            <a style="color: aliceblue;" class="nav-link" href="tasbih.php"><img style="width: 50px; height: auto;" src="IMGG/tasbih.png" alt="tasbih">
-            <a href="adkarAr.html"><button class="btn btn-outline-secondary" type="button">الأذكار الصباح و المساء</button></a>
+            <a href="afterprayerAr.html"><button class="btn btn-outline-primary" type="button">أذكار بعد الصلاة</button></a>
+            <a href="adkarAr.html"><button class="btn btn-outline-primary" type="button">الأذكار الصباح و المساء</button></a>
         </div>
+      </div>
     </div>
 </div>     
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -318,12 +270,12 @@
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranAr.php">القرآن</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color: aliceblue;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
                 </ul>
-                <p style="color:aliceblue;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
+                <p style="color:aliceblue;">&copy; 2024 جميع الحقوق محفوظة</p>
             </ul>
       </div>
     </div>

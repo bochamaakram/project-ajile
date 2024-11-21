@@ -20,6 +20,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
+<<<<<<< HEAD
 header, footer {
   text-align: center;
   background-color: #f4f4f4;
@@ -49,6 +50,8 @@ header, footer {
   right: 0;
 }
 
+=======
+>>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
       .amiri-regular {
   font-family: "Amiri", serif;
   font-weight: 400;
@@ -60,7 +63,7 @@ body{
   font-style: normal;
 }
   header, footer {
-      background-color: #C4DFDF;
+      background-color: #365486;
   }
   nav a.nav-link {
       color: #0F1035;
@@ -75,7 +78,7 @@ body{
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
+    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -183,21 +186,14 @@ body{
             <span class="toggler-icon middle-bar"></span>
             <span class="toggler-icon bottom-bar"></span>
           </button>
-              <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-              <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+              <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+              <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
-                </ul>
-              </li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
           <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
@@ -205,7 +201,7 @@ body{
       </nav>
     </div>
 </header>
-<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1, #7FC7D9);">
 <h1 class=" d-flex justify-content-center">سور القرآن</h1>
 <div class="container">
   <ul class="surah-list" id="surah-list">
@@ -266,13 +262,12 @@ body{
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;"  class="nav-link" href="bookpage.php">القرآ</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
-                <hr style="color:black;" class="featurette-divider">
-                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
+                <hr style="color:aliceblue;" class="featurette-divider">
+                <p style="color:aliceblue;">&copy; 2024 جميع الحقوق محفوظة</p>
             </ul>
       </div>
     </div>
