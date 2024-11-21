@@ -19,7 +19,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
-<<<<<<< HEAD
+
 
 /* Header and Footer Styles */
 header, footer {
@@ -64,22 +64,19 @@ header, footer {
 
 
   body{
-=======
-      body{
->>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
       }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
   .about-container {
@@ -88,7 +85,7 @@ header, footer {
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -141,10 +138,11 @@ header, footer {
   .main-wrapper {
     height: 100vh;
   }
+  
     h1 {
       padding: 20px;
       font-size: 2em;
-      color: #006699;
+      color: black;
     }
     @font-face {
       font-family: 'PDMS_Saleem_QuranFont';
@@ -155,11 +153,12 @@ header, footer {
     .surah-list {
       max-width: 1000px;
       margin: auto;
-      padding: 20px;
+      padding: 10px;
       list-style-type: none;
+      width: 73%;
     }
     .surah-item {
-      background-color: #DCF2F1;
+      background-color: #F8F6F4;
       padding: 15px;
       border: 1px solid #365486;
       border-radius: 8px;
@@ -167,7 +166,7 @@ header, footer {
       justify-content: space-between;
       align-items: center;
       transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
   .surah-item:hover {
     transform: translateY(-5px);
@@ -182,9 +181,21 @@ header, footer {
   }
   .audio-player {
     height: 40px;
-    width: 600px;
+    width: 500px;
     margin-left: auto;
   }
+.navbar-toggler:focus{
+    box-shadow: none !important;
+    
+}
+.navbar-toggler{
+    border: none !important;
+}
+#qura{
+  background-color: #E3F4F4;
+    border-radius: 10px 20px;
+    transform: scale(1);
+}
   </style>
 </head>
 <body>
@@ -200,19 +211,36 @@ header, footer {
           <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
+                        <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
+                        <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="quranaudio.php" id="qura">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
           </div>
-        <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-        <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
+        <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">Log out</a></li>
         </div>
       </nav>
     </div>
 </header>
-<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1, #7FC7D9);">
+
+<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
 <h1 class=" d-flex justify-content-center">Quran Surahs</h1>
 <div class="container">
   <ul class="surah-list" id="surah-list">
@@ -288,17 +316,18 @@ const surahs = [
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="login.php">login</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="signup.php">signup</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php">Quran</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
                 </ul>
-                <hr style="color:aliceblue;" class="featurette-divider">
-                <p style="color:aliceblue;">&copy; 2024 All rights reserved</p>
+                <hr style="color:black;" class="featurette-divider">
+                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
             </ul>
       </div>
     </div>
 </footer>
+
 
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

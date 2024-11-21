@@ -1,54 +1,32 @@
-<<<<<<< HEAD
 <?php
-require "connexion.php";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // قراءة البيانات من النموذج
-    $name = trim($_POST['name']);
-    $gender = $_POST['gender'];
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $password = $_POST['password'];
-    $age = (int)$_POST['age'];
-    $role = $_POST['role'];
-
-    // التحقق من المدخلات
-    if (!empty($name) && !empty($gender) && filter_var($email, FILTER_VALIDATE_EMAIL) &&
-        !empty($password) && $age >= 16 && !empty($role)) {
-        
-        // التحقق من رمز تأكيد دور المعلم
-        if ($role === "educator" && (!isset($_POST['confirmation_code']) || $_POST['confirmation_code'] !== "661219")) {
-            echo "<p class='text-danger'>رمز تأكيد المعلم غير صحيح.</p>";
-            exit();
-        }
-        // تشفير كلمة المرور
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // إعداد الاستعلام
-        $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES (:name, :gender, :email, :password, :age, :role)";
-        $stmt = $connexion->prepare($query);
-        $stmt->bindValue(":name", $name);
-        $stmt->bindValue(":gender", $gender);
-        $stmt->bindValue(":email", $email);
-        $stmt->bindValue(":password", $hashedPassword);
-        $stmt->bindValue(":age", $age);
-        $stmt->bindValue(":role", $role);
-
-        // تنفيذ الاستعلام
-        if ($stmt->execute()) {
-            echo "<p class='text-success'>تم إنشاء الحساب بنجاح!</p>";
-            header("Location: login.php");
-            exit();
-        } else {
-            echo "<p class='text-danger'>خطأ: " . implode(", ", $stmt->errorInfo()) . "</p>";
-        }
-    } else {
-        echo "<p class='text-danger'>يرجى تعبئة جميع الحقول بشكل صحيح.</p>";
-    }
-}
-?>
-
-=======
->>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
+            require "connexion.php";
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $name = $_POST['name'];
+                $gender = $_POST['gender'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $age = $_POST['age'];
+                $role = $_POST['role'];
+                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
+                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
+                    $resultat = $connexion->prepare($query);
+                    $resultat->bindValue(":param1", $name);
+                    $resultat->bindValue(":param2", $gender);
+                    $resultat->bindValue(":param3", $email);
+                    $resultat->bindValue(":param4", $password);
+                    $resultat->bindValue(":param5", $age);
+                    $resultat->bindValue(":param6", $role);
+                    if ($resultat->execute()) {
+                        echo "<p class='text-light'>تم إنشاء الحساب بنجاح!</p>";
+                        // Redirect to index.php upon successful login
+                        header("Location: loginAr.php");
+                        exit();
+                    } else {
+                        echo "<p class='text-light'>خطأ: " . $stmt->error . "</p>";
+                    }
+                }
+            }
+            ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -63,11 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+      .navbar-toggler:focus{
+            box-shadow: none !important;
+            
+        }
+        .navbar-toggler{
+            border: none !important;
+        }
+      
 body{
   font-family: "Amiri", serif;
   font-weight: 400;
@@ -79,7 +60,6 @@ body{
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -133,13 +113,12 @@ body{
     height: 100vh;
   }
   .backbody {
-      background-color: linear-gradient(135deg, #DCF2F1, #7FC7D9);
       color: #333;
       direction: rtl;
       text-align: right;
   }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
       color: aliceblue;
@@ -154,15 +133,15 @@ body{
       align-items: center;
       justify-content: center;
       color: white;
-      background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
-      border-radius: 15px;
-      padding: 30px;
+      backdrop-filter: blur(5px);
+     border-radius: 25px;
+     padding: 25px;
       max-width: 400px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .form-container label {
-      margin-top: 10px;
+      margin-top: 8px;
       text-align: right;
       width: 100%;
       color: #fff;
@@ -172,7 +151,7 @@ body{
   .form-container input[type="password"],
   .form-container input[type="number"] {
       width: 100%;
-      padding: 8px;
+      padding: 5px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ddd;
@@ -181,6 +160,11 @@ body{
   .form-container input[type="radio"] {
       margin: 0 5px 10px 0;
   }
+  #container{
+  background-image: url("IMGG/471133.jpg");
+    background-size: cover;
+    height: 100vh;
+ }
     </style>
 </head>
 <body>
@@ -194,7 +178,7 @@ body{
             </button>
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:aliceblue;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
         </div>
@@ -202,46 +186,16 @@ body{
 </header>
 
 <!-- Main Content -->
-<div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
+<div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
-        <h1>صفحة التسجيل</h1>
         <div class="form-container">
-            <?php
-            require "connexion.php";
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $name = $_POST['name'];
-                $gender = $_POST['gender'];
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-                $age = $_POST['age'];
-                $role = $_POST['role'];
-                if (!empty($name) && !empty($gender) && !empty($email) && !empty($password) && !empty($age) && !empty($role)) {
-                    $query = "INSERT INTO profile (name, gender, email, password, age, role) VALUES(:param1, :param2, :param3, :param4, :param5, :param6)";
-                    $resultat = $connexion->prepare($query);
-                    $resultat->bindValue(":param1", $name);
-                    $resultat->bindValue(":param2", $gender);
-                    $resultat->bindValue(":param3", $email);
-                    $resultat->bindValue(":param4", $password);
-                    $resultat->bindValue(":param5", $age);
-                    $resultat->bindValue(":param6", $role);
-                    if ($resultat->execute()) {
-                        echo "<p class='text-light'>تم إنشاء الحساب بنجاح!</p>";
-                    } else {
-                        echo "<p class='text-light'>خطأ: " . $stmt->error . "</p>";
-                    }
-                }
-            }
-            ?>
-
-            <form method="POST" action="">
-                <h2>التسجيل:</h2>
+        <form method="POST" action="" id="registrationForm" onsubmit="return verifyEducatorRole()">
                 
-                <label for="name">الاسم الكامل:</label>
-                <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+                <input type="text" id="name" name="name" placeholder= " أدخل إسمك الكامل" required>
         
                 <label>الجنس:</label>
-                <input type="radio" name="gender" value="M" id="M" required>ذكر<br>
-                <input type="radio" name="gender" value="F" id="F" required>أنثى<br>
+                <input type="radio" name="gender" value="M" id="M" required>ذكر
+                <input type="radio" name="gender" value="F" id="F" style="margin-right: 55px;" required>أنثى<br>
         
                 <label for="email">البريد الإلكتروني:</label>
                 <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
@@ -253,14 +207,27 @@ body{
                 <input type="number" id="age" name="age" placeholder="أدخل عمرك" min="1" required>
         
                 <label>الدور:</label>
-                <input type="radio" name="role" value="student" id="student" required>طالب<br>
-                <input type="radio" name="role" value="educator" id="educator" required>معلم<br>
+                <input type="radio" name="role" value="student" id="student" required>طالب
+                <input type="radio" name="role" value="educator" id="educator" style="margin-right: 55px;" required>معلم<br>
                 
-                <button type="submit" class="btn btn-outline-primary">إنشاء حساب</button>
+                <button type="submit" class="btn btn-outline-secondary" style="color:black">إنشاء حساب</button>
             </form>
         </div>
     </div>
 </div>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+function verifyEducatorRole() {
+    const educatorRole = document.getElementById("educator").checked;
+    if (educatorRole) {
+        const confirmationCode = prompt("الرجاء إدخال رمز تأكيد المعلم:");
+        if (confirmationCode !== "661219") {
+            alert("رمز غير صحيح. يرجى المحاولة مرة أخرى.");
+            return false; // Prevent form submission
+        }
+    }
+    return true; // Allow form submission
+}
+</script>
 </body>
 </html>

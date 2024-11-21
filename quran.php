@@ -19,6 +19,36 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
+header, footer {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.backbody {
+  position: relative;; 
+  padding: 20px;
+  min-height: 80vh;  
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-image: url('IMGG/strip.png'); 
+  background-size: contain; 
+  background-repeat: repeat-y; 
+}
+
+.container::before {
+  left: 0;
+}
+
+.container::after {
+  right: 0;
+}
+
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
@@ -31,7 +61,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -85,25 +115,25 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     height: 100vh;
   }
   .backbody {
-      background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
+      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
       direction: rtl;
       text-align: right;
   }
   header, footer {
-      background-color: #365486;
+      background-color: #C4DFDF;
   }
   nav a.nav-link {
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
 h1 {
     padding: 20px;
     font-size: 2em;
-    color: #006699;
+    color: black;
 }
 .container {
     display: grid;
@@ -120,7 +150,7 @@ h1 {
   align-items: center;
 }
 .surah-card {
-    background-color: #7FC7D9;
+    background-color: #F8F6F4;
     padding: 15px;
     border: 1px solid #365486;
     border-radius: 8px;
@@ -167,6 +197,26 @@ align-items: left;
 justify-content: left;
 direction: rtl;
 }
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+.table th {
+    background-color: #C4DFDF;
+    color: #0F1035;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+    
+}
+.navbar-toggler{
+    border: none !important;
+}
+#qur{
+  background-color: #E3F4F4;
+    border-radius: 10px 25px;
+    transform: scale(1);
+}
 </style>
 </head>
 <body>
@@ -182,59 +232,101 @@ direction: rtl;
           <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php" id="qur">Quran </a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
           </div>
-        <li class="nav-item d-flex justify-content-left"><a style="color:aliceblue;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-        <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="distroy.php">Log out</a></li>
+        <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">Log out</a></li>
         </div>
       </nav>
     </div>
 </header>
-<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #7FC7D9, #DCF2F1);">
-  <div class="container-fluid col-11" id="res-container">
+<div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+<div class="container-fluid col-6" id="res-container">
 
-<!-- Audio Recording Section for Students -->
-<?php if ($_SESSION["role"] === "student") { ?>
-  <div id="student-section">
-    <h1 class="d-flex justify-content-center">Audio Recording</h1>
-    <div class="surah-card audio-player">
-      <button id="start-recording">Start Recording</button><br>
-      <button id="stop-recording" style="display: none;">Stop Recording</button>
-      <audio id="audio-preview" controls></audio><br>
-      <button id="submit-audio" style="display: none;">Submit for Evaluation</button>
+  <!-- Audio Recording Section for Students -->
+  <?php if ($_SESSION["role"] === "student") { ?>
+    <div id="student-section">
+      <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
+      <h1 class="d-flex justify-content-center">Audio Recording</h1>
+      <table class="table table-bordered d-flex justify-content-center">
+        <tr>
+          <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
+          <td><button id="stop-recording"  class="btn btn-primary"style="display: none;">Stop Recording</button></td>
+          <td>
+            <audio id="audio-preview"  class="audio-player" controls></audio>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="submit-audio" style="display: none;" class="btn btn-primary">Submit for Evaluation</button>
+          </td>
+          <td colspan="2">
+            <input type="text" id="username" name="username" placeholder="Your name" required class="form-control">
+          </td>
+        </tr>
+      </table>
     </div>
-  </div>
-<?php } ?>
+  <?php } ?>
 
-<!-- Audio Review Section for Educators -->
-<?php if ($_SESSION["role"] === "educator") { ?>
-  <div id="educator-section">
-    <h1 class="d-flex justify-content-center">Evaluate Student Recordings</h1>
-    <div class="surah-card audio-player">
-      <?php
-        $targetDir = __DIR__ . "/audios/";
-        $audioFiles = glob($targetDir . "*.webm"); // Consistently use .webm
+  <!-- Audio Review Section for Educators -->
+  <?php if ($_SESSION["role"] === "educator") { ?>
+    <div id="educator-section">
+      <h1 class="d-flex justify-content-center">Evaluate Student Recordings</h1>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Recording</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              $targetDir = __DIR__ . "/audios/";
+              $audioFiles = glob($targetDir . "*.webm");
 
-        if (!empty($audioFiles)) {
-            foreach ($audioFiles as $file) {
-                $fileName = basename($file);
-                echo "<div class='audio-item'>";
-                echo "<audio controls src='audios/$fileName'></audio>";
-                echo "<button class='mark-good' data-file='$fileName'>Good Job</button>";
-                echo "<button class='mark-more' data-file='$fileName'>Needs More Work</button>";
-                echo "</div><br>";
-            }
-        } else {
-            echo "<p>No audio files to review.</p>";
-        }
-      ?>
+              if (!empty($audioFiles)) {
+                  foreach ($audioFiles as $file) {
+                      $fileName = basename($file);
+                      $parts = explode('_', $fileName);
+                      $studentName = $parts[0];
+            ?>
+            <tr>
+              <td><?php echo htmlspecialchars($studentName); ?></td>
+              <td><audio controls src="audios/<?php echo $fileName; ?>"></audio></td>
+              <td>
+                <button class="mark-good btn btn-success" data-file="<?php echo $fileName; ?>">Good Job</button>
+                <button class="mark-more btn btn-warning" data-file="<?php echo $fileName; ?>">Needs More Work</button>
+              </td>
+            </tr>
+            <?php
+                  }
+              } else {
+                  echo "<trcolspan='3'  class='d-flex justify-content-center'>No audio files to review.</tr>";
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-<?php } ?>
+    <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">students list</button></a>
+  <?php } ?>
+
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -242,24 +334,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const stopRecordingBtn = document.getElementById("stop-recording");
   const audioPreview = document.getElementById("audio-preview");
   const submitAudioBtn = document.getElementById("submit-audio");
+  const usernameField = document.getElementById("username");
 
   let mediaRecorder;
   let audioBlob;
 
-  // Recording logic for students
   if (startRecordingBtn) {
     startRecordingBtn.addEventListener("click", async () => {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
 
-      mediaRecorder.ondataavailable = (event) => {
-        audioBlob = new Blob([event.data], { type: 'audio/webm' });
-        audioPreview.src = URL.createObjectURL(audioBlob);
-      };
+        mediaRecorder.ondataavailable = (event) => {
+          audioBlob = new Blob([event.data], { type: 'audio/webm' });
+          audioPreview.src = URL.createObjectURL(audioBlob);
+        };
 
-      mediaRecorder.start();
-      startRecordingBtn.style.display = "none";
-      stopRecordingBtn.style.display = "block";
+        mediaRecorder.start();
+        startRecordingBtn.style.display = "none";
+        stopRecordingBtn.style.display = "block";
+      } catch (error) {
+        alert("Error accessing microphone: " + error.message);
+      }
     });
 
     stopRecordingBtn.addEventListener("click", () => {
@@ -269,48 +365,60 @@ document.addEventListener("DOMContentLoaded", () => {
       submitAudioBtn.style.display = "block";
     });
 
-    // Submit recorded audio
     submitAudioBtn.addEventListener("click", async () => {
+      const username = usernameField.value.trim();
+      if (!username) {
+        alert("Please enter your name.");
+        return;
+      }
+
+      const timestamp = Date.now();
+      const filename = `${username}_${timestamp}.webm`;
+
       const formData = new FormData();
-      formData.append("audio", audioBlob, "student_audio.webm");
+      formData.append("audio", audioBlob, filename);
 
-      const response = await fetch("upload_audio.php", { // Use dedicated upload script
-        method: "POST",
-        body: formData,
-      });
+      try {
+        const response = await fetch("upload_audio.php", {
+          method: "POST",
+          body: formData,
+        });
 
-      const result = await response.text();
-      alert(result);
+        const result = await response.text();
+        alert(result);
+      } catch (error) {
+        alert("Error uploading audio: " + error.message);
+      }
     });
   }
 
-  // Handle educator's evaluation of audio files
   document.querySelectorAll('.mark-good, .mark-more').forEach(button => {
     button.addEventListener('click', async (event) => {
       const fileName = event.target.getAttribute('data-file');
       const action = event.target.classList.contains('mark-good') ? 'good' : 'more';
 
-      const response = await fetch("evaluate.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ fileName, action }),
-      });
+      try {
+        const response = await fetch("evaluate.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fileName, action }),
+        });
 
-      const result = await response.text();
-      alert(result);
+        const result = await response.text();
+        alert(result);
 
-      // Remove the audio item from the page if marked as "Good Job"
-      if (action === "good") {
-        event.target.closest('.audio-item').remove();
+        if (action === "good") {
+          event.target.closest('tr').remove();
+        }
+      } catch (error) {
+        alert("Error in evaluation: " + error.message);
       }
     });
   });
 });
 </script>
 
-<h1 class=" d-flex justify-content-center">Quran Juzes</h1>
+<h1 class=" d-flex justify-content-center" id="juze">Quran Juzes</h1>
 <div class="container col-8" id="juz-container">
 <script>
     const juzContainer = document.getElementById('juz-container');
@@ -339,10 +447,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 </script></div>
 <h1 class=" d-flex justify-content-center">Quran Surahs</h1>
-<<<<<<< HEAD
 <div class="container col-10" id="surah-container"></div>
 <script>   document.addEventListener("DOMContentLoaded", function() {
-  
         const surahContainer = document.getElementById('surah-container');
         const surahs = [
             { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },
@@ -427,66 +533,6 @@ surahLink.addEventListener('click', () => {
         });
         surahContainer.appendChild(surahCard);
     });
-=======
-<div class="container col-10" id="surah-container">
-<script>
-    const surahs = [
-  { name: "Al-Fatihah" }, { name: "Al-Baqarah" }, { name: "Aali Imran" }, { name: "An-Nisa" },
-  { name: "Al-Ma'idah" }, { name: "Al-An'am" }, { name: "Al-A'raf" }, { name: "Al-Anfal" },
-  { name: "At-Tawbah" }, { name: "Yunus" }, { name: "Hud" }, { name: "Yusuf" },
-  { name: "Ar-Ra'd" }, { name: "Ibrahim" }, { name: "Al-Hijr" }, { name: "An-Nahl" },
-  { name: "Al-Isra" }, { name: "Al-Kahf" }, { name: "Maryam" }, { name: "Ta-Ha" },
-  { name: "Al-Anbiya" }, { name: "Al-Hajj" }, { name: "Al-Mu'minun" }, { name: "An-Nur" },
-  { name: "Al-Furqan" }, { name: "Ash-Shu'ara" }, { name: "An-Naml" }, { name: "Al-Qasas" },
-  { name: "Al-Ankabut" }, { name: "Ar-Rum" }, { name: "Luqman" }, { name: "As-Sajda" },
-  { name: "Al-Ahzab" }, { name: "Saba" }, { name: "Fatir" }, { name: "Ya-Sin" },
-  { name: "As-Saffat" }, { name: "Sad" }, { name: "Az-Zumar" }, { name: "Ghafir" },
-  { name: "Fussilat" }, { name: "Ash-Shura" }, { name: "Az-Zukhruf" }, { name: "Ad-Dukhan" },
-  { name: "Al-Jathiyah" }, { name: "Al-Ahqaf" }, { name: "Muhammad" }, { name: "Al-Fath" },
-  { name: "Al-Hujurat" }, { name: "Qaf" }, { name: "Adh-Dhariyat" }, { name: "At-Tur" },
-  { name: "An-Najm" }, { name: "Al-Qamar" }, { name: "Ar-Rahman" }, { name: "Al-Waqi'a" },
-  { name: "Al-Hadid" }, { name: "Al-Mujadila" }, { name: "Al-Hashr" }, { name: "Al-Mumtahina" },
-  { name: "As-Saff" }, { name: "Al-Jumu'a" }, { name: "Al-Munafiqun" }, { name: "At-Taghabun" },
-  { name: "At-Talaq" }, { name: "At-Tahrim" }, { name: "Al-Mulk" }, { name: "Al-Qalam" },
-  { name: "Al-Haqqah" }, { name: "Al-Ma'arij" }, { name: "Nuh" }, { name: "Al-Jinn" },
-  { name: "Al-Muzzammil" }, { name: "Al-Muddathir" }, { name: "Al-Qiyamah" }, { name: "Al-Insan" },
-  { name: "Al-Mursalat" }, { name: "An-Naba" }, { name: "An-Nazi'at" }, { name: "Abasa" },
-  { name: "At-Takwir" }, { name: "Al-Infitar" }, { name: "Al-Mutaffifin" }, { name: "Al-Inshiqaq" },
-  { name: "Al-Buruj" }, { name: "At-Tariq" }, { name: "Al-A'la" }, { name: "Al-Ghashiyah" },
-  { name: "Al-Fajr" }, { name: "Al-Balad" }, { name: "Ash-Shams" }, { name: "Al-Lail" },
-  { name: "Ad-Duha" }, { name: "Ash-Sharh" }, { name: "At-Tin" }, { name: "Al-Alaq" },
-  { name: "Al-Qadr" }, { name: "Al-Bayyina" }, { name: "Az-Zalzalah" }, { name: "Al-Adiyat" },
-  { name: "Al-Qari'a" }, { name: "At-Takathur" }, { name: "Al-Asr" }, { name: "Al-Humazah" },
-  { name: "Al-Fil" }, { name: "Quraish" }, { name: "Al-Ma'un" }, { name: "Al-Kawthar" },
-  { name: "Al-Kafirun" }, { name: "An-Nasr" }, { name: "Al-Masad" }, { name: "Al-Ikhlas" },
-  { name: "Al-Falaq" }, { name: "An-Nas" }
-];
-
-
-    const surahContainer = document.getElementById('surah-container');
-surahs.forEach((surah, index) => {
-    const surahCard = document.createElement('div');
-    surahCard.className = 'surah-card';
-
-    const surahLink = document.createElement('a');
-    const formattedNumber = (index + 1).toString().padStart(3, '0');
-    surahLink.href = `https://quran.com/${formattedNumber}`;
-    surahLink.className = 'surah-link';
-
-    const surahContent = document.createElement('div');
-    surahContent.className = 'surah-content';
-
-    const surahName = document.createElement('div');
-    surahName.className = 'surah-name-arabic';
-    surahName.textContent = surah.name;
-  
-surahContent.appendChild(surahName);
-
-surahLink.appendChild(surahContent);
-
-surahCard.appendChild(surahLink);
-surahContainer.appendChild(surahCard);
->>>>>>> 9032b1afda11b452f59ed58b3c76cef0158536f7
 });
 </script>
 </div>
@@ -499,13 +545,35 @@ surahContainer.appendChild(surahCard);
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="login.php">login</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="signup.php">signup</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:aliceblue;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
                 </ul>
-                <hr style="color:aliceblue;" class="featurette-divider">
-                <p style="color:aliceblue;">&copy; 2024 All rights reserved</p>
+                <hr style="color:black;" class="featurette-divider">
+                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
+            </ul>
+      </div>
+    </div>
+  </div>
+</script>
+</div>
+</div>
+</div>
+
+<footer>
+    <div class="container-fluid w-100">
+        <div class="d-flex justify-content-center">
+            <ul class="navbar-nav">
+                <hr class="featurette-divider">
+                <ul class="navbar-nav nav-underline">
+                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                </ul>
+                <hr style="color:black;" class="featurette-divider">
+                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
             </ul>
       </div>
     </div>

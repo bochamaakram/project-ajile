@@ -3,6 +3,7 @@ CREATE DATABASE IF NOT EXISTS user_profiles;
 
 -- Use the newly created database
 USE user_profiles;
+
 -- Step 2: Create the 'profile' table with the specified columns
 CREATE TABLE profile (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -34,8 +35,8 @@ CREATE TABLE IF NOT EXISTS student_audios (
     FOREIGN KEY (user_id) REFERENCES profile(user_id)
 );
 CREATE TABLE button_clicks (
-    id INT,
-    click_date date,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    click_date DATE NOT NULL,
     click_count INT DEFAULT 0
 );
 -- hestoy of quran read
