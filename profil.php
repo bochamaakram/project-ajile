@@ -1,9 +1,9 @@
 <?php
 session_start();
 require 'connexion.php';
-
+$err_mss = "";
 // Redirect to login if required session variables are missing
-if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"]) || !isset($_SESSION["age"])) {
+if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"]) || !isset($_SESSION["age"])|| !isset($_SESSION["password"]) ) {
     header("Location: login.php");
     exit();
 }
@@ -61,57 +61,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
     }
 }
 
-// Handle password change
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['change_password'])) {
-    // Validate and sanitize password inputs
-    $op = trim($_POST['current_password']);
-    $np = trim($_POST['new_password']);
-    $c_np = trim($_POST['confirm_password']);
+if (isset($_POST['change_password'])) {
+    // Get the form inputs
+    $c_password = $_POST['cp'];
+    $new_password = $_POST['np'];
+    $confirm_password = $_POST['c_np'];
 
-    if (empty($op)) {
-        header("Location: change-password.php?error=Old Password is required");
-        exit();
-    } else if (empty($np)) {
-        header("Location: change-password.php?error=New Password is required");
-        exit();
-    } else if ($np !== $c_np) {
-        header("Location: change-password.php?error=The confirmation password does not match");
-        exit();
+    // Validate the passwords
+    if (empty($new_password) || empty($confirm_password)|| empty($c_password)) {
+        $err_mss= "all fields are required.";
+    } elseif ($new_password !== $confirm_password || $c_password!==$_SESSION["password"]) {
+        echo "Passwords do not match.";
     } else {
-        // Hash the old and new passwords
-        $op = md5($op);
-        $np = md5($np);
-        $email = $_SESSION['email'];
+        // Hash the new password (for security)
+        $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
+// Make sure to store user's email in the session after login
+        
 
-        // Check if the old password is correct using email
-        try {
-            $query = "SELECT password FROM profile WHERE email = :email";
-            $stmt = $connexion->prepare($query);
-            $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($result && $result['password'] === $op) {
-                // Update the password in the database
-                $query = "UPDATE profile SET password = :password WHERE email = :email";
-                $stmt = $connexion->prepare($query);
-                $stmt->bindValue(':password', $np, PDO::PARAM_STR);
-                $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-                $stmt->execute();
-
-                header("Location: change-password.php?success=Your password has been changed successfully");
-                exit();
-            } else {
-                header("Location: change-password.php?error=Incorrect old password");
-                exit();
-            }
-        } catch (PDOException $e) {
-            echo "Error changing password: " . $e->getMessage();
+        // Update the password in the database
+        $sql = "UPDATE profile SET password = :password WHERE email = :email";
+        $stmt1 = $connexion->prepare($sql);
+        $stmt1->bindValue(':password', $new_password, PDO::PARAM_STR);
+        $stmt1->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
+        $stmt1->execute();
+        if ($stmt1) {
+            echo "Password changed successfully!";
+        } else {
+            echo "Failed to change the password.";
         }
     }
 }
-
-// Set variables for display
 $description = htmlspecialchars($_SESSION["description"]);
 ?>
 
@@ -130,7 +109,6 @@ $description = htmlspecialchars($_SESSION["description"]);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>abdellah</h1>
     <div class="container light-style flex-grow-1 container-p-y">
         <h4 class="font-weight-bold py-3 mb-4">Account settings</h4>
         <div class="card overflow-hidden">
@@ -140,7 +118,6 @@ $description = htmlspecialchars($_SESSION["description"]);
                         <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -165,10 +142,6 @@ $description = htmlspecialchars($_SESSION["description"]);
                                     <div class="form-group">
                                         <label class="form-label">E-mail</label>
                                         <input type="text" class="form-control mb-1" name="email" value="<?php echo htmlspecialchars($_SESSION["email"]); ?>">
-                                        <div class="alert alert-warning mt-3">
-                                            Your email is not confirmed. Please check your inbox.<br>
-                                            <a href="javascript:void(0)">Resend confirmation</a>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="text-right mt-3">
@@ -178,17 +151,16 @@ $description = htmlspecialchars($_SESSION["description"]);
                             </form>
                         </div>
                         <div class="tab-pane fade" id="account-change-password">
-                        <form method="post">
-                            <label for="current_password">Current Password:</label>
-                            <input type="password" id="current_password" name="op" required><br> <!-- Use 'op' as name to match PHP -->
-                            
+                        <form method="post"><!-- Use 'op' as name to match PHP -->    
+                            <label for="new_password">c Password:</label>
+                            <input type="password" id="c_password" name="cp" class="form-control mb-1" required><br>
                             <label for="new_password">New Password:</label>
-                            <input type="password" id="new_password" name="np" required><br> <!-- Use 'np' as name to match PHP -->
+                            <input type="password" id="new_password" name="np" class="form-control mb-1" required><br> <!-- Use 'np' as name to match PHP -->
                             
                             <label for="confirm_password">Confirm New Password:</label>
-                            <input type="password" id="confirm_password" name="c_np" required><br> <!-- Use 'c_np' as name to match PHP -->
+                            <input type="password" id="confirm_password" class="form-control mb-1" name="c_np" required><br> <!-- Use 'c_np' as name to match PHP -->
                             
-                            <button type="submit" name="change_password">Change Password</button>
+                            <button type="submit" name="change_password" class="btn btn-primary">Change Password</button>
                         </form>
 
                         </div>
@@ -197,7 +169,7 @@ $description = htmlspecialchars($_SESSION["description"]);
                             <form method="POST" action="">
                                 <label for="description">Profile Description:</label><br>
                                 <textarea id="description" name="description" rows="4" cols="50"><?= htmlspecialchars($description); ?></textarea><br><br>
-                                <button type="submit">Update Description</button>
+                                <button type="submit" name="update_profile">Update Description</button>
                             </form>
                                 <div class="form-group">
                                 <label class="form-label">Total Time Spent:</label>
@@ -219,87 +191,6 @@ $description = htmlspecialchars($_SESSION["description"]);
                                 </div>
                             </div>
                             <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Contacts</h6>
-                                <div class="form-group">
-                                    <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" value="+0 (123) 456 7891">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Website</label>
-                                    <input type="text" class="form-control" value>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="account-notifications">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Activity</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone comments on my article</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone answers on my forum
-                                            thread</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone follows me</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Application</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">News and announcements</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly product updates</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly blog digest</span>
-                                    </label>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
