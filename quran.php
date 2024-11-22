@@ -215,7 +215,6 @@ direction: rtl;
 #qur{
   background-color: #E3F4F4;
     border-radius: 10px 25px;
-    transform: scale(1);
 }
 </style>
 </head>
@@ -260,7 +259,6 @@ direction: rtl;
   <?php if ($_SESSION["role"] === "student") { ?>
     <div id="student-section">
       <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
-      <h1 class="d-flex justify-content-center">Audio Recording</h1>
       <table class="table table-bordered d-flex justify-content-center">
         <tr>
           <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
@@ -561,24 +559,7 @@ surahLink.addEventListener('click', () => {
 </div>
 </div>
 
-<footer>
-    <div class="container-fluid w-100">
-        <div class="d-flex justify-content-center">
-            <ul class="navbar-nav">
-                <hr class="featurette-divider">
-                <ul class="navbar-nav nav-underline">
-                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
-                </ul>
-                <hr style="color:black;" class="featurette-divider">
-                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
-            </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

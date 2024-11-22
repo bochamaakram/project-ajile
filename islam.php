@@ -95,7 +95,7 @@ footer {
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
     .navbar-toggler:focus{
@@ -141,7 +141,10 @@ header {
     padding: 120px; 
     text-indent: 20px;
 }
-
+#is{
+    background-color: #E3F4F4;
+    border-radius: 10px 20px;
+}
 
 </style>
 </head>
@@ -170,7 +173,15 @@ header {
                         </li>
                         <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                         <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="islam.php" id="is">Islam</a></li>
                     </ul>
                 </div>
                 <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>

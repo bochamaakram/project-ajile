@@ -113,7 +113,6 @@
   #index{
     background-color: #E3F4F4;
     border-radius: 10px 20px;
-    transform: scale(1);
   }
 </style>
 </head>

@@ -20,50 +20,37 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
 
-
-/* Header and Footer Styles */
 header, footer {
   text-align: center;
-  background-color: #f4f4f4; /* Optional: Background for header/footer */
+  background-color: #f4f4f4; 
 }
 
 /* Main Content */
 .backbody {
-  position: relative;; /* Center the content */
+  position: relative;; 
   padding: 20px;
-  min-height: 80vh;  /* Optional */
 }
 
-/* Left and Right Strips using Pseudo-elements */
 .container::before,
 .container::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100px; /* Width of the strip */
-  background-image: url('IMGG/strip.png'); /* Replace with your image path */
-  background-size: contain; /* Scale the image */
+  width: 100px; 
+  background-image: url('IMGG/strip.png'); 
+  background-size: contain; 
   background-repeat: repeat-y; 
 }
 
-/* Left Strip */
 .container::before {
   left: 0;
 }
 
-/* Right Strip */
 .container::after {
   right: 0;
 }
-
-
-
-
-
-
-
-  body{
+body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
         font-weight: 500;
@@ -194,7 +181,6 @@ header, footer {
 #qura{
   background-color: #E3F4F4;
     border-radius: 10px 20px;
-    transform: scale(1);
 }
   </style>
 </head>
