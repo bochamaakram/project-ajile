@@ -148,7 +148,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                     </ul>
                 </div>
                 <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="logout.php">Logout</a></li>
-                <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profile.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profile"></a></li>
+                <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             </div>
         </nav>
     </div>
