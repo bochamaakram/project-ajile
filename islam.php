@@ -140,7 +140,9 @@ header {
     margin: 60px 80px;
     padding: 120px; 
     text-indent: 20px;
+    text-align: left;
 }
+
 #is{
     background-color: #E3F4F4;
     border-radius: 10px 20px;
@@ -186,12 +188,12 @@ header {
                 </div>
                 <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
                 <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="welcomAr.php">Arabic</a></li>
+                <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="islamAr.php">Arabic</a></li>
             </div>
         </nav>
     </header>
     <div class="introduction-content">
-        <h1 class="display-1 fw-bold">Islam</h1>
+        <h1 class="display-1 fw-bold" >Islam</h1>
         <p class="fs-4">
             In Islam, purification and prayer are fundamental acts of worship that connect a believer to Allah.
             Wudu (ablution) cleanses both the body and soul, preparing Muslims for Salah (prayer), 

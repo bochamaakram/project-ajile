@@ -140,40 +140,55 @@ header {
     margin: 60px 80px;
     padding: 120px; 
     text-indent: 20px;
+    text-align: right;
 }
 #is{
     background-color: #E3F4F4;
     border-radius: 10px 20px;
 }
-
+#index{
+    background-color: #E3F4F4;
+    border-radius: 20px 10px;
+}
+.col-md-8 h1 {
+    text-align: right;
+    letter-spacing: 1.5px;
+    line-height: 40px;
+}
+.col-md-8 h1 span{
+    font-size: 30px;
+    font-weight: bold;
+}
 </style>
 </head>
 <body>
     <!-- الصفحة الرئيسية -->
     <div class="introduction">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon top-bar"></span>
-                    <span class="toggler-icon middle-bar"></span>
-                    <span class="toggler-icon bottom-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
-                                <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
-                                <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                        <li class="nav-item dropdown">
+      <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="container-fluid">
+                  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="toggler-icon top-bar"></span>
+                      <span class="toggler-icon middle-bar"></span>
+                      <span class="toggler-icon bottom-bar"></span>
+                  </button>
+                  <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+                  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php">الصفحة الرئيسية</a></li>
+                      <ul class="navbar-nav"> 
+                          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
+                </ul>
+              </li>
+            
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                          <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
@@ -181,27 +196,28 @@ header {
                             <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
                         </ul>
                     </li>
-                        </ul>
-                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="islam.php" id="is">Islam</a></li>
-                    </ul>
-                </div>
-                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="welcomAr.php">Arabic</a></li>
-            </div>
-        </nav>
-    </header>
+                      </ul>
+                      <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php" id="index">إسلام</a></li>
+                  </div>
+                    <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">الانجليزية</a></li>
+              </div>
+          </nav>
+      </div>
+  </header>
     <div class="introduction-content">
-        <h1 class="display-1 fw-bold">Islam</h1>
+        <h1 class="display-1 fw-bold">الإسلام</h1>
         <p class="fs-4">
-            In Islam, purification and prayer are fundamental acts of worship that connect a believer to Allah.
-            Wudu (ablution) cleanses both the body and soul, preparing Muslims for Salah (prayer), 
-            the cornerstone of faith and devotion. Through these practices, we attain spiritual discipline, 
-            mindfulness, and closeness to our Creator.
-            Begin your journey with guidance on wudu and prayer below.
+            
+في الإسلام، يعتبر الطهارة والصلاة من العبادات الأساسية التي تربط المؤمن بالله <br>
+الوضوء يطهر الجسد والروح، ويهيئ المسلمين للصلاة، حجر الأساس للإيمان والتقوى<br>
+ ومن خلال هذه الممارسات، نحقق الانضباط الروحي، واليقظة، والقرب من خالقنا<br>
+ ابدأ رحلتك بالإرشادات حول الوضوء والصلاة أدناه
+
         </p>
         <a href="#topbar" id="gotopBtn">
-            <button class="btn btn-outline-secondary" type="button">More information</button>
+            <button class="btn btn-outline-secondary" type="button" style="font-weight:600">مزيد من المعلومات</button>
         </a>
     </div>
 </div>
@@ -213,11 +229,13 @@ header {
     <hr class="featurette-divider"id="topbar">
         <div data-bs-spy="scroll" data-bs-target="#gotop" class="row featurette" style="margin-top: 30px;">
             <div  class=" col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"> <span>Step 1: Niyyah (Intention)</span>  <br>
+                <h1 class="text position-relative p-5 lead" style="color: black;"> <span>الخطوة الأولى: النية</span>  <br>
 
-The first step in performing wudu is known as “Niyyah” (intention). This involves having the intention to perform wudu and make a firm resolve to obey Allah in this act of worship. It is important to remember that simply intending in your heart alone is not enough—you must verbalize it as well. An example of how one might verbally express their intention could be:
-
-“I intend to perform Wudu, seeking nearness to Allah SWT.”</h1>
+                الخطوة الأولى في الوضوء تُعرف باسم "النية" <br>
+ وتتضمن هذه النية أن يكون لديك نية الوضوء وتتخذ قرارًا حازمًا بطاعة الله في هذا العمل العبادي <br>
+ من المهم أن تتذكر أن مجرد النية في قلبك وحدها لا تكفي - يجب عليك أيضًا النطق بها <br>
+ مثال على كيفية التعبير عن نيتك لفظيًا يمكن أن يكون: "أنوي أن أتوضأ، أسعى إلى التقرب إلى الله سبحانه وتعالى
+</h1>
             </div>
             <div class="d-flex justify-content-center col-md-4">
                 <img height="250px" width="400px" src="IMGG/wudu/niya.jpeg" alt="">
@@ -231,9 +249,12 @@ The first step in performing wudu is known as “Niyyah” (intention). This inv
                 <img height="250px" width="400px" src="IMGG/wudu/hand1.jpeg" alt="">
             </div>
             <div class="col-md-8 ">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"> <span>Step 2: Wash Hands</span> <br> 
-
-Once you have made your Niyyah, it’s time to start washing! Begin by rinsing your hands three times with clean water, rubbing them together while doing so. Make sure you reach between your fingers and thumbs during this process. This step symbolizes the importance of cleanliness before beginning wudu and is one of the main ways of cleaning oneself in Islam.</h1>
+                <h1 class="text position-relative p-5 lead" style="color: black;"> <span >الخطوة الثانية: غسل اليدين</span> <br> 
+                بمجرد أن تنتهي من النية<br>
+ حان وقت البدء في الغسل! ابدأ بشطف يديك ثلاث مرات بالماء النظيف، وافركهما معًا أثناء القيام بذلك<br>
+ تأكد من الوصول إلى ما بين أصابعك وإبهامك أثناء هذه العملية<br>
+ترمز هذه الخطوة إلى أهمية النظافة قبل بدء الوضوء وهي إحدى الطرق الرئيسية لتنظيف النفس في الإسلام
+</h1>
             </div>
         </div>
 
@@ -241,9 +262,13 @@ Once you have made your Niyyah, it’s time to start washing! Begin by rinsing y
 
         <div class="row featurette">
             <div class="col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"><span>Step 3: Rinse Mouth</span> <br>
-
-The next step is to rinse your mouth three times with a handful of water, making sure to reach all areas inside your mouth (including the gums and back of your tongue). Swallowing some of this water as you are doing so is permissible, but it’s important not to do it excessively so that none of the water remains after completing this process. Again, this step underscores the importance of cleanliness before performing wudu.<h1>
+                <h1 class="text position-relative p-5 lead" style="color: black;"><span>الخطوة 3: شطف الفم</span> <br>
+                الخطوة التالية هي المضمضة ثلاث مرات بكمية من الماء <br>
+ مع الحرص على الوصول إلى جميع المناطق داخل الفم (بما في ذلك اللثة وظهر اللسان) <br>
+ ويجوز بلع بعض هذا الماء أثناء القيام بذلك <br>
+ ولكن من المهم عدم المبالغة في ذلك حتى لا يبقى شيء من الماء بعد إتمام هذه العملية <br>
+ ومرة أخرى، تؤكد هذه الخطوة على أهمية النظافة قبل أداء الوضوء
+<h1>
             </div>
             <div class="d-flex justify-content-center col-md-4">
                 <img height="250px" width="400px" src="IMGG/wudu/mouth.jpeg" alt="">
@@ -256,18 +281,26 @@ The next step is to rinse your mouth three times with a handful of water, making
                 <img height="250px" width="400px" src="IMGG/wudu/noise.jpeg" alt="">
             </div>
             <div class="col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"><span>Step 4: Clean Nostrils</span> <br>
+                <h1 class="text position-relative p-5 lead" style="color: black;"><span>الخطوة 4: تنظيف فتحتي الأنف</span> <br>
 
-After rinsing your mouth, you’ll want to move on to cleaning your nostrils. To do this, take a handful of water in one hand and snort it up into your left nostril three times before repeating the same with the right nostril. Make sure to rub both sides of your nose as you’re doing so. This step is done to ensure that any impurities from inside your nose are removed prior to performing wudu.<h1>
+                بعد المضمضة، عليك أن تنتقل إلى تنظيف فتحتي الأنف <br>
+ للقيام بذلك، خذ حفنة من الماء في يدك واستنشقها في فتحة الأنف اليسرى ثلاث مرات <br>
+ قبل أن تكرر نفس الشيء مع فتحة الأنف اليمنى <br>
+ تأكد من فرك جانبي أنفك أثناء القيام بذلك. يتم القيام بهذه الخطوة للتأكد من إزالة أي شوائب من داخل أنفك قبل أداء الوضوء
+<h1>
             </div>
         </div>
         <hr class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"><span>Step 5: Wash Face</span> <br>
+                <h1 class="text position-relative p-5 lead" style="color: black;"><span>الخطوة 5: غسل الوجه</span> <br>
 
-The fifth step in completing wudu involves washing the face—from the hair-line all the way down to the chin and from one earlobe to the other. Here, you’ll want to use enough water so that it covers your entire face and make sure not to miss any spots! Again, like the previous steps, this step is designed to ensure that any impurities on the face are completely washed off.<h1>
+                الخطوة الخامسة في إتمام الوضوء هي غسل الوجه <br>
+ من منبت الشعر حتى الذقن ومن شحمة الأذن إلى شحمة الأذن الأخرى <br>
+ستحتاج إلى استخدام كمية كافية من الماء بحيث تغطي وجهك بالكامل وتأكد من عدم تفويت أي بقع <br>
+ مرة أخرى مثل الخطوات السابقة، تم تصميم هذه الخطوة لضمان غسل أي شوائب على الوجه تمامًا
+<h1>
             </div>
             <div class="d-flex justify-content-center col-md-4">
                 <img height="250px" width="400px" src="IMGG/wudu/face.jpeg" alt="">
@@ -280,18 +313,27 @@ The fifth step in completing wudu involves washing the face—from the hair-line
                 <img height="250px" width="400px" src="IMGG/wudu/hand2.jpeg" alt="">
             </div>
             <div class="col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"><span>Step 6: Wash Arms</span> <br>
+                <h1 class="text position-relative p-5 lead" style="color: black;"><span>الخطوة 6: غسل الذراعين</span> <br>
 
-The sixth step in wudu involves washing both arms three times up to and including the elbows. This includes rubbing your hands over each arm from fingertips to elbows, ensuring that all areas of the arm are cleaned before continuing with other parts of wudu. Make sure you use enough water so that it covers your entire arm from wrist to elbow and remember not to forget the spaces between your fingers!<h1>
+                الخطوة السادسة في الوضوء هي غسل الذراعين ثلاث مرات حتى المرفقين <br>
+ ويشمل ذلك فرك اليدين على كل ذراع من أطراف الأصابع إلى المرفقين <br>
+ والتأكد من تنظيف جميع مناطق الذراع قبل الاستمرار في أجزاء أخرى من الوضوء <br>
+ تأكد من استخدام كمية كافية من الماء بحيث تغطي ذراعك بالكامل من الرسغ إلى المرفق <br>
+وتذكر ألا تنسى المسافات بين الأصابع
+<h1>
             </div>
         </div>
         <hr class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"><span>Step 7: Wipe Head</span> <br>
+                <h1 class="text position-relative p-5 lead" style="color: black;"><span>الخطوة 7: امسح الرأس</span> <br>
 
-Once you have finished washing your arms, move on to wiping the head. Take a handful of water and pour it over your head (starting at your forehead) so that it covers your entire scalp. Then, use the remaining water to wipe the top and back of your head until it is completely dry. This step symbolizes purity coming from above, as well as humility before Allah SWT.<h1>
+                بعد الانتهاء من غسل اليدين انتقل إلى مسح الرأس <br>
+ خذ حفنة من الماء واسكبها على رأسك (بدءًا من جبهتك) بحيث تغطي فروة رأسك بالكامل <br>
+ ثم استخدم الماء المتبقي لمسح الجزء العلوي والخلفي من رأسك حتى يجف تمامًا <br>
+ هذه الخطوة ترمز إلى الطهارة القادمة من الأعلى، وكذلك التواضع أمام الله سبحانه وتعالى
+<h1>
             </div>
             <div class="d-flex justify-content-center col-md-4">
                 <img height="250px" width="400px" src="IMGG/wudu/hair.jpeg" alt="">
@@ -304,34 +346,39 @@ Once you have finished washing your arms, move on to wiping the head. Take a han
                 <img height="250px" width="400px" src="IMGG/wudu/feet.jpeg" alt="">
             </div>
             <div class="col-md-8">
-                <h1 class="text-center position-relative p-5 lead" style="color: black;"><span>Step 8: Wash Feet</span> <br>
-
-The final step in performing wudu is to wash both feet three times up to and including the ankles. Make sure you use enough water so that it covers your entire foot from toes to ankle and don’t forget to rub between each toe! Once again, this step ensures that any impurities on the feet are removed prior to prayer.
-
-Once these 8 steps have been completed, one’s wudu is considered valid and they may proceed to offer prayer. May Allah SWT accept all of our acts of worship and guide us to obey His commands with sincerity and faithfulness. Ameen.<h1>
+                <h1 class="text position-relative p-5 lead" style="color: black;"><span>الخطوة 8: غسل القدمين</span> <br>
+                الخطوة الأخيرة في الوضوء هي غسل القدمين ثلاث مرات حتى الكعبين <br>
+ تأكد من استخدام كمية كافية من الماء <br>
+ بحيث تغطي قدمك بالكامل من أصابع القدم إلى الكاحل ولا تنس أن تفرك بين كل إصبع <br>
+ ومرة أخرى، تضمن هذه الخطوة إزالة أي شوائب على القدمين قبل الصلاة <br>
+ بمجرد إكمال هذه الخطوات الثماني <br>
+ يُعتبر الوضوء صحيحًا ويمكن للمرء المضي قدمًا في أداء الصلاة <br>
+ نسأل الله سبحانه وتعالى أن يتقبل جميع أعمال عبادتنا ويهدينا إلى طاعة أوامره بإخلاص وإخلاص <br>
+ آمين
+<h1>
             </div>
         </div>
         </div>
     </div>
     </div>
-<footer>
+    <footer>
     <div class="container-fluid w-100">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                          <li class="nav-item d-flex justify-content-center"><a style="color:black;"  class="nav-link" href="quran.php">Quran</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpage.php">library</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <hr class="featurette-divider">
                 </ul>
-                <hr style="color:black;" class="featurette-divider">
-                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
+                <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
             </ul>
       </div>
     </div>
-  </div>
+</div>
 </footer>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
