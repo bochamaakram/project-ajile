@@ -85,6 +85,7 @@ if (isset($_POST['change_password'])) {
         $stmt1->bindValue(':email', $_SESSION["email"], PDO::PARAM_STR);
         $stmt1->execute();
         if ($stmt1) {
+            session_destroy();
             echo "Password changed successfully!";
         } else {
             echo "Failed to change the password.";
@@ -108,9 +109,15 @@ $description = htmlspecialchars($_SESSION["description"]);
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container light-style flex-grow-1 container-p-y">
-        <h4 class="font-weight-bold py-3 mb-4">Account settings</h4>
+<body style="background-image: url('IMGG/pixelcut-export.jpeg'); background-size: cover;
+        background-repeat: no-repeat;">
+    <div class="container light-style flex-grow-3 container-p-y ">
+    <div class="container d-flex justify-content-between align-items-center mb-5">
+        <h4 class="font-weight-bold py-3 mb-0">
+            <img style="width: 25px; height: auto;" src="./IMGG/settings.png"> Account settings
+        </h4>
+        <a href="index.php" class="btn btn-secondary">Go Back <img style="width: 25px; height: auto;" src="./IMGG/enter.png"></a>
+    </div> 
         <div class="card overflow-hidden">
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
@@ -144,23 +151,20 @@ $description = htmlspecialchars($_SESSION["description"]);
                                         <input type="text" class="form-control mb-1" name="email" value="<?php echo htmlspecialchars($_SESSION["email"]); ?>">
                                     </div>
                                 </div>
-                                <div class="text-right mt-3">
-                                    <button type="submit" class="btn btn-primary" name="save">Save changes</button>&nbsp;
-                                    <button type="button" class="btn btn-default">Cancel</button>
-                                </div>
+
                             </form>
                         </div>
-                        <div class="tab-pane fade" id="account-change-password">
+                        <div class="tab-pane fade mt-3" id="account-change-password">
                         <form method="post"><!-- Use 'op' as name to match PHP -->    
-                            <label for="new_password">c Password:</label>
-                            <input type="password" id="c_password" name="cp" class="form-control mb-1" required><br>
+                            <label for="new_password">old Password:</label>
+                            <input type="password" id="c_password" name="cp" class="form-control " required><br>
                             <label for="new_password">New Password:</label>
-                            <input type="password" id="new_password" name="np" class="form-control mb-1" required><br> <!-- Use 'np' as name to match PHP -->
+                            <input type="password" id="new_password" name="np" class="form-control " required><br> <!-- Use 'np' as name to match PHP -->
                             
                             <label for="confirm_password">Confirm New Password:</label>
-                            <input type="password" id="confirm_password" class="form-control mb-1" name="c_np" required><br> <!-- Use 'c_np' as name to match PHP -->
+                            <input type="password" id="confirm_password" class="form-control" name="c_np" required><br> <!-- Use 'c_np' as name to match PHP -->
                             
-                            <button type="submit" name="change_password" class="btn btn-primary">Change Password</button>
+                            <button type="submit" name="change_password" class="btn btn-primary  mb-5">Change Password</button>
                         </form>
 
                         </div>
@@ -169,7 +173,7 @@ $description = htmlspecialchars($_SESSION["description"]);
                             <form method="POST" action="">
                                 <label for="description">Profile Description:</label><br>
                                 <textarea id="description" name="description" rows="4" cols="50"><?= htmlspecialchars($description); ?></textarea><br><br>
-                                <button type="submit" name="update_profile">Update Description</button>
+                                <button type="submit" name="update_profile" class="btn btn-primary">Update Description</button>
                             </form>
                                 <div class="form-group">
                                 <label class="form-label">Total Time Spent:</label>
@@ -178,16 +182,6 @@ $description = htmlspecialchars($_SESSION["description"]);
                                 <div class="form-group">
                                     <label class="form-label">age</label>
                                     <input type="text" class="form-control" value="<?php echo htmlspecialchars($_SESSION["age"]); ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Country</label>
-                                    <select class="custom-select">
-                                        <option>USA</option>
-                                        <option selected>Canada</option>
-                                        <option>UK</option>
-                                        <option>Germany</option>
-                                        <option>France</option>
-                                    </select>
                                 </div>
                             </div>
                             <hr class="border-light m-0">
