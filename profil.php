@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
     // Update session variables
     $_SESSION["description"] = $description;
 
+    
     // Update database
     try {
         $query = "UPDATE profile SET description = :description WHERE email = :email";

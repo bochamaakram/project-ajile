@@ -113,6 +113,7 @@ $description = htmlspecialchars($_SESSION["description"]);
         .form-label, h4, label {
             text-align: right;
         }
+        
     </style>
 </head>
 <body style="background-image: url('IMGG/pixelcut-export.jpeg'); background-size: cover;
