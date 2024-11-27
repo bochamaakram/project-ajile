@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
         
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" pattern="(?=.*[A-Z]).{8,}" required>
         
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" placeholder="Enter your age" min="1" required>

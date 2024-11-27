@@ -207,7 +207,7 @@
                 <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
         
                 <label for="password">كلمة المرور:</label>
-                <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+                <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" pattern="(?=.*[A-Z]).{8,}" required>
         
                 <label for="age">العمر:</label>
                 <input type="number" id="age" name="age" placeholder="أدخل عمرك" min="1" required>
