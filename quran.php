@@ -253,86 +253,103 @@ direction: rtl;
     </div>
 </header>
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
-<div class="container-fluid col-6" id="res-container">
+<div class="container-fluid col-8" id="res-container">
 
-  <!-- Audio Recording Section for Students -->
-  <?php if ($_SESSION["role"] === "student") { ?>
-    <div id="student-section">
-      <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
-      <table class="table table-bordered d-flex justify-content-center">
-        <tr>
-          <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
-          <td><button id="stop-recording"  class="btn btn-primary"style="display: none;">Stop Recording</button></td>
-          <td>
-            <audio id="audio-preview"  class="audio-player" controls></audio>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button id="submit-audio" style="display: none;" class="btn btn-primary">Submit for Evaluation</button>
-          </td>
-          <td colspan="2">
-            <input type="text" id="username" name="username" placeholder="Your name" required class="form-control">
-          </td>
-        </tr>
-      </table>
-    </div>
+  <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "student") { ?>
+  <!-- Student Section -->
+  <div id="student-section">
+    <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
+    <table class="table table-bordered">
+      <tr>
+        <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
+        <td><button id="stop-recording" class="btn btn-danger" style="display: none;">Stop Recording</button></td>
+        <td>
+          <audio id="audio-preview" class="audio-player" controls></audio>
+        </td>
+        <td>
+          <input type="text" id="username" name="username" placeholder="Your name" required class="form-control mb-2 col-12 btn btn-outline-secondary">
+        </td>
+        <td>
+          <select id="juz-selection" class="form-control mb-2 col-10 btn btn-outline-secondary" required>
+            <option value="" disabled selected>Select a Juz</option>
+            <?php for ($i = 1; $i <= 30; $i++) { ?>
+              <option value="Juz <?php echo $i; ?>">Juz <?php echo $i; ?></option>
+            <?php } ?>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <button id="submit-audio" style="display: none;" class="btn btn-success">Submit for Evaluation</button>
+        </td>
+      </tr>
+    </table>
+  </div>
   <?php } ?>
 
-  <!-- Audio Review Section for Educators -->
-  <?php if ($_SESSION["role"] === "educator") { ?>
-    <div id="educator-section">
-      <h1 class="d-flex justify-content-center">Evaluate Student Recordings</h1>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Student Name</th>
-              <th>Recording</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-              $targetDir = __DIR__ . "/audios/";
+  <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "educator") { ?>
+  <!-- Educator Section -->
+  <div id="educator-section">
+    <h1 class="d-flex justify-content-center">Evaluate Student Recordings</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Selected Juz</th>
+            <th>Recording</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $targetDir = __DIR__ . "/audios/";
+          if (is_dir($targetDir)) {
               $audioFiles = glob($targetDir . "*.webm");
-
               if (!empty($audioFiles)) {
                   foreach ($audioFiles as $file) {
                       $fileName = basename($file);
-                      $parts = explode('_', $fileName);
-                      $studentName = $parts[0];
-            ?>
-            <tr>
-              <td><?php echo htmlspecialchars($studentName); ?></td>
-              <td><audio controls src="audios/<?php echo $fileName; ?>"></audio></td>
-              <td>
-                <button class="mark-good btn btn-success" data-file="<?php echo $fileName; ?>">Good Job</button>
-                <button class="mark-more btn btn-warning" data-file="<?php echo $fileName; ?>">Needs More Work</button>
-              </td>
-            </tr>
-            <?php
+                      $parts = explode('_', pathinfo($fileName, PATHINFO_FILENAME));
+                      
+                      $studentName = $parts[0] ?? "Unknown";
+                      $selectedJuz = str_replace('_', ' ', $parts[1] ?? "Unknown");
+          ?>
+          <tr>
+            <td><?php echo htmlspecialchars($studentName); ?></td>
+            <td><?php echo htmlspecialchars($selectedJuz); ?></td>
+            <td><audio controls src="audios/<?php echo htmlspecialchars($fileName); ?>"></audio></td>
+            <td>
+              <button class="mark-good btn btn-success" data-file="<?php echo htmlspecialchars($fileName); ?>">Good Job</button>
+              <button class="mark-more btn btn-warning" data-file="<?php echo htmlspecialchars($fileName); ?>">Needs More Work</button>
+            </td>
+          </tr>
+          <?php
                   }
               } else {
-                  echo "<trcolspan='3'  class='d-flex justify-content-center'>No audio files to review.</tr>";
+                  echo "<tr><td colspan='4' class='text-center'>No audio files to review.</td></tr>";
               }
-            ?>
-          </tbody>
-        </table>
-      </div>
+          } else {
+              echo "<tr><td colspan='4' class='text-center'>Audio directory does not exist.</td></tr>";
+          }
+          ?>
+        </tbody>
+      </table>
     </div>
-    <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">students list</button></a>
+  </div>
+  <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">Students List</button></a>
   <?php } ?>
 
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // For Students
   const startRecordingBtn = document.getElementById("start-recording");
   const stopRecordingBtn = document.getElementById("stop-recording");
   const audioPreview = document.getElementById("audio-preview");
   const submitAudioBtn = document.getElementById("submit-audio");
   const usernameField = document.getElementById("username");
+  const juzSelection = document.getElementById("juz-selection");
 
   let mediaRecorder;
   let audioBlob;
@@ -357,7 +374,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     stopRecordingBtn.addEventListener("click", () => {
-      mediaRecorder.stop();
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+      }
       startRecordingBtn.style.display = "block";
       stopRecordingBtn.style.display = "none";
       submitAudioBtn.style.display = "block";
@@ -365,13 +384,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     submitAudioBtn.addEventListener("click", async () => {
       const username = usernameField.value.trim();
+      const selectedJuz = juzSelection.value.trim();
+
       if (!username) {
         alert("Please enter your name.");
         return;
       }
 
+      if (!selectedJuz) {
+        alert("Please select a Juz.");
+        return;
+      }
+
       const timestamp = Date.now();
-      const filename = `${username}_${timestamp}.webm`;
+      const filename = `${username}_${selectedJuz.replace(/\s+/g, "_")}_${timestamp}.webm`;
 
       const formData = new FormData();
       formData.append("audio", audioBlob, filename);
@@ -384,12 +410,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const result = await response.text();
         alert(result);
+
+        if (response.ok) {
+          alert("Audio successfully submitted.");
+        }
       } catch (error) {
-        alert("Error uploading audio: " + error.message);
+        alert("Error during submission: " + error.message);
       }
     });
   }
 
+  // For Educators
   document.querySelectorAll('.mark-good, .mark-more').forEach(button => {
     button.addEventListener('click', async (event) => {
       const fileName = event.target.getAttribute('data-file');
@@ -500,11 +531,11 @@ document.addEventListener("DOMContentLoaded", () => {
             surahCard.appendChild(surahLink);
             // Apply orange background if Surah has been read
             if (readSurahs.includes(index + 1)) {
-                surahCard.style.backgroundColor = 'orange';
+                surahCard.style.backgroundColor = 'green';
             }
             // Apply green background to the last visited Surah
             if (parseInt(lastVisitedSurah) === index + 1) {
-                surahCard.style.backgroundColor = 'green';
+                surahCard.style.backgroundColor = 'orange';
             }
 // Add click event to mark Surah as read and last visited
 surahLink.addEventListener('click', () => {
