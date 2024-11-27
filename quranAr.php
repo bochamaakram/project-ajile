@@ -236,9 +236,9 @@ direction: ltr;
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
               </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>

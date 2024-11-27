@@ -12,22 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
 body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
-<<<<<<< HEAD
   height: 100vh;
   background-image: url("IMGG/h2.webp");
   background-size: cover;
   background-repeat: no-repeat
-=======
->>>>>>> 8048e9a5ff31d51e7fec6b67f102b3ac04f31dda
 }
   .about-container {
     display: flex;
@@ -35,9 +27,9 @@ body{
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 25px;
     margin: auto;
+    backdrop-filter: blur(5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: right;
     width: 70%;
@@ -96,7 +88,8 @@ body{
     text-align: right;
   }
   header, footer {
-      background-color: #C4DFDF;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   nav a.nav-link {
       color: #0F1035;
@@ -141,9 +134,9 @@ body{
                           <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
               </li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
@@ -160,7 +153,7 @@ body{
   </header>
   
   <!-- Page Content -->
-  <div class="p-5 rounded-4 backbody container-fluid" id="bbody" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+  <div class="p-5 rounded-4 backbody container-fluid" id="bbody" >
       <div class="main-wrapper about-container">
           <div class="container py-5 section right col-xs-9">
               <p class="col-md-8 fs-4">
