@@ -16,7 +16,7 @@
         font-weight: 500;
         font-style: normal;
         height: 100vh;
-        background-image: url("IMGG/mos1.jpg");
+        background-image: url("IMGG/h2.webp");
         background-size: cover;
         background-repeat: no-repeat;
         
