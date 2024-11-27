@@ -23,6 +23,7 @@
                     $_SESSION["name"] = $x['name'];
                     $_SESSION["gender"] = $x['gender'];
                     $_SESSION["role"] = $x['role'];
+                    $_SESSION['class'] = $x['class'];
                     if (!isset($_SESSION["total_time_spent"])) {
                         $_SESSION["total_time_spent"] = 0;
                     }
