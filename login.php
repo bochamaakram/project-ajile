@@ -150,11 +150,8 @@
   .container-fluid{
     background-color: rgba(255, 255, 255, 0); 
     backdrop-filter: blur(600px);
-    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.text-light{
-    margin-bottom: 10px;
-  }
   
 </style>
 </head>

@@ -217,10 +217,6 @@ direction: ltr;
 .navbar-toggler{
     border: none !important;
 }
-#qur{
-  background-color: #E3F4F4;
-    border-radius: 10px 25px;
-}
 </style>
 </head>
 <body>
@@ -237,19 +233,16 @@ direction: ltr;
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="islamAr.php">إسلام</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
-                        </ul>
-                    </li>
-                      </ul>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                </ul>
+              </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php" id="qur">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
@@ -264,7 +257,7 @@ direction: ltr;
   <!-- قسم تسجيل الصوت للطلاب -->
   <?php if ($_SESSION["role"] === "student") { ?>
     <div id="student-section">
-      <h1 class="d-flex justify-content-center" id="audio">تسجيل الصوت</h1>
+      <h1 class="d-flex justify-content-center">تسجيل الصوت</h1>
       <table class="table table-bordered">
         <tr>
           <td><button id="start-recording" class="btn btn-primary">بدء التسجيل</button></td>
@@ -422,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<h1 class=" d-flex justify-content-center" id="juze">أجزاء القرآن</h1>
+<h1 class=" d-flex justify-content-center">أجزاء القرآن</h1>
 <div class="container col-8" id="juz-container">
 
 <script>
@@ -451,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
         juzContainer.appendChild(juzCard);
     }
 </script></div>
-<h1 class=" d-flex justify-content-center" id="sura">سور القرآن</h1>
+<h1 class=" d-flex justify-content-center">سور القرآن</h1>
 <div class="container col-8" id="surah-container">
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -549,9 +542,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">إسلام</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                    <hr class="featurette-divider">
                 </ul>
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
             </ul>

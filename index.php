@@ -87,7 +87,7 @@
       direction: rtl;
       text-align: right;
   }
-  header{
+  header, footer {
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -114,7 +114,6 @@
     background-color: #E3F4F4;
     border-radius: 10px 20px;
   }
-  
 </style>
 </head>
 <body>
@@ -128,11 +127,11 @@
         </button>
         <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Homepage"></a>
         <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
-              <ul class="navbar-nav nav-underline" >
+              <ul class="navbar-nav nav-underline">
                 <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php" id="index">Home page</a></li>
-              <li class="nav-item dropdown" >
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
                   <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
                   <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
@@ -140,14 +139,7 @@
               </li>
                   <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                   <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li>
-                  <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
-                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
-                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
-                        </ul>
-                    </li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
                   <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
               </ul>
         </div>
@@ -156,7 +148,7 @@
           <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="indexAr.php">Arabic</a></li>
       </div>
     </nav>
-  
+  </div>
   </header>
 <!--page-->
 <div class="p-5 rounded-4 container-fluid " id="bbody" >
@@ -164,7 +156,7 @@
   <div class="main-wrapper about-container">
     <div class="container py-5 section right col-xs-9">
       <p class="col-md-8 fs-4 " style="color:#0F1035;">
-        Welcome to our platform! <br> We are dedicated to providing resources for learning and exploring the Quran and other Islamic teachings.
+        Welcome to our platform! We are dedicated to providing resources for learning and exploring the Quran and other Islamic teachings.
       </p>
       <div id="gotop">
         <a href="login.php"><button class="btn btn-outline-secondary" type="button">login</button></a>
