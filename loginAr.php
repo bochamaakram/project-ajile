@@ -56,16 +56,14 @@
         .navbar-toggler{
             border: none !important;
         }
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-body{
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+      body{
+        font-family: "Amiri", serif;
+        font-weight: 400;
+        font-style: normal;
+        background-image: url("IMGG/470549.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
   .about-container {
     display: flex;
     flex-direction: column;
@@ -125,20 +123,13 @@ body{
   .main-wrapper {
     height: 100vh;
   }
-  .backbody {
-    background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
-      color: #333;
-      direction: rtl;
-      text-align: right;
-  }
-  header, footer {
-      background-color: #C4DFDF;
-  }
+  
+  
   nav a.nav-link {
       color: aliceblue;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
   .form-container {
@@ -154,13 +145,14 @@ body{
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  #container{
-    background-image: url("IMGG/470549.jpg");
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-
+  
+  .container-fluid{
+    background-color: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(600px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+  .text-light{
+    margin-bottom: 10px;
   }
 </style>
 </head>

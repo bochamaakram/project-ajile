@@ -147,7 +147,7 @@ body{
       list-style-type: none;
     }
     .surah-item {
-      background-color: #DCF2F1;
+      background-color: #F8F6F4;
       padding: 15px;
       border: 1px solid #365486;
       border-radius: 8px;
@@ -155,7 +155,7 @@ body{
       justify-content: space-between;
       align-items: center;
       transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     .surah-item:hover {
       transform: translateY(-5px);
@@ -187,6 +187,15 @@ body{
               <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="PrayerAr.html#audio">مواقيت الصلاة</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#juze">تسبيح</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#sura">الأذكار</a></li>
+                </ul>
+              </li>
                 <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>

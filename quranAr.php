@@ -50,12 +50,7 @@ header, footer {
   right: 0;
 }
 
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-body{
+  body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
@@ -232,6 +227,18 @@ direction: ltr;
               <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="PrayerAr.html#audio">مواقيت الصلاة</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#juze">تسبيح</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#sura">الأذكار</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+              <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                 <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
@@ -241,8 +248,6 @@ direction: ltr;
                   <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
               </li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
@@ -570,11 +575,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
+                    
                 </ul>
+                <hr class="featurette-divider">
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
             </ul>
       </div>
