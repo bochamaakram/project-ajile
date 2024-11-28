@@ -2,7 +2,6 @@
 session_start();
 require 'connexion.php';
 $err_mss = "";
-$err_mss1 = "";
 // Redirect to login if required session variables are missing
 if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"]) || !isset($_SESSION["age"])|| !isset($_SESSION["password"]) ) {
     header("Location: login.php");
@@ -68,15 +67,11 @@ if (isset($_POST['change_password'])) {
     $new_password = $_POST['np'];
     $confirm_password = $_POST['c_np'];
 
+    // Validate the passwords
     if (empty($new_password) || empty($confirm_password)|| empty($c_password)) {
-        $err_mss= "جميع الحقول مطلوبة";
-        $error_occurred = true;
-    } elseif ($new_password !== $confirm_password) {
-         $err_mss="كلمتا المرور غير متطابقتين";
-         $error_occurred = true;
-    }elseif ($c_password!==$_SESSION["password"]) {
-        $err_mss="كلمة المرور القديمة غير صحيحة";
-        $error_occurred = true;
+        $err_mss= "all fields are required.";
+    } elseif ($new_password !== $confirm_password || $c_password!==$_SESSION["password"]) {
+        echo "Passwords do not match.";
     } else {
         // Hash the new password (for security)
         $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
@@ -91,11 +86,9 @@ if (isset($_POST['change_password'])) {
         $stmt1->execute();
         if ($stmt1) {
             session_destroy();
-            $err_mss1 = "تم تغيير كلمة المرور بنجاح";
-            $error_occurred = true;
+            echo "Password changed successfully!";
         } else {
-            $err_mss= "فشل في تغيير كلمة المرور.";
-            $error_occurred = true;
+            echo "Failed to change the password.";
         }
     }
 }
@@ -178,8 +171,6 @@ $description = htmlspecialchars($_SESSION["description"]);
                                 <input type="password" id="new_password" name="np" class="form-control " required><br>
                                 <label for="confirm_password">تأكيد كلمة المرور الجديدة:</label>
                                 <input type="password" id="confirm_password" class="form-control" name="c_np" required><br>
-                                <h4 style="color: green;"><?php echo htmlspecialchars($err_mss1); ?></h4>
-                                <h4 style="color: red;"><?php echo htmlspecialchars($err_mss); ?></h4>
                                 <button type="submit" name="change_password" class="btn btn-primary mb-5">تغيير كلمة المرور</button>
                             </form>
                         </div>
@@ -210,25 +201,7 @@ $description = htmlspecialchars($_SESSION["description"]);
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const errorOccurred = <?php echo json_encode($error_occurred); ?>;
-            
-            if (errorOccurred) {
-                // Automatically switch to the "Change Password" tab if there's an error
-                const changePasswordTab = document.querySelector('a[href="#account-change-password"]');
-                const allTabs = document.querySelectorAll('.tab-pane');
-                
-                // Remove active class from all tabs
-                allTabs.forEach(tab => tab.classList.remove('active', 'show'));
-                document.querySelectorAll('.list-group-item').forEach(item => item.classList.remove('active'));
 
-                // Activate "Change Password" tab
-                document.querySelector('#account-change-password').classList.add('active', 'show');
-                changePasswordTab.classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>
 

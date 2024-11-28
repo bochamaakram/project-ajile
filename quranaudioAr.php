@@ -24,7 +24,7 @@ header, footer {
   text-align: center;
   background-color: #f4f4f4;
 }
-  
+
 .backbody {
   position: relative;; 
   padding: 20px;
@@ -147,7 +147,7 @@ body{
       list-style-type: none;
     }
     .surah-item {
-      background-color: #DCF2F1;
+      background-color: #F8F6F4;
       padding: 15px;
       border: 1px solid #365486;
       border-radius: 8px;
@@ -155,7 +155,7 @@ body{
       justify-content: space-between;
       align-items: center;
       transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     .surah-item:hover {
       transform: translateY(-5px);
@@ -172,10 +172,6 @@ body{
       width: 600px;
       margin-right: auto;
     }
-    #qura{
-  background-color: #E3F4F4;
-    border-radius: 10px 20px;
-}
   </style>
 </head>
 <body>
@@ -191,28 +187,26 @@ body{
               <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="islamAr.php">إسلام</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
-                        </ul>
-                    </li>
-                      </ul>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php" id="qura">القرآن الصوتي</a></li>
-                    <ul class="navbar-nav"> 
-                          <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#audio">مواقيت الصلاة</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#juze">تسبيح</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#sura">الأذكار</a></li>
                 </ul>
               </li>
+                <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                </ul>
+              </li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
@@ -222,7 +216,7 @@ body{
     </div>
 </header>
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
-<h1 class=" d-flex justify-content-center" style="color: black;">سور القرآن</h1>
+<h1 class=" d-flex justify-content-center">سور القرآن</h1>
 <div class="container">
   <ul class="surah-list" id="surah-list">
     <!-- JavaScript will populate this list -->
@@ -282,10 +276,11 @@ body{
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav">
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
                 </ul>
                 <hr style="color:black;" class="featurette-divider">
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>

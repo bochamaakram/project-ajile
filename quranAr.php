@@ -50,12 +50,7 @@ header, footer {
   right: 0;
 }
 
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-body{
+  body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
@@ -217,10 +212,6 @@ direction: ltr;
 .navbar-toggler{
     border: none !important;
 }
-#qur{
-  background-color: #E3F4F4;
-    border-radius: 10px 25px;
-}
 </style>
 </head>
 <body>
@@ -236,20 +227,27 @@ direction: ltr;
               <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="PrayerAr.html#audio">مواقيت الصلاة</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#juze">تسبيح</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#sura">الأذكار</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+              <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                 <ul class="navbar-nav">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="islamAr.php">إسلام</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
-                        </ul>
-                    </li>
-                      </ul>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php" id="qur">القرآن</a></li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
+                </ul>
+              </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
@@ -259,86 +257,103 @@ direction: ltr;
     </div>
 </header>
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
-<div class="container-fluid col-6" id="res-container">
+<div class="container-fluid col-8" id="res-container">
 
-  <!-- قسم تسجيل الصوت للطلاب -->
-  <?php if ($_SESSION["role"] === "student") { ?>
-    <div id="student-section">
-      <h1 class="d-flex justify-content-center" id="audio">تسجيل الصوت</h1>
-      <table class="table table-bordered">
-        <tr>
-          <td><button id="start-recording" class="btn btn-primary">بدء التسجيل</button></td>
-          <td><button id="stop-recording" class="btn btn-primary" style="display: none;">إيقاف التسجيل</button></td>
-          <td>
-            <audio id="audio-preview" class="audio-player" controls></audio>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button id="submit-audio" style="display: none;" class="btn btn-primary">إرسال للتقييم</button>
-          </td>
-          <td colspan="2">
-            <input type="text" id="username" name="username" placeholder="اسمك" required class="form-control">
-          </td>
-        </tr>
-      </table>
-    </div>
+  <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "student") { ?>
+  <!-- قسم الطلاب -->
+  <div id="student-section">
+    <h1 class="d-flex justify-content-center" id="audio">تسجيل الصوت</h1>
+    <table class="table table-bordered">
+      <tr>
+        <td><button id="start-recording" class="btn btn-primary">ابدأ التسجيل</button></td>
+        <td><button id="stop-recording" class="btn btn-danger" style="display: none;">إيقاف التسجيل</button></td>
+        <td>
+          <audio id="audio-preview" class="audio-player" controls></audio>
+        </td>
+        <td>
+          <input type="text" id="username" name="username" placeholder="اسمك" required class="form-control mb-2 col-12 btn btn-outline-secondary">
+        </td>
+        <td>
+          <select id="juz-selection" class="form-control mb-2 col-10 btn btn-outline-secondary" required>
+            <option value="" disabled selected>اختر جزءاً</option>
+            <?php for ($i = 1; $i <= 30; $i++) { ?>
+              <option value="جزء <?php echo $i; ?>">جزء <?php echo $i; ?></option>
+            <?php } ?>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <button id="submit-audio" style="display: none;" class="btn btn-success">إرسال للتقييم</button>
+        </td>
+      </tr>
+    </table>
+  </div>
   <?php } ?>
 
-  <!-- قسم مراجعة الصوت للمدرسين -->
-  <?php if ($_SESSION["role"] === "educator") { ?>
-    <div id="educator-section">
-      <h1 class="d-flex justify-content-center">تقييم تسجيلات الطلاب</h1>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>اسم الطالب</th>
-              <th>التسجيل</th>
-              <th>الإجراءات</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-              $targetDir = __DIR__ . "/audios/";
+  <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "educator") { ?>
+  <!-- قسم المعلم -->
+  <div id="educator-section">
+    <h1 class="d-flex justify-content-center">تقييم تسجيلات الطلاب</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>اسم الطالب</th>
+            <th>الجزء المختار</th>
+            <th>التسجيل</th>
+            <th>الإجراءات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $targetDir = __DIR__ . "/audios/";
+          if (is_dir($targetDir)) {
               $audioFiles = glob($targetDir . "*.webm");
-
               if (!empty($audioFiles)) {
                   foreach ($audioFiles as $file) {
                       $fileName = basename($file);
-                      $parts = explode('_', $fileName);
-                      $studentName = $parts[0];
-            ?>
-            <tr>
-              <td><?php echo htmlspecialchars($studentName); ?></td>
-              <td><audio controls src="audios/<?php echo $fileName; ?>"></audio></td>
-              <td>
-                <button class="mark-good btn btn-success" data-file="<?php echo $fileName; ?>">عمل جيد</button>
-                <button class="mark-more btn btn-warning" data-file="<?php echo $fileName; ?>">يحتاج للمزيد من العمل</button>
-              </td>
-            </tr>
-            <?php
+                      $parts = explode('_', pathinfo($fileName, PATHINFO_FILENAME));
+                      
+                      $studentName = $parts[0] ?? "غير معروف";
+                      $selectedJuz = str_replace('_', ' ', $parts[1] ?? "غير معروف");
+          ?>
+          <tr>
+            <td><?php echo htmlspecialchars($studentName); ?></td>
+            <td><?php echo htmlspecialchars($selectedJuz); ?></td>
+            <td><audio controls src="audios/<?php echo htmlspecialchars($fileName); ?>"></audio></td>
+            <td>
+              <button class="mark-good btn btn-success" data-file="<?php echo htmlspecialchars($fileName); ?>">عمل جيد</button>
+              <button class="mark-more btn btn-warning" data-file="<?php echo htmlspecialchars($fileName); ?>">يحتاج المزيد من العمل</button>
+            </td>
+          </tr>
+          <?php
                   }
               } else {
-                  echo "<tr colspan='3' class='d-flex justify-content-center'>لا توجد ملفات صوتية للمراجعة.</tr>";
+                  echo "<tr><td colspan='4' class='text-center'>لا توجد ملفات صوتية للمراجعة.</td></tr>";
               }
-            ?>
-          </tbody>
-        </table>
-      </div>
+          } else {
+              echo "<tr><td colspan='4' class='text-center'>دليل الصوتيات غير موجود.</td></tr>";
+          }
+          ?>
+        </tbody>
+      </table>
     </div>
-    <a href="student_listAr.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">قائمة الطلاب</button></a>
+  </div>
+  <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">قائمة الطلاب</button></a>
   <?php } ?>
 
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // للطلاب
   const startRecordingBtn = document.getElementById("start-recording");
   const stopRecordingBtn = document.getElementById("stop-recording");
   const audioPreview = document.getElementById("audio-preview");
   const submitAudioBtn = document.getElementById("submit-audio");
   const usernameField = document.getElementById("username");
+  const juzSelection = document.getElementById("juz-selection");
 
   let mediaRecorder;
   let audioBlob;
@@ -363,7 +378,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     stopRecordingBtn.addEventListener("click", () => {
-      mediaRecorder.stop();
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+      }
       startRecordingBtn.style.display = "block";
       stopRecordingBtn.style.display = "none";
       submitAudioBtn.style.display = "block";
@@ -371,13 +388,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     submitAudioBtn.addEventListener("click", async () => {
       const username = usernameField.value.trim();
+      const selectedJuz = juzSelection.value.trim();
+
       if (!username) {
         alert("يرجى إدخال اسمك.");
         return;
       }
 
+      if (!selectedJuz) {
+        alert("يرجى اختيار الجزء.");
+        return;
+      }
+
       const timestamp = Date.now();
-      const filename = `${username}_${timestamp}.webm`;
+      const filename = `${username}_${selectedJuz.replace(/\s+/g, "_")}_${timestamp}.webm`;
 
       const formData = new FormData();
       formData.append("audio", audioBlob, filename);
@@ -390,12 +414,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const result = await response.text();
         alert(result);
+
+        if (response.ok) {
+          alert("تم إرسال الصوت بنجاح.");
+        }
       } catch (error) {
-        alert("خطأ في تحميل الصوت: " + error.message);
+        alert("خطأ أثناء الإرسال: " + error.message);
       }
     });
   }
 
+  // للمعلمين
   document.querySelectorAll('.mark-good, .mark-more').forEach(button => {
     button.addEventListener('click', async (event) => {
       const fileName = event.target.getAttribute('data-file');
@@ -413,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (action === "good") {
           event.target.closest('tr').remove();
-        } 
+        }
       } catch (error) {
         alert("خطأ في التقييم: " + error.message);
       }
@@ -422,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<h1 class=" d-flex justify-content-center" id="juze">أجزاء القرآن</h1>
+<h1 class=" d-flex justify-content-center">أجزاء القرآن</h1>
 <div class="container col-8" id="juz-container">
 
 <script>
@@ -451,7 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
         juzContainer.appendChild(juzCard);
     }
 </script></div>
-<h1 class=" d-flex justify-content-center" id="sura">سور القرآن</h1>
+<h1 class=" d-flex justify-content-center">سور القرآن</h1>
 <div class="container col-8" id="surah-container">
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -546,13 +575,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">إسلام</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                    <hr class="featurette-divider">
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
+                    
                 </ul>
+                <hr class="featurette-divider">
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
             </ul>
       </div>

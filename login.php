@@ -15,7 +15,7 @@
                 $resultat->execute(); 
                 
                 $x = $resultat->fetch(PDO::FETCH_ASSOC);
-
+                
                 if ($x) {
                   $_SESSION["age"] = $x['age'];
                   $_SESSION["email"] = $x['email'];
@@ -24,6 +24,7 @@
                   $_SESSION["name"] = $x['name'];
                   $_SESSION["gender"] = $x['gender'];
                   $_SESSION["role"] = $x['role'];
+                  $_SESSION['class'] = $x['class'];
                   $_SESSION["login_time"] = time();
                   if (!isset($_SESSION["total_time_spent"])) {
                       $_SESSION["total_time_spent"] = 0;
@@ -150,11 +151,8 @@
   .container-fluid{
     background-color: rgba(255, 255, 255, 0); 
     backdrop-filter: blur(600px);
-    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.text-light{
-    margin-bottom: 10px;
-  }
   
 </style>
 </head>

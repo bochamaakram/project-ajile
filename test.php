@@ -120,4 +120,4 @@ new Chart(document.getElementById("monthlyChart"), {
     }
 });
 </script>
-</body> 
+</body>

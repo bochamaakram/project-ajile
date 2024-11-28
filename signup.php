@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       color: aliceblue;
   }
   .nav-link:hover {
-    transform: scale(1.07);
+    transform: scale(1.02);
     color: #d1e7dd;
   }
  .form-container {
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
      align-items: center;
      justify-content: center;
      color: white;
-     backdrop-filter: blur(10px);
+     backdrop-filter: blur(5px);
      border-radius: 25px;
      padding: 25px;
      max-width: 400px;
@@ -205,16 +205,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
         
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" pattern="(?=.*[A-Z]).{8,}" required>
         
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" placeholder="Enter your age" min="1" required>
-    
+        
                 <label>Role:</label>
                 <input type="radio" name="role" value="student" id="student" required>Student
                 <input type="radio" name="role" value="educator" id="educator" style="margin-left: 55px;" required>Educator<br>
                 
-                <button type="submit" class="btn btn-outline-secondary" style="color:white ;margin-top:8px">Create Account</button>
+                <button type="submit" class="btn btn-outline-secondary" style="color:black">Create Account</button>
             </form>
         </div>
     </div>

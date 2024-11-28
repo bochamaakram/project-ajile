@@ -16,6 +16,7 @@ if (!isset($_SESSION["user_id"])) {
     }
 }
 require "connexion.php";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get the JSON data sent from the client
     $data = json_decode(file_get_contents("php://input"), true);

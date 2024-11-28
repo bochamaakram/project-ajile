@@ -48,16 +48,26 @@
         .navbar-toggler{
             border: none !important;
         }
+      body{
+        font-family: "Amiri", serif;
+        font-weight: 400;
+        font-style: normal;
+        background-image: url("IMGG/471133.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
       
-body{
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-  background-image: url("IMGG/471133.jpg");
-  background-size: cover;
-  height: 100vh;
-}
-  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0F1035;
+    border-radius: 15px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: right;
+  }
   .toggler-icon {
     width: 30px;
     height: 3px;
@@ -96,68 +106,70 @@ body{
       background: #0F1035;
   }
   .section {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
+  .main-wrapper {
+    height: 100vh;
+  }
   .backbody {
       color: #333;
       direction: rtl;
       text-align: right;
   }
-  header{
-
-      backdrop-filter: blur(5px);
-  }
+  
   nav a.nav-link {
       color: aliceblue;
   }
   .nav-link:hover {
-    transform: scale(1.07);
+    transform: scale(1.02);
     color: #d1e7dd;
   }
-  .form-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(10px);
+ .form-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     backdrop-filter: blur(5px);
      border-radius: 25px;
      padding: 25px;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .form-container label {
-      margin-top: 8px;
-      text-align: right;
-      width: 100%;
-      color: black;
-      margin-bottom: 6px;
-  }
-  .form-container input[type="text"],
-  .form-container input[type="email"],
-  .form-container input[type="password"],
-  .form-container input[type="number"] {
-      width: 100%;
-      padding: 5px;
-      color: black;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      text-align: right;
-  }
-  .form-container input[type="radio"] {
-      margin: 0 5px 10px 0;
-  }
-  .container-fluid{
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-#container{
+     max-width: 400px;
+     margin: auto;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+ .form-container label {
+     margin-top: 8px;
+     text-align: right;
+     direction: ltr;
+     width: 100%;
+     color: #fff;
+ }
+ .form-container input[type="text"],
+ .form-container input[type="email"],
+ .form-container input[type="password"],
+ .form-container input[type="number"] {
+     width: 100%;
+     padding: 5px;
+     margin-top: 5px;
+     border-radius: 5px;
+     border: 1px solid #ddd;
+ }
+ .form-container input[type="radio"] {
+     margin: 0 5px 10px 0;
+ }
+ #container{
   background-image: url("IMGG/471133.jpg");
-  background-size: cover;
+    background-size: cover;
+    height: 100vh;
+ }
+ .container-fluid{
+    background-color: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(600px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
     </style>
 </head>
@@ -172,7 +184,7 @@ body{
             </button>
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center"><a style="color:black;font-size:18px" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
         </div>
@@ -195,13 +207,8 @@ body{
                 <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
         
                 <label for="password">كلمة المرور:</label>
-<<<<<<< HEAD
                 <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" pattern="(?=.*[A-Z]).{8,}" required>
-      
-=======
-                <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
         
->>>>>>> 5bc19e4e0ff4af5203c4b50186ff157e8a52f94d
                 <label for="age">العمر:</label>
                 <input type="number" id="age" name="age" placeholder="أدخل عمرك" min="1" required>
         
@@ -209,7 +216,7 @@ body{
                 <input type="radio" name="role" value="student" id="student" required>طالب
                 <input type="radio" name="role" value="educator" id="educator" style="margin-right: 55px;" required>معلم<br>
                 
-                <button type="submit" class="btn btn-outline-secondary" style="color:black">إنشاء حساب</button>
+                <button type="submit" class="btn btn-outline-secondary" style="color:black;margin-top:8px" >إنشاء حساب</button>
             </form>
         </div>
     </div>
