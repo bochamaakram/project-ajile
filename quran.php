@@ -278,7 +278,7 @@ direction: rtl;
           </select>
         </td>
       </tr>
-      <tr>
+      <tr> 
         <td colspan="3">
           <button id="submit-audio" style="display: none;" class="btn btn-success">Submit for Evaluation</button>
         </td>

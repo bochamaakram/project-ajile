@@ -122,7 +122,6 @@
     const reset = document.getElementById('reset');
     const countDisplay = document.getElementById('count');
     const phraseDisplay = document.getElementById('phrase-display');
-
     // Increment the count and display phrase on each click
     clickableDiv.addEventListener('click', () => {
         count++;

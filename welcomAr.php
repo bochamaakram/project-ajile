@@ -175,7 +175,6 @@ body{
                 <img height="350px" width="250px" src="IMGG/memo (1).jpg" alt="">
             </div>
         </div>
-
         <hr class="featurette-divider">
 
         <div class="row featurette">

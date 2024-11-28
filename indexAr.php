@@ -34,7 +34,7 @@ body{
     text-align: right;
     width: 70%;
     height: 80%;
-  }
+  } 
   .toggler-icon {
     width: 30px;
     height: 3px;

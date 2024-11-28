@@ -17,7 +17,6 @@
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
-        
 }
     .about-container {
     display: flex;

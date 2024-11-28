@@ -19,7 +19,6 @@
         background-image: url("IMGG/h2.webp");
         background-size: cover;
         background-repeat: no-repeat;
-        
       }
   .about-container {
     display: flex;

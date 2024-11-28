@@ -47,7 +47,6 @@ if (isset($_FILES["audio"]) && $_FILES["audio"]["error"] === UPLOAD_ERR_OK) {
     
     $errorCode = $_FILES["audio"]["error"];
     $errorMessage = $errorMessages[$errorCode] ?? "Unknown error occurred.";
-    
     echo "Error: $errorMessage";
 }
 ?>

@@ -18,7 +18,6 @@ if (isset($_FILES["audio"]) && $_FILES["audio"]["error"] === UPLOAD_ERR_OK) {
     // Validate and sanitize student name and Juz
     $studentName = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $studentName); // Replace invalid characters with underscores
     $selectedJuz = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $selectedJuz);
-
     // Validate the file type (e.g., only accept .mp3 and .webm files)
     $allowedExtensions = ['mp3', 'webm'];
     $fileExtension = strtolower(pathinfo($audioFile["name"], PATHINFO_EXTENSION));

@@ -442,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (action === "good") {
           event.target.closest('tr').remove();
-        }
+        } 
       } catch (error) {
         alert("خطأ في التقييم: " + error.message);
       }

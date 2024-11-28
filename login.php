@@ -15,7 +15,7 @@
                 $resultat->execute(); 
                 
                 $x = $resultat->fetch(PDO::FETCH_ASSOC);
-                
+
                 if ($x) {
                   $_SESSION["age"] = $x['age'];
                   $_SESSION["email"] = $x['email'];

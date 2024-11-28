@@ -157,7 +157,6 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
         </form>
     </div>
 </td>
-
                         <td>
                                 <input type="submit" name="Submit_feedback" value="Submit Feedback" class="btn btn-outline-secondary">
                             </form>

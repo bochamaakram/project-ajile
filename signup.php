@@ -209,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" placeholder="Enter your age" min="1" required>
-        
+    
                 <label>Role:</label>
                 <input type="radio" name="role" value="student" id="student" required>Student
                 <input type="radio" name="role" value="educator" id="educator" style="margin-left: 55px;" required>Educator<br>
