@@ -113,6 +113,10 @@ $description = htmlspecialchars($_SESSION["description"]);
         /* Add custom RTL rules if needed */
         body {
             text-align: right;
+            font-family: "Amiri", serif;
+            font-weight: 400;
+            font-style: normal;
+            background-image: url('IMGG/pixelcut-export.jpeg');
         }
         .container {
             direction: rtl;
@@ -123,8 +127,7 @@ $description = htmlspecialchars($_SESSION["description"]);
         
     </style>
 </head>
-<body style="background-image: url('IMGG/pixelcut-export.jpeg'); background-size: cover;
-        background-repeat: no-repeat;">
+<body  >
     <div class="container light-style flex-grow-3 container-p-y">
         <div class="container d-flex justify-content-between align-items-center mb-5">
             <h4 class="font-weight-bold py-3 mb-0">
@@ -132,7 +135,7 @@ $description = htmlspecialchars($_SESSION["description"]);
             </h4>
             <a href="index.php" class="btn btn-secondary">الرجوع <img style="width: 25px; height: auto;" src="./IMGG/enter.png"></a>
         </div>
-        <div class="card overflow-hidden">
+        <div class="card " >
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
@@ -143,7 +146,7 @@ $description = htmlspecialchars($_SESSION["description"]);
                 </div>
                 <div class="col-md-9">
                     <div class="tab-content">
-                        <div class="tab-pane fade active show" id="account-general">
+                        <div class="tab-pane fade active show" id="account-general" >
                             <form method="POST">
                                 <div class="card-body media align-items-center">
                                     <div class="media-body ml-4">

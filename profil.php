@@ -224,6 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#account-change-password').classList.add('active', 'show');
         changePasswordTab.classList.add('active');
     }
+
+    
 });
 
 
