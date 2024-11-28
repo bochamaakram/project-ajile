@@ -81,6 +81,15 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
                     <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quran.php">القرآن</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">تلاوة القرآن</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">المكتبة</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
+                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
+                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
+                        </ul>
+                    </li>
+                      </ul>
                 </ul>
                 </div>
                 <div class="navbar-nav">

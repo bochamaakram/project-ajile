@@ -53,18 +53,11 @@ body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
+  background-image: url("IMGG/471133.jpg");
+  background-size: cover;
+  height: 100vh;
 }
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #0F1035;
-    border-radius: 15px;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: right;
-  }
+  
   .toggler-icon {
     width: 30px;
     height: 3px;
@@ -103,28 +96,26 @@ body{
       background: #0F1035;
   }
   .section {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .main-wrapper {
-    height: 100vh;
-  }
+  
   .backbody {
       color: #333;
       direction: rtl;
       text-align: right;
   }
-  header, footer {
-      background-color: #C4DFDF;
+  header{
+
+      backdrop-filter: blur(5px);
   }
   nav a.nav-link {
       color: aliceblue;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
   .form-container {
@@ -132,8 +123,7 @@ body{
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: white;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
      border-radius: 25px;
      padding: 25px;
       max-width: 400px;
@@ -144,7 +134,8 @@ body{
       margin-top: 8px;
       text-align: right;
       width: 100%;
-      color: #fff;
+      color: black;
+      margin-bottom: 6px;
   }
   .form-container input[type="text"],
   .form-container input[type="email"],
@@ -152,6 +143,7 @@ body{
   .form-container input[type="number"] {
       width: 100%;
       padding: 5px;
+      color: black;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ddd;
@@ -160,11 +152,13 @@ body{
   .form-container input[type="radio"] {
       margin: 0 5px 10px 0;
   }
-  #container{
+  .container-fluid{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#container{
   background-image: url("IMGG/471133.jpg");
-    background-size: cover;
-    height: 100vh;
- }
+  background-size: cover;
+}
     </style>
 </head>
 <body>

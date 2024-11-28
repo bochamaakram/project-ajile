@@ -38,7 +38,7 @@
             ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
+<header>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>تسجيل الدخول</title>
@@ -56,15 +56,14 @@
         .navbar-toggler{
             border: none !important;
         }
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+      
 body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
+  background-image: url("IMGG/470549.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
   .about-container {
     display: flex;
@@ -125,20 +124,12 @@ body{
   .main-wrapper {
     height: 100vh;
   }
-  .backbody {
-    background-color: linear-gradient(135deg, #7FC7D9, #DCF2F1);
-      color: #333;
-      direction: rtl;
-      text-align: right;
-  }
-  header, footer {
-      background-color: #C4DFDF;
-  }
-  nav a.nav-link {
+  
+    nav a.nav-link {
       color: aliceblue;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
   .form-container {
@@ -162,8 +153,14 @@ body{
     align-items: center;
 
   }
+  header{
+    backdrop-filter: blur(40px);
+  }
+  .text-light{
+    margin-bottom: 10px;
+  }
 </style>
-</head>
+</header>
 <body>
 
 <header>
@@ -176,7 +173,7 @@ body{
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center">
-                        <a style="color:black;font-size:18px" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a>
+                        <a style="color:white;font-size:18px" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a>
                     </li>
                 </ul>
             </div>
@@ -185,7 +182,7 @@ body{
 </header>
 
 <!-- المحتوى الرئيسي -->
-<div class="p-5 bg-body-tertiary rounded-4" id="container" style= "height: 100vh;">
+<div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
         <div class="form-container">
             <form method="POST" action="">
