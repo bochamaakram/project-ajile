@@ -47,3 +47,6 @@ As users progress, they can earn achievements for activities like completing all
  in the making of this project we faced a lot of problems that we solved with the help of 
 - [Mehdi El Bakouri](https://github.com/sirconscious) and his team mates.
 - [Nizar Belahsar](https://github.com/benlahsar) and his team mates.
+
+## this project was supervised by 
+[GOUBRAIM NAIMA](https://github.com/GOUBRAIM-NAIMA) 👩🏻‍🏫 "ADOPTER L'APPROCHE AGILE" module trainer in ISTA NTIC Sidi Youssef Ben Ali
