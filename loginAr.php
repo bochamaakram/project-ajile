@@ -23,7 +23,6 @@
                     $_SESSION["name"] = $x['name'];
                     $_SESSION["gender"] = $x['gender'];
                     $_SESSION["role"] = $x['role'];
-                    $_SESSION['class'] = $x['class'];
                     if (!isset($_SESSION["total_time_spent"])) {
                         $_SESSION["total_time_spent"] = 0;
                     }
@@ -39,7 +38,7 @@
             ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
+<header>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>تسجيل الدخول</title>
@@ -57,14 +56,15 @@
         .navbar-toggler{
             border: none !important;
         }
-      body{
-        font-family: "Amiri", serif;
-        font-weight: 400;
-        font-style: normal;
-        background-image: url("IMGG/470549.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
+      
+body{
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: url("IMGG/470549.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
   .about-container {
     display: flex;
     flex-direction: column;
@@ -125,8 +125,7 @@
     height: 100vh;
   }
   
-  
-  nav a.nav-link {
+    nav a.nav-link {
       color: aliceblue;
   }
   .nav-link:hover {
@@ -146,17 +145,22 @@
       margin: auto;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
-  .container-fluid{
-    background-color: rgba(255, 255, 255, 0); 
-    backdrop-filter: blur(600px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
+  #container{
+    background-image: url("IMGG/470549.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+  }
+  header{
+    backdrop-filter: blur(40px);
+  }
   .text-light{
     margin-bottom: 10px;
   }
 </style>
-</head>
+</header>
 <body>
 
 <header>
@@ -169,7 +173,7 @@
             <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center">
-                        <a style="color:black;font-size:18px" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a>
+                        <a style="color:white;font-size:18px" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a>
                     </li>
                 </ul>
             </div>
@@ -178,7 +182,7 @@
 </header>
 
 <!-- المحتوى الرئيسي -->
-<div class="p-5 bg-body-tertiary rounded-4" id="container" style= "height: 100vh;">
+<div class="p-5 bg-body-tertiary rounded-4" id="container" >
     <div class="container py-5 text-center">
         <div class="form-container">
             <form method="POST" action="">

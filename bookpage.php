@@ -19,35 +19,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Urbanist:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
-        header, footer {
-  text-align: center;
-  background-color: #f4f4f4;
-}
-
-.backbody {
-  position: relative;; 
-  padding: 20px;
-  min-height: 80vh;  
-}
-.container::before,
-.container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  background-image: url('IMGG/strip.png'); 
-  background-size: contain; 
-  background-repeat: repeat-y; 
-}
-
-.container::before {
-  left: 0;
-}
-
-.container::after {
-  right: 0;
-}
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
@@ -122,8 +93,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       .card-M {
           transition: all 0.3s;
           opacity: .9;
-          width: 200px;
-          height: 300px;
       }
       .card-M:hover {
           scale: 1.05;
@@ -139,20 +108,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         }
         #lib{
             background-color: #E3F4F4;
-            border-radius: 10px 20px;
-        }
-        .col.text-center h2{
-            font-size: x-large;
-            margin-top: 20px;
-            width: 190px;
-            letter-spacing: 1.5px;
-            line-height: 28px;
-        }
-        .col.text-center{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding:20px 10px ;
+    border-radius: 10px 20px;
         }
     </style>
 </head>
@@ -164,7 +120,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler-icon top-bar"></span>
                     <span class="toggler-icon middle-bar"></span>
-                    <span class="toggler-icon bottom-bar"></span> 
+                    <span class="toggler-icon bottom-bar"></span>
                 </button>
                 <a class="logo" href="home.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="Home"></a>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -199,6 +155,8 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 </header>
 <!-- Page Content -->
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+    <hr class="featurette-divider">
+
     <div data-bs-spy="scroll" data-bs-target="#gotop" class="row featurette">
       <div id="topbar" class="col">
         <div class="row d-flex justify-content-center ">
@@ -214,9 +172,13 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <a href="https://drive.google.com/file/d/19mY_xrw0YQ-3Mp5Lf_GNQv6ix43aSY_7/view?usp=drive_link"><img class="card-M" src="IMGG/img (4).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">Sunnah of Imam Abu Dawood</h2>
             </div>
-            
+            <div class="col text-center">
+                <a href="https://drive.google.com/file/d/1eQr_B2jJ_3HVD53GoVBuQS4waxDKpGs3/view?usp=drive_link"><img class="card-M" src="IMGG/img (2).jpg" height="350px" width="250px" alt=""></a>
+                <h2 class="" style="color:black;">Al-Muwatta’ narrated by Abu Musab Al-Zahr narrated by Al-Laythi</h2>
+            </div>
         </div>
-        <div class="row d-flex justify-content-center ">1
+        <hr class="featurette-divider">
+        <div class="row d-flex justify-content-center ">
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1G_8QJeHLrPB5RKo88is3NdVvanq6_4SH/view?usp=drive_link"><img class="card-M" src="IMGG/img (3).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">A Brief Introduction to Fasting Rulings</h2>
@@ -229,23 +191,13 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <a href="https://drive.google.com/file/d/1qAMQ7HPJx3HDKys5FaioKV1_u7hg4rUZ/view?usp=drive_link"><img class="card-M" src="IMGG/img (1).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">Sunan Al-Tirmidhi</h2>
             </div>
-            
-        </div>
-        <div style="margin-bottom: 10px;" class="row d-flex justify-content-center ">
-        <div class="col text-center" >
-                <a href="https://drive.google.com/file/d/1IUZEWUCFbG9yEmG0TZ8j6ljhDrdbu5QA/view?usp=drive_link" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen><img class="card-M" src="IMGG/img (11).jpg" height="350px" width="250px" alt=""></a>
-                <h2 class="" style="color:black;">The Book of Monotheism</h2>
-            </div>
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/12jbO3S2IZtsjeC-1dfQtMNryBVJv0oUg/view?usp=drive_link"><img class="card-M" src="IMGG/img (7).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">Explanation of the Three Principles of Al-Ghaniman</h2>
             </div>
-            <div class="col text-center">
-                <a href="https://drive.google.com/file/d/1eQr_B2jJ_3HVD53GoVBuQS4waxDKpGs3/view?usp=drive_link"><img class="card-M" src="IMGG/img (2).jpg" height="350px" width="250px" alt=""></a>
-                <h2 class="" style="color:black;">Al-Muwatta’ narrated by Abu Musab Al-Zahr narrated by Al-Laythi</h2>
-            </div>
         </div>
-        <div class="row d-flex justify-content-center ">2
+        <hr class="featurette-divider">
+        <div class="row d-flex justify-content-center ">
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1M1LwNFMxkfmOubMOX2SfP-lJmf6mXA6A/view?usp=drive_link"><img class="card-M" src="IMGG/img (9).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">Explanation of Kashf Al-Shubuhat</h2>
@@ -258,11 +210,16 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <a href="https://drive.google.com/file/d/1oaxXNsN4dAn2DgEZ7FUxvMLZXe0vctP4/view?usp=drive_link"><img class="card-M" src="IMGG/img (12).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">Sahih Muslim</h2>
             </div>
-            
+            <div class="col text-center">
+                <a href="https://drive.google.com/file/d/1IUZEWUCFbG9yEmG0TZ8j6ljhDrdbu5QA/view?usp=drive_link" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen><img class="card-M" src="IMGG/img (11).jpg" height="350px" width="250px" alt=""></a>
+                <h2 class="" style="color:black;">The Book of Monotheism</h2>
+            </div>
         </div>
+        <hr class="featurette-divider">
         </div>
     </div>
-<div class="container py-5 section right col-xs-9"><a href="#"><img alt=""></a></div>
+    <hr class="featurette-divider">
+<div class="container py-5 section right col-xs-9"><a href="#"><img src="IMGG/up.png" alt=""></a></div>
 </div>
 </div>
 <footer>
@@ -275,8 +232,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quran.php">Quran</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
-                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
-                <hr class="featurette-divider">
                 </ul>
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
             </ul>

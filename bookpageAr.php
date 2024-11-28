@@ -20,36 +20,12 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
-        header, footer {
-  text-align: center;
-  background-color: #f4f4f4;
+      .amiri-regular {
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-.backbody {
-  position: relative;; 
-  padding: 20px;
-  min-height: 80vh;  
-}
-.container::before,
-.container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  background-image: url('IMGG/strip.png'); 
-  background-size: contain; 
-  background-repeat: repeat-y; 
-}
-
-.container::before {
-  left: 0;
-}
-
-.container::after {
-  right: 0;
-}
-    body{
+body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
@@ -122,8 +98,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       .card-M {
           transition: all 0.3s;
           opacity: .9;
-          width: 200px;
-          height: 300px;
       }
       .card-M:hover {
           scale: 1.05;
@@ -136,18 +110,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         }
         .navbar-toggler{
             border: none !important;
-        }
-        .col.text-center h2{
-            font-size: x-large;
-            margin-top: 20px;
-            width: 190px;
-            line-height: 28px;
-        }
-        .col.text-center{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding:20px 10px ;
         }
 </style>
 </head>
@@ -165,18 +127,26 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
+                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
+                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
+                        </ul>
+                    </li>
+                      </ul>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                    <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                    <ul class="navbar-nav"> 
+                          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
               </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                </ul>
           </div>
           <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
         </div>
@@ -186,6 +156,8 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 <!--page-->
 
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+    <hr class="featurette-divider">
+
     <div data-bs-spy="scroll" data-bs-target="#gotop" class="row featurette">
       <div id="topbar" class="col">
         <div class="row d-flex justify-content-center ">
@@ -201,25 +173,12 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <a href="https://drive.google.com/file/d/1eQr_B2jJ_3HVD53GoVBuQS4waxDKpGs3/view?usp=drive_link"><img class="card-M" src="IMGG/img (4).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">السنن  للإمام أبي داود</h2>
             </div>
-            
-        </div>
-        <div class="row d-flex justify-content-center ">
-        <div class="col text-center">
-                <a href="https://drive.google.com/file/d/1qAMQ7HPJx3HDKys5FaioKV1_u7hg4rUZ/view?usp=drive_link"><img class="card-M" src="IMGG/img (7).jpg" height="350px" width="250px" alt=""></a>
-                <h2 class="" style="color:black;">شرح الأصول الثلاثة للغنيمان</h2>
-            </div>
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1G_8QJeHLrPB5RKo88is3NdVvanq6_4SH/view?usp=drive_link"><img class="card-M" src="IMGG/img (2).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">الموطأ برواية أبي مصعب الزهر برواية الليثي</h2>
             </div>
-            <div class="col text-center">
-                <a href="https://drive.google.com/file/d/1IUZEWUCFbG9yEmG0TZ8j6ljhDrdbu5QA/view?usp=drive_link"><img class="card-M" src="IMGG/img (11).jpg" height="350px" width="250px" alt=""></a>
-                <h2 class="" style="color:black;">كتاب التوحيد</h2>
-            </div>
         </div>
-
-
-       
+        <hr class="featurette-divider">
         <div class="row d-flex justify-content-center ">
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1pN5p0MYc78UIvbGBRGSMyZaWugFgF3sR/view?usp=drive_link"><img class="card-M" src="IMGG/img (3).jpg" height="350px" width="250px" alt=""></a>
@@ -233,8 +192,12 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <a href="PDFs/سنن_الترمذي_وهو_الجامع_الكبير_ط_التأصيل.pdf"><img class="card-M" src="IMGG/img (1).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">سنن الترمذي</h2>
             </div>
-            
+            <div class="col text-center">
+                <a href="https://drive.google.com/file/d/1qAMQ7HPJx3HDKys5FaioKV1_u7hg4rUZ/view?usp=drive_link"><img class="card-M" src="IMGG/img (7).jpg" height="350px" width="250px" alt=""></a>
+                <h2 class="" style="color:black;">شرح الأصول الثلاثة للغنيمان</h2>
+            </div>
         </div>
+        <hr class="featurette-divider">
         <div class="row d-flex justify-content-center ">
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/12jbO3S2IZtsjeC-1dfQtMNryBVJv0oUg/view?usp=drive_link"><img class="card-M" src="IMGG/img (9).jpg" height="350px" width="250px" alt=""></a>
@@ -248,11 +211,16 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 <a href="https://drive.google.com/file/d/1oaxXNsN4dAn2DgEZ7FUxvMLZXe0vctP4/view?usp=drive_link"><img class="card-M" src="IMGG/img (12).jpg" height="350px" width="250px" alt=""></a>
                 <h2 class="" style="color:black;">صحيح مسلم</h2>
             </div>
-            
+            <div class="col text-center">
+                <a href="https://drive.google.com/file/d/1IUZEWUCFbG9yEmG0TZ8j6ljhDrdbu5QA/view?usp=drive_link"><img class="card-M" src="IMGG/img (11).jpg" height="350px" width="250px" alt=""></a>
+                <h2 class="" style="color:black;">كتاب التوحيد</h2>
+            </div>
         </div>
+        <hr class="featurette-divider">
         </div>
     </div>
-<div class="container py-5 section right col-xs-9"><a href="#"></a></div>
+    <hr class="featurette-divider">
+<div class="container py-5 section right col-xs-9"><a href="#"><img src="IMGG/up.png" alt=""></a></div>
 </div>
 </div>
 <footer>
@@ -261,13 +229,11 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
-                <hr class="featurette-divider">
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>
             </ul>
       </div>

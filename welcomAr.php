@@ -15,27 +15,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet"><style>
-      .amiri-regular {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+      
 body{
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
 }
   .about-container {
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
+    width: 80%;
+    height: 70%;
   }
   .toggler-icon {
     width: 30px;
@@ -74,24 +72,37 @@ body{
   .navbar-toggler.collapsed .toggler-icon {
       background: #0F1035;
   }
-  .section {
-    height: 100%;
+  #bg{
+    background-image: url(IMGG/salat.jpg);
+    background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+        }
+  .section {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  .main-wrapper {
-    height: 100vh;
-  }
+
   .backbody {
       background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
       direction: rtl;
       text-align: right;
   }
-  header, footer {
+  footer {
       background-color: #C4DFDF;
+  }
+  header{
+    background-image: url(IMGG/salat.jpg);
+    background-size: cover;
+  }
+  #hh{
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
   }
   nav a.nav-link {
       color: #0F1035;
@@ -115,7 +126,7 @@ body{
 </head>
 <body>
     <header>
-    <div class="container-fluid"></div>
+    <div class="container-fluid" id="hh">
         <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
@@ -137,7 +148,16 @@ body{
               </li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
+                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
+                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
+                        </ul>
+                    </li>
+                      </ul>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
                 </ul>
             </div>
             <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
@@ -147,8 +167,8 @@ body{
       </nav>
     </div>
     </header>
-    <!-- الصفحة الرئيسية -->
-    <div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+    
+        <div id="bg">
         <div class="main-wrapper about-container">
             <div class="container py-5 section right col-xs-9">
                 <h1 class="display-1 " style="color: black;font-weight:100">معلومات عنا</h1>
@@ -157,15 +177,15 @@ body{
                     هدفنا هو خدمة الطلاب والعلماء وكل من يهتم بتعميق فهمه للقرآن الكريم والتاريخ الإسلامي.
                 </p>
                 <div id="gotop">
-                    <a href="loginAr.php"><button class="btn btn-outline-secondary" type="submit" name="login">تسجيل الدخول</button></a>
-                    <a href="signupAr.php"><button class="btn btn-outline-secondary" type="submit" name="signup">التسجيل</button></a><br>
+                    <a href="loginAr.php"><button style="color: white;" class="btn btn-outline-secondary" type="submit" name="login">تسجيل الدخول</button></a>
+                    <a href="signupAr.php"><button style="color: white;" class="btn btn-outline-secondary" type="submit" name="signup">التسجيل</button></a><br>
                 </div>
-                <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button">المزيد من المعلومات</button></a>
+                <a href="#topbar" id="gotopBtn"><button style="color: white;" class="btn btn-outline-secondary" type="button">المزيد من المعلومات</button></a>
             </div>
         </div>
-
+        </div>
         <hr class="featurette-divider">
-
+        <div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
         <div data-bs-spy="scroll" data-bs-target="#gotop" class="row featurette">
             <div id="topbar" class="topbar col-md-8">
                 <h1 class="text-center position-relative p-5 featurette-heading fw-normal lh-1" style="color: black;">تحفيظ القرآن</h1>
@@ -247,6 +267,7 @@ body{
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
                 </ul>
                 <hr style="color:black;" class="featurette-divider">
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>

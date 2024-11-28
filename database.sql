@@ -13,8 +13,7 @@ CREATE TABLE profile (
     password VARCHAR(255) NOT NULL,
     age INT CHECK (age >= 0),
     role ENUM('educator', 'student') NOT NULL,
-    description varchar(5000),
-    class varchar(5)
+    description varchar(5000)
 );
 
 -- Step 3: Create the 'user_achievements' table
@@ -26,10 +25,13 @@ CREATE TABLE students_feedback (
     FOREIGN KEY (user_id) REFERENCES profile(user_id) ON DELETE CASCADE
 );
 
-CREATE TABLE student_completed_juz (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    juz INT NOT NULL,
+-- Step 4: Create the 'student_audios' table
+CREATE TABLE IF NOT EXISTS student_audios (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    file_path VARCHAR(255) NOT NULL,
+    status ENUM('pending', 'reviewed') DEFAULT 'pending',
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    feedback VARCHAR(255) DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES profile(user_id)
 );
 CREATE TABLE button_clicks (
@@ -37,5 +39,17 @@ CREATE TABLE button_clicks (
     click_date DATE NOT NULL,
     click_count INT DEFAULT 0
 );
+<<<<<<< HEAD
+=======
+-- hestoy of quran read
+CREATE TABLE user_surah_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,             -- assuming you have user authentication
+    surah_id varchar (500) NOT NULL,             -- ID of the Surah read or last visited
+    is_read BOOLEAN DEFAULT FALSE,     -- Indicates if the Surah is marked as read
+    last_visited BOOLEAN DEFAULT FALSE -- Indicates if the Surah is the last visited one
+);
+
+>>>>>>> 5bc19e4e0ff4af5203c4b50186ff157e8a52f94d
 -- To drop the database, use:
 #DROP DATABASE user_profiles;
