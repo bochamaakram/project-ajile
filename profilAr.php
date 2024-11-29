@@ -213,9 +213,7 @@ $class = htmlspecialchars($_SESSION["class"]);
                                         <label for="form-label">الصف الشخصي:</label><br>
                                         <textarea id="class" name="class" rows="1" cols="10" maxlength="255"><?= htmlspecialchars($class); ?></textarea><br><br>
                                         <button type="submit" name="update_class" class="btn btn-primary">تحديث الصف</button>
-                                    </form>
-
-                                    
+                                    </form>                                   
                                 </div>
                             </form>
                         </div>
