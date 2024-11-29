@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Set the target directory for uploads
 $targetDir = __DIR__ . DIRECTORY_SEPARATOR . "audios";
 
@@ -10,14 +12,11 @@ if (!is_dir($targetDir)) {
 // Check if the audio file was uploaded
 if (isset($_FILES["audio"]) && $_FILES["audio"]["error"] === UPLOAD_ERR_OK) {
     $audioFile = $_FILES["audio"];
-    
-    // Get additional data (student name and selected Juz)
-    $studentName = isset($_POST['student_name']) ? trim($_POST['student_name']) : 'Unknown';
-    $selectedJuz = isset($_POST['juz']) ? trim($_POST['juz']) : 'Unknown';
+    // Get student name from the session
+    $studentName = $_SESSION["name"] ?? "Unknown";
 
-    // Validate and sanitize student name and Juz
+    // Validate and sanitize the student name
     $studentName = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $studentName); // Replace invalid characters with underscores
-    $selectedJuz = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $selectedJuz);
 
     // Validate the file type (e.g., only accept .mp3 and .webm files)
     $allowedExtensions = ['mp3', 'webm'];
@@ -28,8 +27,8 @@ if (isset($_FILES["audio"]) && $_FILES["audio"]["error"] === UPLOAD_ERR_OK) {
         exit;
     }
 
-    // Generate a file name based on student name, selected Juz, and a unique identifier
-    $uniqueFileName = "{$studentName}_{$selectedJuz}_" . uniqid("audio_", true) . "." . $fileExtension;
+    // Generate a unique file name based on the student name and a unique identifier
+    $uniqueFileName = "{$studentName}_" . uniqid("audio_", true) . "." . $fileExtension;
     $targetFilePath = $targetDir . DIRECTORY_SEPARATOR . $uniqueFileName;
     
     // Move the uploaded file to the target directory

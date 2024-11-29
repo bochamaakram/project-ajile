@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Check if the user is logged in
 if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["email"])) {
     header("Location: login.php");
@@ -258,7 +257,9 @@ direction: rtl;
   <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "student") { ?>
   <!-- Student Section -->
   <div id="student-section">
-    <h1 class="d-flex justify-content-center" id="audio">Audio Recording</h1>
+    <h1 class="d-flex justify-content-center" id="audio">Recitation</h1>
+    <p class="d-flex justify-content-center"> before recording say the juz you are trying to recite and start reciting</p>
+    <p class="d-flex justify-content-center">⚠️ failure to do so will make your recitation inacceptable ⚠️</p>
     <table class="table table-bordered">
       <tr>
         <td><button id="start-recording" class="btn btn-primary">Start Recording</button></td>
@@ -268,14 +269,6 @@ direction: rtl;
         </td>
         <td>
           <input type="text" id="username" name="username" placeholder="Your name" required class="form-control mb-2 col-12 btn btn-outline-secondary">
-        </td>
-        <td>
-          <select id="juz-selection" class="form-control mb-2 col-10 btn btn-outline-secondary" required>
-            <option value="" disabled selected>Select a Juz</option>
-            <?php for ($i = 1; $i <= 30; $i++) { ?>
-              <option value="Juz <?php echo $i; ?>">Juz <?php echo $i; ?></option>
-            <?php } ?>
-          </select>
         </td>
       </tr>
       <tr>
@@ -296,7 +289,6 @@ direction: rtl;
         <thead>
           <tr>
             <th>Student Name</th>
-            <th>Selected Juz</th>
             <th>Recording</th>
             <th>Actions</th>
           </tr>
@@ -312,11 +304,9 @@ direction: rtl;
                       $parts = explode('_', pathinfo($fileName, PATHINFO_FILENAME));
                       
                       $studentName = $parts[0] ?? "Unknown";
-                      $selectedJuz = str_replace('_', ' ', $parts[1] ?? "Unknown");
           ?>
           <tr>
             <td><?php echo htmlspecialchars($studentName); ?></td>
-            <td><?php echo htmlspecialchars($selectedJuz); ?></td>
             <td><audio controls src="audios/<?php echo htmlspecialchars($fileName); ?>"></audio></td>
             <td>
               <button class="mark-good btn btn-success" data-file="<?php echo htmlspecialchars($fileName); ?>">Good Job</button>
@@ -326,10 +316,10 @@ direction: rtl;
           <?php
                   }
               } else {
-                  echo "<tr><td colspan='4' class='text-center'>No audio files to review.</td></tr>";
+                  echo "<tr><td colspan='3' class='text-center'>No audio files to review.</td></tr>";
               }
           } else {
-              echo "<tr><td colspan='4' class='text-center'>Audio directory does not exist.</td></tr>";
+              echo "<tr><td colspan='3' class='text-center'>Audio directory does not exist.</td></tr>";
           }
           ?>
         </tbody>
@@ -349,7 +339,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const audioPreview = document.getElementById("audio-preview");
   const submitAudioBtn = document.getElementById("submit-audio");
   const usernameField = document.getElementById("username");
-  const juzSelection = document.getElementById("juz-selection");
 
   let mediaRecorder;
   let audioBlob;
@@ -384,20 +373,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     submitAudioBtn.addEventListener("click", async () => {
       const username = usernameField.value.trim();
-      const selectedJuz = juzSelection.value.trim();
 
       if (!username) {
         alert("Please enter your name.");
         return;
       }
 
-      if (!selectedJuz) {
-        alert("Please select a Juz.");
-        return;
-      }
-
       const timestamp = Date.now();
-      const filename = `${username}_${selectedJuz.replace(/\s+/g, "_")}_${timestamp}.webm`;
+      const filename = `${username}_${timestamp}.webm`;
 
       const formData = new FormData();
       formData.append("audio", audioBlob, filename);
