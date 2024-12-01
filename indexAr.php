@@ -115,6 +115,25 @@ body{
     border-radius: 20px 10px;
     transform: scale(1);
   }
+  /* Remove padding for screens smaller than 400px */
+  h3{
+    font-weight: bold !important;
+  }
+  @media (max-width: 400px) {
+    h3 {
+      font-weight: small !important;
+      font-size: 0.85rem;
+      padding: 0;
+    }
+  .section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px ;
+  }
+  }
 </style>
 </head>
 <body>
@@ -163,9 +182,9 @@ body{
   <div class="p-5 rounded-4 backbody container-fluid" id="bbody" >
       <div class="main-wrapper about-container">
           <div class="container py-5 section right col-xs-9">
-              <p class="col-md-8 fs-4">
+              <h3>
                   مرحباً بكم في منصتنا! نحن ملتزمون بتوفير الموارد اللازمة لتعلم واستكشاف القرآن الكريم والتعاليم الإسلامية الأخرى.
-              </p>
+              </h3>
               <div id="gotop" class="d-flex gap-2">
                   <a href="loginAr.php"><button class="btn btn-outline-secondary" type="button">تسجيل الدخول</button></a>
                   <a href="signupAr.php"><button class="btn btn-outline-secondary" type="button">التسجيل</button></a>

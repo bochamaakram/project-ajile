@@ -335,7 +335,6 @@ direction: ltr;
   <?php } ?>
 
 </div>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   // للطلاب

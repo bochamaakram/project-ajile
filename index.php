@@ -114,6 +114,25 @@
     background-color: #E3F4F4;
     border-radius: 10px 20px;
   }
+  /* Remove padding for screens smaller than 400px */
+  h3{
+    font-size: 1.4rem;
+  }
+  @media (max-width: 400px) {
+    h3 {
+      font-weight: small !important;
+      font-size: 0.85rem;
+      padding: 0;
+    }
+  .section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px ;
+  }
+  }
 </style>
 </head>
 <body>
@@ -155,9 +174,9 @@
   
   <div class="main-wrapper about-container">
     <div class="container py-5 section right col-xs-9">
-      <p class="col-md-8 fs-4 " style="color:#0F1035;">
+      <h3 style="color:#0F1035;">
         Welcome to our platform! We are dedicated to providing resources for learning and exploring the Quran and other Islamic teachings.
-      </p>
+      </h3>
       <div id="gotop">
         <a href="login.php"><button class="btn btn-outline-secondary" type="button">login</button></a>
         <a href="signup.php"><button class="btn btn-outline-secondary" type="button">signup </button></a><br>
