@@ -104,16 +104,50 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
         .navbar-toggler {
             border: none !important;
         }
+        .NO{
+            visibility: hidden;
+        }
+        @media (max-width: 600px) {
+            .main-wrapper {
+    margin: 20px;
+    background-color: #F8F6F4;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.table {
+    visibility: hidden;
+}
+.NO{
+    visibility: unset;
+    font-weight: small !important;
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px ;
+}
+.p-5 {
+     padding: 0 !important; 
+}
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        justify-content: space-evenly;
+        flex-direction: column-reverse;
+        align-content: stretch;
+    }
+}
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="welcome.php"><img src="Logo.png" alt="Homepage" style="width: 50px;"></a>
                 <div class="navbar-nav">
-                    <a class="nav-link" href="profil.php"><img src="IMGG/profil.png" alt="Profile" style="width: 20px;"></a>
-                    <a class="nav-link" href="distroy.php">Log out</a>
+                    <a class="nav-link d-flex justify-content-center" href="profil.php"><img src="IMGG/profil.png" alt="Profile" style="width: 20px;"></a>
+                    <a class="nav-link d-flex justify-content-center" href="distroy.php">Log out</a>
                 </div>
             </div>
         </nav>
@@ -122,6 +156,7 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
     <div class="p-5 rounded-4 container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
         <div class="main-wrapper">
             <h1 class="text-center">Student Profiles</h1>
+            <p class="NO d-flex justify-content-center ">⚠️can't show table in phone screen you should try it on a larger screen⚠️</p>
             <table class="table table-bordered">
                 <thead>
                     <tr>

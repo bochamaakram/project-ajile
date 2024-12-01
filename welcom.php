@@ -132,6 +132,46 @@
         padding: 20px;
         margin: 0px;
     }
+  /* Remove padding for screens smaller than 400px */
+  h3{
+    font-weight: bold !important;
+  }
+  @media (max-width: 600px) {
+    h3 {
+      font-weight: small !important;
+      font-size: 0.9rem;
+      padding: 0;
+    }
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0F1035;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 70%;
+    height: fit-content;
+}
+    .p-5 {
+    padding: 0 !important;
+}
+  .section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding:10px ;
+  }
+  .btn {
+    width: 100%;
+}
+  }
 </style>
 </head>
 <div id="F1"class="container-fluid">
@@ -150,7 +190,7 @@
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
                     <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
                   <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
@@ -160,7 +200,7 @@
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpage.php">library</a></li>
                           <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
                             <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
@@ -179,12 +219,12 @@
     </header>
     <!-- الصفحة الرئيسية -->
     <div class="main-wrapper about-container">
-            <div class="container section right col-xs-9">
-                <h1 class="display-1 fw-bold" style="color: black;font-weight:100">About Us</h1>
-                <p class="col-md-8 fs-4" style="color: black;">
-Welcome to our platform! We are committed to providing the necessary resources to learn and explore the Holy Quran and other Islamic teachings. <br>
+            <div class="container section right ">
+                <h1 class="display-1" style="color: black;font-weight:100">About Us</h1>
+                <h3 style="color: black;">
+Welcome to our platform! We are committed to providing the necessary resources to learn and explore the Holy Quran and other Islamic teachings.
                     Our goal is to serve students, scholars and anyone interested in deepening their understanding of the Holy Quran and Islamic history.
-                </p>
+                </h3>
                 <div id="gotop">
                     <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button">More information</button></a>
                     <a href="login.php"><button class="btn btn-outline-secondary" type="submit" name="login">login</button></a>

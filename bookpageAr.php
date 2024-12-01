@@ -24,7 +24,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
   text-align: center;
   background-color: #f4f4f4;
 }
-
 .backbody {
   position: relative;; 
   padding: 20px;
@@ -48,6 +47,36 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 
 .container::after {
   right: 0;
+}
+@media (max-width: 600px) {
+  .container::before,
+  .container::after {
+    content: none; /* Removes the pseudo-elements */
+  }
+  #res-container{
+    width: 100%;
+  }
+  .card-M {
+    transition: all 0.3s;
+    opacity: .9;
+    width: 90px;
+    height: 140px;
+}
+    .p-5 {
+    padding: 0 !important;
+}
+    h2{
+        font-size: 0.9rem !important;
+    }
+    .col.text-center {
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    flex-wrap: nowrap;
+    align-content: stretch;
+}
 }
     body{
   font-family: "Amiri", serif;

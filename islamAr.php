@@ -140,7 +140,10 @@ header {
     margin: 60px 80px;
     padding: 120px; 
     text-indent: 20px;
-    text-align: right;
+    text-indent: 20px;
+    text-align: center;
+    font-weight: bold !important;
+    font-size: 2rem;
 }
 #is{
     background-color: #E3F4F4;
@@ -159,6 +162,24 @@ header {
     font-size: 30px;
     font-weight: bold;
 }
+    .btn{
+        color: white;
+    }
+  /* Remove padding for screens smaller than 400px */
+  @media (max-width: 600px) {
+    .introduction-content {
+        margin: 50% 10%;
+        padding: 10px;
+        text-indent: 20px;
+        text-indent: 20px;
+        text-align: center;
+        font-weight: normal !important;
+        font-size: 1rem;
+    }
+    .p-5 {
+    padding: 10px !important;
+}
+  }
 </style>
 </head>
 <body>
@@ -208,7 +229,7 @@ header {
   </header>
     <div class="introduction-content">
         <h1 class="display-1 fw-bold">الإسلام</h1>
-        <p class="fs-4">
+        <p>
             
 في الإسلام، يعتبر الطهارة والصلاة من العبادات الأساسية التي تربط المؤمن بالله <br>
 الوضوء يطهر الجسد والروح، ويهيئ المسلمين للصلاة، حجر الأساس للإيمان والتقوى<br>

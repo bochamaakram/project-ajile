@@ -12,7 +12,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Akram Manga</title>
+    <title>Library</title>
     <link rel="icon" href="Logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +47,37 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 
 .container::after {
   right: 0;
+}
+
+@media (max-width: 600px) {
+  .container::before,
+  .container::after {
+    content: none; /* Removes the pseudo-elements */
+  }
+  #res-container{
+    width: 100%;
+  }
+  .card-M {
+    transition: all 0.3s;
+    opacity: .9;
+    width: 90px;
+    height: 140px;
+}
+    .p-5 {
+    padding: 0 !important;
+}
+    h2{
+        font-size: 0.9rem !important;
+    }
+    .col.text-center {
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    flex-wrap: nowrap;
+    align-content: stretch;
+}
 }
       body{
         font-family: "Urbanist", sans-serif;

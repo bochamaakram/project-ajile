@@ -131,6 +131,47 @@ body{
         margin: 0px;
     }
 
+  /* Remove padding for screens smaller than 400px */
+  h3{
+    font-weight: bold !important;
+  }
+  @media (max-width: 600px) {
+    h3 {
+      font-weight: small !important;
+      font-size: 0.9rem;
+      padding: 0;
+    }
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0F1035;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 70%;
+    height: fit-content;
+}
+    .p-5 {
+    padding: 0 !important;
+}
+  .section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding:10px ;
+  }
+  .btn {
+    width: 100%;
+    max-width: fit;
+}
+  }
 </style>
 </head>
 <body>
@@ -152,9 +193,9 @@ body{
             
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">إسلام</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;" class="click">مواقيت الصلاة</a>
+                    <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="PrayerAr.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;" class="click">مواقيت الصلاة</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="PrayerAr.html#audio">مواقيت الصلاة</a></li>
                         <li><a class="dropdown-item" href="PrayerAr.html#juze">تسبيح</a></li>
@@ -164,7 +205,7 @@ body{
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                 <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item dropdown" style="position: relative;z-index: 10">
-                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                        <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
                     <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
@@ -182,16 +223,16 @@ body{
     </header>
     <!-- الصفحة الرئيسية -->    
     <div class="main-wrapper about-container">
-            <div class="container  section right col-xs-9" >
-                <h1 class="display-1 " style="color: black;font-weight:100">معلومات عنا</h1>
-                <p class="col-md-8 fs-4" style="color: black;">
+            <div class="container  section right" >
+                <h1 class="display-1" style="color: black;font-weight:100">معلومات عنا</h1>
+                <h3 style="color: black;">
                     مرحبًا بكم في منصتنا! نحن ملتزمون بتوفير الموارد اللازمة لتعلم واستكشاف القرآن الكريم والتعاليم الإسلامية الأخرى.<br>
                     هدفنا هو خدمة الطلاب والعلماء وكل من يهتم بتعميق فهمه للقرآن الكريم والتاريخ الإسلامي.
-                </p>
-                <div id="gotop" style="display: flex;margin-top: 15px;gap:13px">
-                    <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button" >المزيد من المعلومات</button></a>
-                    <a href="loginAr.php"><button class="btn btn-outline-secondary" type="submit" name="login">تسجيل الدخول</button></a>
-                    <a href="signupAr.php"><button class="btn btn-outline-secondary" type="submit" name="signup">التسجيل</button></a>
+                </h3>
+                <div id="gotop">
+                    <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary " type="button" >المزيد من المعلومات</button></a>
+                    <a href="loginAr.php"><button class="btn btn-outline-secondary " type="submit" name="login">تسجيل الدخول</button></a>
+                    <a href="signupAr.php"><button class="btn btn-outline-secondary " type="submit" name="signup">التسجيل</button></a>
                 </div>
             </div>
     </div>

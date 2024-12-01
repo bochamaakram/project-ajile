@@ -63,6 +63,33 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
         .navbar-toggler {
             border: none !important;
         }
+        .NO{
+            visibility: hidden;
+        }
+        @media (max-width: 600px) {
+            .main-wrapper {
+    margin: 20px;
+    background-color: #F8F6F4;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.table {
+    visibility: hidden;
+}
+.NO{
+    visibility: unset;
+    font-weight: small !important;
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px ;
+}
+.p-5 {
+     padding: 0 !important; 
+}
+}
     </style>
 </head>
 <body>
@@ -74,7 +101,6 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
                     <span class="toggler-icon middle-bar"></span>
                     <span class="toggler-icon bottom-bar"></span>
                 </button>
-                <a class="navbar-brand" href="welcome.php"><img src="Logo.png" alt="الصفحة الرئيسية" style="width: 50px;"></a>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="index.php">الصفحة الرئيسية</a></li>
@@ -93,6 +119,7 @@ if (isset($_POST["Submit_feedback"]) && isset($_POST["user_id"])) {
 
 <div class="p-5 rounded-4 container-fluid " style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
     <div class="main-wrapper ">
+    <p class="NO d-flex justify-content-center ">⚠️لا يمكن عرض الجدول على شاشة الهاتف، يجب عليك تجربته على شاشة أكبر⚠️</p>
         <h1 class="text-center">ملفات الطلاب الشخصية</h1>
         <table class="table table-bordered">
             <thead>

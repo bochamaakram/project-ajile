@@ -118,12 +118,29 @@
   h3{
     font-size: 1.4rem;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     h3 {
       font-weight: small !important;
       font-size: 0.85rem;
       padding: 0;
     }
+    .p-5 {
+    padding: 0 !important;
+}
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0F1035;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 70%;
+    height: fit-content;
+}
   .section {
     height: 100%;
     display: flex;
@@ -149,8 +166,8 @@
               <ul class="navbar-nav nav-underline">
                 <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php" id="index">Home page</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                <ul class="dropdown-menu">
+                <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center " href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                <ul class="dropdown-menu ">
                   <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
                   <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
                   <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
@@ -164,7 +181,7 @@
         </div>
           <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
           <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="indexAr.php">Arabic</a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="indexAr.php">Arabic</a></li>
       </div>
     </nav>
   </div>
