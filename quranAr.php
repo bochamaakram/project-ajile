@@ -331,7 +331,7 @@ direction: ltr;
       </table>
     </div>
   </div>
-  <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button"></button></a>
+  <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">قائمة الطلاب</button></a>
   <?php } ?>
 
 </div>
