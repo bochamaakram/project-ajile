@@ -24,17 +24,16 @@
         font-weight: 500;
         font-style: normal;
 }
-    .about-container {
+.about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #0F1035;
-    background: linear-gradient(135deg, #D2E9E9, #E3F4F4);
-    border-radius: 15px;
-    margin: auto;
+    backdrop-filter: blur(15px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    border-radius: 25px;
+    width: 70%;
   }
   .toggler-icon {
     width: 30px;
@@ -74,29 +73,36 @@
       background: #0F1035;
   }
   .section {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 1100px;
+    text-align: center;
+    margin:30px ;
   }
-  .main-wrapper {
-    height: 100vh;
-  }
+  
   .backbody {
-      background-color: linear-gradient(135deg, #D2E9E9, #E3F4F4);
       color: #333;
       direction: rtl;
       text-align: right;
   }
-  header, footer {
+  footer {
       background-color: #C4DFDF;
+  }
+  
+  header{
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top:0 ;
+    width: 100%;
+    z-index: 20;
   }
   nav a.nav-link {
       color: #0F1035;
   }
   .nav-link:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
     color: #d1e7dd;
   }
         .navbar-toggler:focus{
@@ -106,11 +112,32 @@
         .navbar-toggler{
             border: none !important;
         }
+        .col-md-8.fs-4{
+    direction: ltr;
+    text-align: left;
+  }
+  #F1{
+    height: 100vh;
+    background-image: url("IMGG/inside.webp");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+    .btn{
+        color: white;
+    }
+    .container{
+        padding: 20px;
+        margin: 0px;
+    }
 </style>
 </head>
+<div id="F1"class="container-fluid">
 <body>
     <header>
-    <div class="container-fluid"></div>
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
@@ -132,38 +159,46 @@
               </li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpage.php">library</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
+                            <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
+                        </ul>
+                    </li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
             </div>
-            <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-            <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-            <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="welcomAr.php">Arabic</a></li>
+            <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 25px; height: auto;" src="IMGG/Wprofil.png" alt="profil"></a></li>
+            <li class="nav-item d-flex justify-content-center"><a style="color: white;" class="nav-link" href="distroy.php">Log out</a></li>
+            <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="welcomAr.php">Arabic</a></li>
         </div>
       </nav>
     </div>
     </header>
     <!-- الصفحة الرئيسية -->
-    <div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
-        <div class="main-wrapper about-container">
-            <div class="container py-5 section right col-xs-9">
-                <h1 class="display-1 fw-bold" style="color: black;">About Us</h1>
+    <div class="main-wrapper about-container">
+            <div class="container section right col-xs-9">
+                <h1 class="display-1 fw-bold" style="color: black;font-weight:100">About Us</h1>
                 <p class="col-md-8 fs-4" style="color: black;">
-Welcome to our platform! We are committed to providing the necessary resources to learn and explore the Holy Quran and other Islamic teachings.
+Welcome to our platform! We are committed to providing the necessary resources to learn and explore the Holy Quran and other Islamic teachings. <br>
                     Our goal is to serve students, scholars and anyone interested in deepening their understanding of the Holy Quran and Islamic history.
                 </p>
                 <div id="gotop">
+                    <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button">More information</button></a>
                     <a href="login.php"><button class="btn btn-outline-secondary" type="submit" name="login">login</button></a>
-                    <a href="signup.php"><button class="btn btn-outline-secondary" type="submit" name="signup">signup</button></a><br>
+                    <a href="signup.php"><button class="btn btn-outline-secondary" type="submit" name="signup">signup</button></a>
                 </div>
-                <a href="#topbar" id="gotopBtn"><button class="btn btn-outline-secondary" type="button">More information</button></a>
             </div>
         </div>
+</div>
 
-        <hr class="featurette-divider">
+    <div class="p-5 bg-body-tertiary rounded-4" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
+        <hr class="featurette-divider"id="topbar">
 
         <div data-bs-spy="scroll" data-bs-target="#gotop" class="row featurette">
-            <div id="topbar" class=" col-md-8">
+            <div  class=" col-md-8">
                 <h1 class="text-center position-relative p-5 featurette-heading fw-normal lh-1" style="color: black;">Quran Memorization</h1>
                 <h1 class="text-center position-relative p-5 lead" style="color: black;">Memorization of the Holy Quran with the rules of intonation under the supervision of a group of honorable sheikhs<</h1>
             </div>
@@ -246,6 +281,7 @@ Welcome to our platform! We are committed to providing the necessary resources t
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpage.php">library</a></li>
                           <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="Prayer.html">Prayer Times</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
                 </ul>
                 <hr style="color:black;" class="featurette-divider">
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram">&copy; 2024 All rights reserved</a></p>
