@@ -48,6 +48,16 @@ header, footer {
   right: 0;
 }
 
+@media (max-width: 600px) {
+  .container::before,
+  .container::after {
+    content: none; /* Removes the pseudo-elements */
+  }
+  #res-container{
+    width: 100%;
+  }
+}
+
       body{
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
@@ -153,6 +163,7 @@ h1 {
     padding: 15px;
     border: 1px solid #365486;
     border-radius: 8px;
+    max-width: 150px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }

@@ -49,7 +49,12 @@ header, footer {
 .container::after {
   right: 0;
 }
-
+@media (max-width: 600px) {
+  .container::before,
+  .container::after {
+    content: none; /* Removes the pseudo-elements */
+  }
+}
       .amiri-regular {
   font-family: "Amiri", serif;
   font-weight: 400;

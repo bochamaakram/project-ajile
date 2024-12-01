@@ -212,6 +212,15 @@ direction: ltr;
 .navbar-toggler{
     border: none !important;
 }
+@media (max-width: 600px) {
+  .container::before,
+  .container::after {
+    content: none; /* Removes the pseudo-elements */
+  }
+  #res-container{
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
