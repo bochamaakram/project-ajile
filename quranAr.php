@@ -257,12 +257,14 @@ direction: ltr;
     </div>
 </header>
 <div class="p-5 rounded-4 backbody container-fluid" style="background: linear-gradient(135deg, #D2E9E9, #E3F4F4);">
-<div class="container-fluid col-8" id="res-container">
+<div class="container-fluid col-8" id="res-container" dir="rtl">
 
   <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "student") { ?>
-  <!-- قسم الطلاب -->
+  <!-- قسم الطالب -->
   <div id="student-section">
-    <h1 class="d-flex justify-content-center" id="audio">تسجيل الصوت</h1>
+    <h1 class="d-flex justify-content-center" id="audio"> التلاوة</h1>
+    <p class="d-flex justify-content-center"> قبل التسجيل، قل الجزء الذي تحاول تلاوته وابدأ في التلاوة</p>
+    <p class="d-flex justify-content-center">⚠️ إن عدم القيام بذلك سيجعل تلاوتك غير مقبولة ⚠️</p>
     <table class="table table-bordered">
       <tr>
         <td><button id="start-recording" class="btn btn-primary">ابدأ التسجيل</button></td>
@@ -272,14 +274,6 @@ direction: ltr;
         </td>
         <td>
           <input type="text" id="username" name="username" placeholder="اسمك" required class="form-control mb-2 col-12 btn btn-outline-secondary">
-        </td>
-        <td>
-          <select id="juz-selection" class="form-control mb-2 col-10 btn btn-outline-secondary" required>
-            <option value="" disabled selected>اختر جزءاً</option>
-            <?php for ($i = 1; $i <= 30; $i++) { ?>
-              <option value="جزء <?php echo $i; ?>">جزء <?php echo $i; ?></option>
-            <?php } ?>
-          </select>
         </td>
       </tr>
       <tr>
@@ -300,7 +294,6 @@ direction: ltr;
         <thead>
           <tr>
             <th>اسم الطالب</th>
-            <th>الجزء المختار</th>
             <th>التسجيل</th>
             <th>الإجراءات</th>
           </tr>
@@ -316,31 +309,29 @@ direction: ltr;
                       $parts = explode('_', pathinfo($fileName, PATHINFO_FILENAME));
                       
                       $studentName = $parts[0] ?? "غير معروف";
-                      $selectedJuz = str_replace('_', ' ', $parts[1] ?? "غير معروف");
           ?>
           <tr>
             <td><?php echo htmlspecialchars($studentName); ?></td>
-            <td><?php echo htmlspecialchars($selectedJuz); ?></td>
             <td><audio controls src="audios/<?php echo htmlspecialchars($fileName); ?>"></audio></td>
             <td>
               <button class="mark-good btn btn-success" data-file="<?php echo htmlspecialchars($fileName); ?>">عمل جيد</button>
-              <button class="mark-more btn btn-warning" data-file="<?php echo htmlspecialchars($fileName); ?>">يحتاج المزيد من العمل</button>
+              <button class="mark-more btn btn-warning" data-file="<?php echo htmlspecialchars($fileName); ?>">يحتاج لمزيد من العمل</button>
             </td>
           </tr>
           <?php
                   }
               } else {
-                  echo "<tr><td colspan='4' class='text-center'>لا توجد ملفات صوتية للمراجعة.</td></tr>";
+                  echo "<tr><td colspan='3' class='text-center'>لا توجد تسجيلات للمراجعة.</td></tr>";
               }
           } else {
-              echo "<tr><td colspan='4' class='text-center'>دليل الصوتيات غير موجود.</td></tr>";
+              echo "<tr><td colspan='3' class='text-center'>مجلد التسجيلات غير موجود.</td></tr>";
           }
           ?>
         </tbody>
       </table>
     </div>
   </div>
-  <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button">قائمة الطلاب</button></a>
+  <a href="student_list.php"><button class="mb-2 col-12 btn btn-outline-secondary" type="button"></button></a>
   <?php } ?>
 
 </div>
@@ -353,7 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const audioPreview = document.getElementById("audio-preview");
   const submitAudioBtn = document.getElementById("submit-audio");
   const usernameField = document.getElementById("username");
-  const juzSelection = document.getElementById("juz-selection");
 
   let mediaRecorder;
   let audioBlob;
@@ -388,20 +378,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     submitAudioBtn.addEventListener("click", async () => {
       const username = usernameField.value.trim();
-      const selectedJuz = juzSelection.value.trim();
 
       if (!username) {
         alert("يرجى إدخال اسمك.");
         return;
       }
 
-      if (!selectedJuz) {
-        alert("يرجى اختيار الجزء.");
-        return;
-      }
-
       const timestamp = Date.now();
-      const filename = `${username}_${selectedJuz.replace(/\s+/g, "_")}_${timestamp}.webm`;
+      const filename = `${username}_${timestamp}.webm`;
 
       const formData = new FormData();
       formData.append("audio", audioBlob, filename);
@@ -416,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(result);
 
         if (response.ok) {
-          alert("تم إرسال الصوت بنجاح.");
+          alert("تم إرسال التسجيل بنجاح.");
         }
       } catch (error) {
         alert("خطأ أثناء الإرسال: " + error.message);
@@ -444,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
           event.target.closest('tr').remove();
         }
       } catch (error) {
-        alert("خطأ في التقييم: " + error.message);
+        alert("خطأ أثناء التقييم: " + error.message);
       }
     });
   });
