@@ -54,6 +54,32 @@ header, footer {
   .container::after {
     content: none; /* Removes the pseudo-elements */
   }
+.surah-item {
+    background-color: #F8F6F4;
+    padding: 15px;
+    border: 1px solid #365486;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+    flex-direction: column-reverse;
+}
+.audio-player {
+    height: 40px !important;
+    width: 95% !important;
+}
+    .p-5 {
+    padding: 0 !important;
+}
+.surah-list {
+    max-width: 1000px!important;
+    margin: auto!important;
+    padding: 0 !important;
+    list-style-type: none!important;
+    width: 100%!important;
+}
 }
       .amiri-regular {
   font-family: "Amiri", serif;
