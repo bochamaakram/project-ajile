@@ -1,6 +1,5 @@
 ﻿# project-ajile
-
-## 🚀 Get Started
+[## 🚀 Get Started](http://irshade.wuaze.com/)
 # 📖 Irshade.com
 
 Welcome to **Irshade.com**, a comprehensive platform designed to help users deepen their understanding of Islam. Our site provides a variety of resources, including Quran readings, Islamic learning materials, and a community support section for seeking guidance from knowledgeable individuals.
