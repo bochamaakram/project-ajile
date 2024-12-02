@@ -158,12 +158,15 @@ $class = htmlspecialchars($_SESSION["class"]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodingDung | Profile Template</title>
     <link rel="stylesheet" href="style.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>  
+    @media (max-width: 600px) {
+        .no-gutters>.col, .no-gutters>[class*=col-] {
+            padding-right: 10px;
+            padding-left: 10px;
+}
+    }
+    </style>
 </head>
 <body style="background-image: url('IMGG/pixelcut-export.jpeg'); background-size: cover;
         background-repeat: no-repeat;">

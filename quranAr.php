@@ -220,6 +220,17 @@ direction: ltr;
   #res-container{
     width: 100%;
   }
+  .p-5 {
+    padding: 0 !important;
+}
+.col-8 {
+    flex: 0 0 auto;
+     width: 100%;
+}
+.col-10 {
+    flex: 0 0 auto;
+     width: 100%;
+}
 }
 </style>
 </head>

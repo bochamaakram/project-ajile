@@ -165,8 +165,13 @@ $class = htmlspecialchars($_SESSION["class"]);
         }
         .form-label, h4, label {
             text-align: right;
-        }
-        
+        }  
+    @media (max-width: 600px) {
+        .no-gutters>.col, .no-gutters>[class*=col-] {
+            padding-right: 10px;
+            padding-left: 10px;
+}
+    }
     </style>
 </head>
 <body  >

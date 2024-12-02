@@ -69,8 +69,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         font-size: 0.9rem !important;
     }
     .col.text-center {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;

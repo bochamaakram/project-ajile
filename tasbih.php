@@ -89,6 +89,37 @@
             position: relative;
             display: inline-block;
         }
+        
+    @media (max-width: 600px) {
+        #clickable-div {
+    width: 40vh;
+    height: 20vh;
+    background-color: #F8F6F4;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+}
+    }
+    @media (max-width: 400px) {
+        #clickable-div {
+    width: 35vh;
+    height: 15vh;
+    background-color: #F8F6F4;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+}
+    }
     </style>
 </head>
 <body>
