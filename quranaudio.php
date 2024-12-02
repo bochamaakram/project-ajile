@@ -83,6 +83,26 @@ header, footer {
     list-style-type: none!important;
     width: 100%!important;
 }
+    nav a.nav-link {
+        font-size: 14px; /* Make navbar links smaller */
+    }
+
+    .navbar-toggler {
+        font-size: 18px; /* Adjust toggle size */
+    }
+
+    .text-center.position-relative.p-5.lead {
+        line-height: 30px; /* Reduce line height */
+    }
+
+    .text-center.position-relative.p-5.lead span {
+        font-size: 20px; /* Reduce span font size */
+    }
+
+    .introduction {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 20px; /* Add padding for spacing */
+    }
 }
 body{
         font-family: "Urbanist", sans-serif;
