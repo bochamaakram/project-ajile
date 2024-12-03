@@ -127,6 +127,12 @@
     .p-5 {
     padding: 0 !important;
 }
+      body{
+        background-image: url("IMGG/indexmini.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+      }
     nav a.nav-link {
         font-size: 14px; /* Make navbar links smaller */
     }
@@ -194,7 +200,7 @@
                 </ul>
               </li>
                   <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li><li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="bookpage.php" id="lib">library</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpage.php">Library</a></li><li class="nav-item d-flex justify-content-center">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
                         <ul class="dropdown-menu ">
@@ -208,7 +214,7 @@
         </div>
           <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
           <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-          <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="indexAr.php">Arabic</a></li>
+          <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="indexAr.php">Ar</a></li>
       </div>
     </nav>
   </div>

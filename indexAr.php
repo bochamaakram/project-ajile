@@ -125,6 +125,12 @@ body{
       font-size: 0.85rem;
       padding: 0;
     }
+      body{
+        background-image: url("IMGG/indexmini.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+      }
     nav a.nav-link {
         font-size: 14px; /* Make navbar links smaller */
     }
@@ -179,7 +185,7 @@ body{
         <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid" >
             
-            <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="index.php">الانجليزية</a></li>
+            <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="index.php">ENG</a></li>
             <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
             <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
 
@@ -191,7 +197,7 @@ body{
             
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">إسلام</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="PrayerAr.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;" class="click">مواقيت الصلاة</a>
                     <ul class="dropdown-menu">
@@ -205,9 +211,9 @@ body{
                     <li class="nav-item dropdown" style="position: relative;z-index: 10">
                         <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                    <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                    <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                    <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                    <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                    <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
                 </li>
                 <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>

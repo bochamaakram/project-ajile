@@ -55,8 +55,8 @@
             color: #0F1035;
         }
         .nav-link:hover {
-            transform: scale(1.02);
-            color: #d1e7dd;
+            transform: scale(1.07);
+            color: #000000;
         }
         .container {
             width: 95%;
@@ -99,8 +99,25 @@
             border: none !important;
         }
         #navbar-example2{
+            background-color: #0F1035;
             background-attachment: fixed;
         }
+        #boot{
+            background-color: #f2f0f0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: 600px) {
+              .navbar-nav {
+                display: flex;
+                flex-direction: column;
+                padding-left: 1;
+                padding-right: 0;
+                margin-bottom: 0;
+                list-style: none;
+            }
+            }
     </style>
 </head>
 <body>
@@ -137,7 +154,7 @@
     </div>
 </header>
 <div class="main-wrapper about-container">
-    <nav id="navbar-example2">
+    <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light " id="boot">
         <ul class="nav nav-pills">
           <li class="nav-item">
             <a class="nav-link" href="#scrollspyHeading1">الأذكار الصباح </a>
@@ -146,7 +163,7 @@
             <a class="nav-link" href="#scrollspyHeading2">أذكار المساء</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="afterprayerAr.html">الأذكار بعد الصلاة</a>
+            <a class="nav-link" href="afterprayerAr.html#after">أذكار بعد الصلاة</a>
           </li>
         </ul>
       </nav>

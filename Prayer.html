@@ -129,7 +129,6 @@
 
         }
     #countdown{
-        color:white;
         font-size: large;
         backdrop-filter: blur(0px);
         border-radius: 8px;
@@ -160,6 +159,32 @@
             padding-right: 0;
             margin-bottom: 0;
             list-style: none;
+        }
+        .container{
+            margin-top: 30px;
+            background-color: rgba(254, 255, 255, 0.332);
+            border-radius: 15px;
+            padding: 15px;
+        }
+        #gotop {
+            width: 100%;
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            display: flex;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0px 0px;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            font-family: "Urbanist", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            background-image: url(IMGG/pray.jpg);
+            background-size: contain;
+            background-repeat: no-repeat
         }
     }
     </style>
@@ -217,7 +242,7 @@
                         </select>               
                 <div class="timer-section">
                     <div class="remaining-time">
-                        <p class=" d-flex justify-content-center">Next Prayer in</p>
+                        <p class=" d-flex justify-content-center" style="color: li;">Next Prayer in</p>
                         <p class=" d-flex justify-content-center" id="next-prayer-name">Prayer Name</p>
                         <p  class=" d-flex justify-content-center" id="countdown">--:--:--</p>
                     </div>

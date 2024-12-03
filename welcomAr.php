@@ -187,6 +187,11 @@ body{
         font-size: 20px; /* Reduce span font size */
     }
 
+    #F1{
+    background-image: url("IMGG/well.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
     .introduction {
         height: auto; /* Allow height to adjust dynamically */
         padding: 20px; /* Add padding for spacing */

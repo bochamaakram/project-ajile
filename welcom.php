@@ -142,6 +142,11 @@
       font-size: 0.9rem;
       padding: 0;
     }
+  #F1{
+    background-image: url("IMGG/well.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 .about-container {
     display: flex;
     flex-direction: column;

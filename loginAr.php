@@ -155,6 +155,13 @@
   .text-light{
     margin-bottom: 10px;
   }
+@media (max-width: 600px) {
+      body{
+        background-image: url("IMGG/logm.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
 </style>
 </head>
 <body>

@@ -112,14 +112,14 @@ footer {
         font-size: 30px;
     }
     .introduction {
-    background-image: url("IMGG/pexels.jpg");
+    background-image: url("IMGG/4e082d6e-3aee-447b-b488-4e945c591876.webp");
     background-size: cover;
     background-repeat: no-repeat; 
     color: white;
     height: 100vh; 
     display: flex; 
     flex-direction: column; 
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center; 
     text-align: center; 
     position: relative; 
@@ -137,36 +137,32 @@ header {
 }
 
 .introduction-content {
-    margin: 60px 80px;
-    padding: 120px; 
+    margin: 100px 40px;
+    width: 65%;
+    padding: 30px; 
     text-indent: 20px;
+    text-align: left;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    color: black;
 }
 #is{
     background-color: #E3F4F4;
     border-radius: 10px 20px;
 }
-#index{
-    background-color: #E3F4F4;
-    border-radius: 20px 10px;
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: large;
 }
-.col-md-8 h1 {
-    text-align: right;
-    letter-spacing: 1.5px;
-    line-height: 40px;
-}
-.col-md-8 h1 span{
-    font-size: 30px;
-    font-weight: bold;
-}
-    .btn{
-        color: white;
-    }
   /* Remove padding for screens smaller than 400px */
   @media (max-width: 600px) {
     .introduction-content {
         margin: 50% 10%;
         padding: 10px;
         text-indent: 20px;
+        width: 90%;
         text-indent: 20px;
         text-align: center;
         font-weight: normal !important;
@@ -190,13 +186,16 @@ header {
     .text-center.position-relative.p-5.lead span {
         font-size: 20px; /* Reduce span font size */
     }
-
+    p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
     .introduction {
-        height: auto; /* Allow height to adjust dynamically */
-        padding: 20px; /* Add padding for spacing */
+        padding: 0px; /* Add padding for spacing */
+        background-image: url("IMGG/bab.jpg") !important;
     }
   }
-
 </style>
 </head>
 <body>
@@ -235,14 +234,14 @@ header {
                     <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="islam.php" id="is">Islam</a></li>
                     </ul>
                 </div>
-                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">Log out</a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="welcomAr.php">Arabic</a></li>
+                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 25px; height: auto;" src="IMGG/Wprofil.png" alt="profil"></a></li>
+                <li class="nav-item d-flex justify-content-center"><a style="color: white;" class="nav-link" href="distroy.php">Log out</a></li>
+                <li class="nav-item d-flex justify-content-center"><a style="color:black;background-color:#E3F4F4;border-radius: 10px;border-radius: 10px 20px;" class="nav-link" href="islamAr.php">Ar</a></li>
             </div>
         </nav>
     </header>
     <div class="introduction-content">
-        <h1 class="display-1 fw-bold">Islam</h1>
+        <h1 class="display-1 ">Islam</h1>
         <p>
             In Islam, purification and prayer are fundamental acts of worship that connect a believer to Allah.
             Wudu (ablution) cleanses both the body and soul, preparing Muslims for Salah (prayer), 
@@ -251,7 +250,7 @@ header {
             Begin your journey with guidance on wudu and prayer below.
         </p>
         <a href="#topbar" id="gotopBtn">
-            <button class="btn btn-outline-secondary" type="button">More information</button>
+            <button class="btn btn-outline-secondary" type="button" style="color: white;">More information</button>
         </a>
     </div>
 </div>

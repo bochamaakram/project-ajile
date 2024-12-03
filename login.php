@@ -154,6 +154,13 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
   
+@media (max-width: 600px) {
+      body{
+        background-image: url("IMGG/logm.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
 </style>
 </head>
 <body>

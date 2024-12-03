@@ -112,23 +112,22 @@ footer {
         font-size: 30px;
     }
     .introduction {
-    background-image: url("IMGG/pexels.jpg");
+    background-image: url("IMGG/4e082d6e-3aee-447b-b488-4e945c591876.webp");
     background-size: cover;
     background-repeat: no-repeat; 
     color: white;
     height: 100vh; 
     display: flex; 
     flex-direction: column; 
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center; 
     text-align: center; 
-    position: relative; 
-    padding-top: 0; 
+    position: relative;  
 }
 
 header {
     background-color: rgba(255, 255, 255, 0); 
-    backdrop-filter: blur(600px); 
+    backdrop-filter: blur(50px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
     width: 100%; 
     position: absolute; 
@@ -137,13 +136,14 @@ header {
 }
 
 .introduction-content {
-    margin: 60px 80px;
-    padding: 120px; 
+    margin: 160px 80px;
+    padding: 30px; 
     text-indent: 20px;
-    text-indent: 20px;
-    text-align: center;
-    font-weight: bold !important;
-    font-size: 2rem;
+    text-align: right;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    color: black;
 }
 #is{
     background-color: #E3F4F4;
@@ -162,15 +162,18 @@ header {
     font-size: 30px;
     font-weight: bold;
 }
-    .btn{
-        color: white;
-    }
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: large;
+}
   /* Remove padding for screens smaller than 400px */
   @media (max-width: 600px) {
     .introduction-content {
         margin: 50% 10%;
         padding: 10px;
         text-indent: 20px;
+        width: 90%;
         text-indent: 20px;
         text-align: center;
         font-weight: normal !important;
@@ -194,10 +197,15 @@ header {
     .text-center.position-relative.p-5.lead span {
         font-size: 20px; /* Reduce span font size */
     }
-
+    p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: bold;
+}
     .introduction {
-        height: auto; /* Allow height to adjust dynamically */
-        padding: 20px; /* Add padding for spacing */
+        padding: 0px; /* Add padding for spacing */
+        background-image: url("IMGG/bab.jpg") !important;
     }
   }
 </style>
@@ -207,48 +215,49 @@ header {
     <div class="introduction">
     <header>
       <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg navbar-light">
+          <nav class="navbar navbar-expand-lg navbar-light ">
               <div class="container-fluid">
                   <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="toggler-icon top-bar"></span>
                       <span class="toggler-icon middle-bar"></span>
                       <span class="toggler-icon bottom-bar"></span>
                   </button>
-                  <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#E3F4F4;border-radius: 10px;border-radius: 20px 10px;" class="nav-link" href="islam.php">ENG</a></li>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:white;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+                  <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 25px; height: auto;" src="IMGG/Wprofil.png" alt="profil"></a></li>
+
                   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                  <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="index.php">الصفحة الرئيسية</a></li>
-                      <ul class="navbar-nav"> 
-                          <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
-                </ul>
-              </li>
-            
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                          <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
-                          <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
-                            <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
+                            <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php" id="index">إسلام</a></li>
+                            <ul class="navbar-nav"> 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="quranAr.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
+                                    <li><a class="dropdown-item" href="PrayerAr.html#gotop">تسبيح</a></li>
+                                    <li><a class="dropdown-item" href="PrayerAr.html#gotop">الاذكار</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                      </ul>
-                      <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php" id="index">إسلام</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
+                        <ul class="navbar-nav"> 
+                        <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
+                              <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
+                                </ul>
+                            </li>
+                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="indexAr.php">الصفحة الرئيسية</a></li>
                   </div>
-                    <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">الانجليزية</a></li>
+                  <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
               </div>
           </nav>
       </div>
   </header>
     <div class="introduction-content">
-        <h1 class="display-1 fw-bold">الإسلام</h1>
+        <h1 class="display-1 ">الإسلام</h1>
         <p>
             
 في الإسلام، يعتبر الطهارة والصلاة من العبادات الأساسية التي تربط المؤمن بالله <br>
@@ -258,7 +267,7 @@ header {
 
         </p>
         <a href="#topbar" id="gotopBtn">
-            <button class="btn btn-outline-secondary" type="button" style="font-weight:600">مزيد من المعلومات</button>
+            <button class="btn btn-outline-secondary"  type="button" style="font-weight:400;color:white">مزيد من المعلومات</button>
         </a>
     </div>
 </div>
@@ -408,11 +417,11 @@ header {
             <ul class="navbar-nav">
                 <hr class="featurette-divider">
                 <ul class="navbar-nav nav-underline">
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="quranAr.php">القرآن</a></li>
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                     <hr class="featurette-divider">
                 </ul>
                 <p style="color:black;"> <a style="color:black;" class="nav-link" class="nav-link"  href="https://github.com/bochamaakram"> &copy;جميع الحقوق محفوظة 2024</a></p>

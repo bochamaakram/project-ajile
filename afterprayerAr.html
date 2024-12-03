@@ -63,8 +63,8 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
             color: #0F1035;
         }
         .nav-link:hover {
-            transform: scale(1.02);
-            color: #d1e7dd;
+            transform: scale(1.07);
+            color: #0f0f0f;
         }
         .container {
             width: 95%;
@@ -106,6 +106,24 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         .navbar-toggler{
             border: none !important;
         }
+        #boot{
+            background-color: #f2f0f0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: 600px) {.p-5 {
+            padding: 1rem !important;
+              }
+              .navbar-nav {
+                display: flex;
+                flex-direction: column;
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 0;
+                list-style: none;
+            }
+            }
     </style>
 </head>
 <body>
@@ -135,8 +153,22 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
     </div>
 </header>
 <div class="main-wrapper about-container">
+    <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light " id="boot">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="adkarAr.html#scrollspyHeading1">الأذكار الصباح </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adkarAr.html#scrollspyHeading2">أذكار المساء</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="afterprayerAr.html#after">أذكار بعد الصلاة</a>
+          </li>
+        </ul>
+      </nav>
+
     <div class="container p-5 rounded-4 backbody right col-xs-1">
-            <h1>الأذكار بعد الصلاة</h1>
+            <h1 id="after">الأذكار بعد الصلاة</h1>
     
             <div class="supplication">
                 <div class="repetition">٣ مرات</div>
