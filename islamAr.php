@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Irshad.edu</title>
+    <title>منصة إرشاد</title>
     <link rel="icon" href="Logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,6 +203,19 @@ p {
     font-size: 14px;
     font-weight: bold;
 }
+    .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-around;
+}
+    element.style {
+    color: black;
+    background-color: #E3F4F4;
+    border-radius: 10px;
+    border-radius: 10px 20px;
+    width: 150px;
+}
     .introduction {
         padding: 0px; /* Add padding for spacing */
         background-image: url("IMGG/bab.jpg") !important;
@@ -222,9 +235,9 @@ p {
                       <span class="toggler-icon middle-bar"></span>
                       <span class="toggler-icon bottom-bar"></span>
                   </button>
-                  <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#E3F4F4;border-radius: 10px;border-radius: 20px 10px;" class="nav-link" href="islam.php">ENG</a></li>
                   <li class="nav-item d-flex justify-content-center "><a style="color:white;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-                  <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 25px; height: auto;" src="IMGG/Wprofil.png" alt="profil"></a></li>
+                  <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+                  <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 25px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
 
                   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                             <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php" id="index">إسلام</a></li>
@@ -251,7 +264,7 @@ p {
                             </li>
                         <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="indexAr.php">الصفحة الرئيسية</a></li>
                   </div>
-                  <a class="logo" href="welcomAr.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+                  <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#E3F4F4;border-radius: 10px;border-radius: 20px 10px;" class="nav-link" href="islam.php">الانجليزية</a></li>
               </div>
           </nav>
       </div>

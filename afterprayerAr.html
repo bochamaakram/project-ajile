@@ -11,7 +11,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الأذكار بعد الصلاة</title>
+    <title>أذكار بعد الصلاة</title>
     <link rel="icon" href="Logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,13 +70,25 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
             width: 95%;
             max-width: 600px;
             margin: auto;
-        }
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #ffffff;
-            text-align: center;
-        }
+        }h1 {
+    padding: 20px;
+    font-size: 2em;
+    color: black;
+    text-align: center;
+    padding-top: 200px;
+}
+.navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        z-index: 1000;
+    }
         .supplication {
             background-color: #F8F6F4;
             border-radius: 8px;
@@ -94,11 +106,6 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
             color: #818080;
             margin-bottom: 10px;
         }
-        h1 {
-            padding: 20px;
-            font-size: 2em;
-            color: black;
-        }
         .navbar-toggler:focus{
             box-shadow: none !important;
             
@@ -115,6 +122,18 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         @media (max-width: 600px) {.p-5 {
             padding: 1rem !important;
               }
+              element.style {
+    width: 22px;
+    height: auto;
+}.nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    list-style: none;
+    /* align-items: baseline; */
+}
               .navbar-nav {
                 display: flex;
                 flex-direction: column;
@@ -123,40 +142,24 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
                 margin-bottom: 0;
                 list-style: none;
             }
-            }
+            }#boot {
+    background-color: #f2f0f0;
+    width: 100%;
+    display: flex
+;
+    justify-content: space-evenly;
+}
     </style>
 </head>
 <body>
-<header>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
-            <div class="container-fluid">
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon top-bar"></span>
-                    <span class="toggler-icon middle-bar"></span>
-                    <span class="toggler-icon bottom-bar"></span>
-                </button>
-                <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
-                <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="quranAr.php">القرآن</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    </ul>
-                </div>
-                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="الملف الشخصي"></a></li>
-                <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-            </div>
-        </nav>
-    </div>
-</header>
 <div class="main-wrapper about-container">
     <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light " id="boot">
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link" href="adkarAr.html#scrollspyHeading1">الأذكار الصباح </a>
+            <a class="nav-link" href="PrayerAr.html"><img style="width: 25px; height: auto;" src="./IMGG/enter.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adkarAr.html#scrollspyHeading1">أذكار الصباح </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="adkarAr.html#scrollspyHeading2">أذكار المساء</a>
@@ -168,7 +171,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
       </nav>
 
     <div class="container p-5 rounded-4 backbody right col-xs-1">
-            <h1 id="after">الأذكار بعد الصلاة</h1>
+            <h1 id="after">أذكار بعد الصلاة</h1>
     
             <div class="supplication">
                 <div class="repetition">٣ مرات</div>

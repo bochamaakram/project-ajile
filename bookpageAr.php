@@ -12,7 +12,7 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Akram Manga </title>
+    <title>المكتبة </title>
     <link rel="icon" href="Logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +69,8 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
         font-size: 0.9rem !important;
     }
     .col.text-center {
-    display: flex;
+    display: flex
+;
     flex-direction: column;
     align-items: center;
     padding: 0;
@@ -176,11 +177,13 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
             flex-direction: column;
             align-items: center;
             padding:20px 10px ;
-        }
+        }#index {
+    background-color: #E3F4F4;
+    border-radius: 20px 10px;
+}
 </style>
 </head>
-<body>
-<header>
+<body><header>
     <div class="container-fluid"></div>
         <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
         <div class="container-fluid">
@@ -193,14 +196,23 @@ if (!isset($_SESSION["name"]) || !isset($_SESSION["role"]) || !isset($_SESSION["
               <li class="nav-item d-flex justify-content-left"><a style="color:black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
           <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
-                    <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
+                <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islamAr.php">إسلام</a></li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="Prayer.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">مواقيت الصلاة</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="PrayerAr.html#pray">مواقيت الصلاة</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#tasbih">تسبيح</a></li>
+                  <li><a class="dropdown-item" href="PrayerAr.html#tasbih">الأذكار</a></li>
+                </ul>
+              </li>
+                    <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpageAr.php" id="index">مكتبة</a></li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
                     <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                  <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                  <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
+                  <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
                 </ul>
               </li>
                     <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>

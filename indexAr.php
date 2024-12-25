@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>مكتبة</title>
+    <title>منصة إرشاد</title>
     <link rel="icon" href="Logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
@@ -176,6 +176,13 @@ body{
     align-items: center;
     padding:10px ;
   }
+  .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-around;
+}
   }
 </style>
 </head>
@@ -185,8 +192,8 @@ body{
         <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid" >
             
-            <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="index.php">ENG</a></li>
-            <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
+            <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="index.php">الانجليزية</a></li>
+            <li class="nav-item d-flex justify-content-center"><a style="color: white;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
             <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profilAr.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
 
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -211,12 +218,12 @@ body{
                     <li class="nav-item dropdown" style="position: relative;z-index: 10">
                         <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="quranAr.php#audio">تسجيل الصوت</a></li>
-                    <li><a class="dropdown-item" href="quranAr.php#juze">أجزاء القرآن</a></li>
-                    <li><a class="dropdown-item" href="quranAr.php#sura">سور القرآن</a></li>
+                    <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
+                    <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
+                    <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
                 </ul>
                 </li>
-                <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
+                <li class="nav-item d-flex justify-content-center"><a style="color:black;background-color:#C4DFDF;border-radius: 10px; padding: 5px;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
                 </ul>
             </div>
             <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>

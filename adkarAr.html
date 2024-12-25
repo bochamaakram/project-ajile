@@ -85,12 +85,12 @@
             font-size: 1em;
             color: #818080;
             margin-bottom: 10px;
-        }
-        h1 {
-            padding: 20px;
-            font-size: 2em;
-            color: black;
-        }
+        }h1 {
+    padding: 20px;
+    font-size: 2em;
+    color: black;
+    padding-top: 200px;
+}
         .navbar-toggler:focus{
             box-shadow: none !important;
             
@@ -107,57 +107,64 @@
             width: 100%;
             display: flex;
             justify-content: center;
+        }.navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+        #boot{
+            background-color: #f2f0f0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 600px) {.p-5 {
+            padding: 1rem !important;
+              }
+              element.style {
+    width: 22px;
+    height: auto;
+}.nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    list-style: none;
+    /* align-items: baseline; */
+}
               .navbar-nav {
                 display: flex;
                 flex-direction: column;
-                padding-left: 1;
+                padding-left: 0;
                 padding-right: 0;
                 margin-bottom: 0;
                 list-style: none;
             }
-            }
+            }#boot {
+    background-color: #f2f0f0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
     </style>
 </head>
 <body>
-<header>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light ">
-            <div class="container-fluid">
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon top-bar"></span>
-                    <span class="toggler-icon middle-bar"></span>
-                    <span class="toggler-icon bottom-bar"></span>
-                </button>
-                <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
-                <div class="collapse navbar-collapse -flex justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" aria-current="page" href="indexAr.php">الصفحة الرئيسية</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">القرآن</a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="quran.php#audio">تسجيل الصوت</a></li>
-                              <li><a class="dropdown-item" href="quran.php#juze">أجزاء القرآن</a></li>
-                              <li><a class="dropdown-item" href="quran.php#sura">سور القرآن</a></li>
-                            </ul>
-                          </li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudioAr.php">القرآن الصوتي</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="bookpageAr.php">المكتبة</a></li>
-                        <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="PrayerAr.html">مواقيت الصلاة</a></li>
-                    </ul>
-                </div>
-                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="الملف الشخصي"></a></li>
-                <li class="nav-item d-flex justify-content-center "><a style="color: black;" class="nav-link" href="distroy.php">تسجيل الخروج</a></li>
-            </div>
-        </nav>
-    </div>
-</header>
 <div class="main-wrapper about-container">
     <nav class="navbar navbar-expand-lg navbar-light navbar navbar-light " id="boot">
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link" href="#scrollspyHeading1">الأذكار الصباح </a>
+            <a class="nav-link " href="PrayerAr.html"><img style="width: 25px; height: auto;" src="./IMGG/enter.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading1">أذكار الصباح </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#scrollspyHeading2">أذكار المساء</a>
@@ -169,7 +176,7 @@
       </nav>
       
 <div class="container" >
-    <h1 id="scrollspyHeading1">الأذكار الصباح </h1>
+    <h1 id="scrollspyHeading1">أذكار الصباح </h1>
     <div class="supplication ayah">
         <p>آية الكرسي</p>
         <p>اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.</p>

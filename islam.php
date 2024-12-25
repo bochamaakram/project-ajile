@@ -168,6 +168,19 @@ p {
         font-weight: normal !important;
         font-size: 1rem;
     }
+    .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-around;
+}
+    element.style {
+    color: black;
+    background-color: #E3F4F4;
+    border-radius: 10px;
+    border-radius: 10px 20px;
+    width: 150px;
+}
     .p-5 {
     padding: 10px !important;
 }
@@ -202,43 +215,45 @@ p {
     <!-- الصفحة الرئيسية -->
     <div class="introduction">
     <header>
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon top-bar"></span>
-                    <span class="toggler-icon middle-bar"></span>
-                    <span class="toggler-icon bottom-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
-                                <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
-                                <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
-                        <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="bookpage.php">Library</a></li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
+        <div class="container-fluid">
+            <a class="logo" href="welcom.php"><img style="width: 50px; height: auto;" src="Logo.png" alt="الصفحة الرئيسية"></a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item d-flex justify-content-center"><a style="color: black;" class="nav-link" aria-current="page" href="index.php">Home Page</a></li>
+                    <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Quran</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quran.php#audio">Audio Recording</a></li>
+                  <li><a class="dropdown-item" href="quran.php#juze">Quran Juzes</a></li>
+                  <li><a class="dropdown-item" href="quran.php#sura">Quran Surahs</a></li>
+                </ul>
+              </li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="quranaudio.php">Quran audio</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;"  class="nav-link" href="bookpage.php">library</a></li>
+                          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-item d-flex justify-content-center" href="quran.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Prayer times</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Prayer.html#pray">Prayer times</a></li>
                             <li><a class="dropdown-item" href="Prayer.html#tasbih">Tasbih</a></li>
                             <li><a class="dropdown-item" href="Prayer.html#tasbih">Adkar</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item d-flex justify-content-center"><a style="color:black;" class="nav-link" href="islam.php" id="is">Islam</a></li>
-                    </ul>
-                </div>
-                <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 25px; height: auto;" src="IMGG/Wprofil.png" alt="profil"></a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color: white;" class="nav-link" href="distroy.php">Log out</a></li>
-                <li class="nav-item d-flex justify-content-center"><a style="color:black;background-color:#E3F4F4;border-radius: 10px;border-radius: 10px 20px;" class="nav-link" href="islamAr.php">Ar</a></li>
+                          <li class="nav-item d-flex justify-content-center "><a style="color:black;" class="nav-link" href="islam.php">Islam</a></li>
+                </ul>
             </div>
-        </nav>
+            <li class="nav-item d-flex justify-content-left"><a style="color: black;" class="nav-link" href="profil.php"><img style="width: 20px; height: auto;" src="IMGG/profil.png" alt="profil"></a></li>
+            <li class="nav-item d-flex justify-content-center"><a style="color: white;" class="nav-link" href="distroy.php">Log out</a></li>
+            <li class="nav-item d-flex justify-content-center "><a style="color:black;background-color:#C4DFDF;border-radius: 10px;" class="nav-link" href="islamAr.php">Arabic</a></li>
+        </div>
+      </nav>
+    </div>
     </header>
     <div class="introduction-content">
         <h1 class="display-1 ">Islam</h1>
